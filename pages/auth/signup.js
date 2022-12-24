@@ -34,32 +34,8 @@ const SignUp = () => {
       mobile,
       password,
     },
-    onSuccess: (response) => onSignUpSuccess(response),
+    onSuccess: (response) => router.push('/dashboard'),
   })
-
-  const onSignUpSuccess = async (data) => {
-    userCtx.removeAll()
-
-    const decoded = ParseJwt(data)
-
-    userCtx.addUserCredentials({ decoded })
-
-    console.log(userCtx.userCredential)
-
-    setTimeout(function () {
-      console.log(userCtx.userCredential)
-    }, 3000)
-
-    if (userCtx.totalUserCredential > 0) {
-      if (userCtx.userCredential[0]) {
-        if (userCtx.userCredential[0].decoded.valid === 1) {
-          router.push('/dashboard')
-        }
-      }
-    } else {
-      router.push('/auth/signin')
-    }
-  }
 
   const handleClick = (e) => {
     e.preventDefault()

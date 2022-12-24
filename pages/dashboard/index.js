@@ -261,19 +261,8 @@ function Dashboard() {
   )
 }
 
-{
-  /*
 export async function getServerSideProps(context) {
   const { data } = await axios.get('http://api:3000/api/v1/users/currentuser')
-
-  if (!data) {
-    return {
-      redirect: {
-        destination: '/auth/signin',
-        permanent: false,
-      },
-    }
-  }
 
   if (!data) {
     return {
@@ -294,8 +283,6 @@ export async function getServerSideProps(context) {
   }
 
   return { props: { data } }
-}
-*/
 }
 
 export default Dashboard

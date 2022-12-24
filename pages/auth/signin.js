@@ -18,12 +18,12 @@ import loadingIcon from '../../assets/animation/mixer.gif'
 
 import axios from 'axios'
 
-const SignIn = () => {
+const SignIn = ({ data }) => {
   const router = useRouter()
 
   const [mobile, setMobile] = useState('')
   const [password, setPassword] = useState('')
-
+  console.log(data)
   const userCtx = useContext(UserCredentialsContext)
 
   if (userCtx.totalUserCredential === 1) {
@@ -138,8 +138,6 @@ const SignIn = () => {
   )
 }
 
-{
-  /*
 export async function getServerSideProps(context) {
   const { data } = await axios.get('http://api:3000/api/v1/users/currentuser')
 
@@ -148,7 +146,7 @@ export async function getServerSideProps(context) {
       if (data.currentUser.id) {
         return {
           redirect: {
-            destination: '/dashboard',
+            destination: 'http://client:3000/',
             permanent: false,
           },
         }
@@ -159,8 +157,6 @@ export async function getServerSideProps(context) {
   return {
     props: { data }, // will be passed to the page component as props
   }
-}
- */
 }
 
 export default SignIn
