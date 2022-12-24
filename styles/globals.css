@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'CustomFont';
+  src: url('../assets/fonts/Vazir.eot');
+  src: url('../assets/fonts/Vazir.woff') format('woff');
+}
+
+.font-face-vazir {
+  font-family: 'CustomFont';
+}
+
+* {
+  font-family: 'CustomFont' !important;
+}
+
+@layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}
