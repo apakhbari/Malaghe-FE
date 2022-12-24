@@ -1,4 +1,4 @@
-# malaghe-FrontEnd
+# Malaghe-FrontEnd
 
 ![ascii_malaghe_fe.png](ascii_malaghe_fe.png)
 
