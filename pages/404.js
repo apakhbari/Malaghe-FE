@@ -4,46 +4,56 @@ import Lottie from 'react-lottie-player'
 
 import lottieJson from '../assets/animation/animation-404.json'
 
+import Head from 'next/head'
+import { Fragment } from 'react'
+import { CLIENT_NAME_FA } from '../envConfig'
+
 const NotFound = () => {
   const router = useRouter()
 
   return (
-    <div className="w-full">
-      <div>
-        <input
-          type="checkbox"
-          id="my-modal-6"
-          className="modal-toggle"
-          checked="checked"
-          onChange={() => {}}
-        />
-        <div className="modal modal-bottom sm:modal-middle">
-          <div className="modal-box">
-            <p className="label text-4xl justify-center place-content-center items-center mb-12">
-              !صفحه پیدا نشد
-            </p>
+    <Fragment>
+      <Head>
+        <title>{CLIENT_NAME_FA} - خطا</title>
+      </Head>
 
-            <div className="flex mx-auto items-center h-96 w-96">
-              <Lottie loop animationData={lottieJson} play />
-            </div>
+      <div className="w-full">
+        <div>
+          <input
+            type="checkbox"
+            id="my-modal-6"
+            className="modal-toggle"
+            checked="checked"
+            onChange={() => {}}
+          />
+          <div className="modal modal-bottom sm:modal-middle">
+            <div className="modal-box">
+              <p className="label text-4xl justify-center place-content-center items-center mb-12">
+                !صفحه پیدا نشد
+              </p>
 
-            <p className="label text-lg justify-center place-content-center items-center">
-              خطای ۴۰۴
-            </p>
+              <div className="flex mx-auto items-center h-96 w-96">
+                <Lottie loop animationData={lottieJson} play />
+              </div>
 
-            <div className="modal-action">
-              <label
-                htmlFor="my-modal-6"
-                className="btn"
-                onClick={() => router.replace('/')}
-              >
-                صفحه اصلی
-              </label>
+              <p className="label text-lg justify-center place-content-center items-center">
+                خطای ۴۰۴
+              </p>
+
+              <div className="modal-action">
+                <label
+                  htmlFor="my-modal-6"
+                  className="btn"
+                  onClick={() => router.replace('/')}
+                >
+                  صفحه اصلی
+                </label>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </Fragment>
   )
 }
 

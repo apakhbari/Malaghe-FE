@@ -1,10 +1,14 @@
-import { useEffect, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 
 import Navbar from '../../../components/layout/navbar/navbar'
 import CardComponent from '../../../components/layout/card'
 import FooterNotMain from '../../../components/layout/footernotmain'
+
+import { CLIENT_NAME_FA } from '../../../envConfig'
+import MobileDeveloping from '../../../components/layout/mobileDeveloping'
 
 const RequestService3 = () => {
   const router = useRouter()
@@ -76,113 +80,123 @@ const RequestService3 = () => {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen mx-auto">
-      <Navbar />
-      <CardComponent>
-        <form onSubmit={onSubmit} className="card-body">
-          <h3 dir="rtl" className="text-2xl mb-2 text-neutral-content">
-            ثبت درخواست تعمیر
-          </h3>
-          <ul className="steps mb-2">
-            <li
-              data-content="3"
-              className="step step-primary text-neutral-content"
-            >
-              ثبت
-            </li>
-            <li
-              data-content="2"
-              className="step step-primary text-neutral-content"
-            >
-              آدرس
-            </li>
-            <li
-              data-content="1"
-              className="step step-primary text-neutral-content"
-            >
-              اطلاعات پایه
-            </li>
-          </ul>
-          <div className="divider">اطلاعات وارد شده</div>
+    <Fragment>
+      <Head>
+        <title>{CLIENT_NAME_FA} - ۳ ثبت درخواست تعمیر</title>
+      </Head>
 
-          <h3 className=" text-lg" dir="rtl">
-            {enteredName}
-          </h3>
-          <h3 className=" text-lg" dir="rtl">
-            {enteredMobile}
-          </h3>
-          <h3 className=" text-lg" dir="rtl">
-            {enteredPhone}
-          </h3>
+      <div className="md:hidden">
+        <MobileDeveloping />
+      </div>
 
-          <div className="divider"></div>
-
-          <h3 className="text-lg" dir="rtl">
-            {enteredDevice}
-          </h3>
-          <h3 className="text-lg" dir="rtl">
-            توضیحات: {enteredDescription}
-          </h3>
-          <h3 className="text-lg" dir="rtl">
-            نوع تعمیر: {enteredServiceKind}
-          </h3>
-
-          {isExpress && (
-            <h3 className="text-lg" dir="rtl">
-              خدمت پرسرعت
+      <div className="flex flex-col items-center justify-center h-screen mx-auto">
+        <Navbar />
+        <CardComponent>
+          <form onSubmit={onSubmit} className="card-body">
+            <h3 dir="rtl" className="text-2xl mb-2 text-neutral-content">
+              ثبت درخواست تعمیر
             </h3>
-          )}
+            <ul className="steps mb-2">
+              <li
+                data-content="3"
+                className="step step-primary text-neutral-content"
+              >
+                ثبت
+              </li>
+              <li
+                data-content="2"
+                className="step step-primary text-neutral-content"
+              >
+                آدرس
+              </li>
+              <li
+                data-content="1"
+                className="step step-primary text-neutral-content"
+              >
+                اطلاعات پایه
+              </li>
+            </ul>
+            <div className="divider">اطلاعات وارد شده</div>
 
-          <h3 className="text-lg text-primary" dir="rtl">
-            پیش‌پرداخت : {enteredPrice}
-          </h3>
+            <h3 className=" text-lg" dir="rtl">
+              {enteredName}
+            </h3>
+            <h3 className=" text-lg" dir="rtl">
+              {enteredMobile}
+            </h3>
+            <h3 className=" text-lg" dir="rtl">
+              {enteredPhone}
+            </h3>
 
-          <div className="divider"></div>
+            <div className="divider"></div>
 
-          <h3 className="text-lg" dir="rtl">
-            کد پستی: {postalCodeNum}
-          </h3>
-          <h3 className="text-lg" dir="rtl">
-            آدرس: {addressStr}
-          </h3>
+            <h3 className="text-lg" dir="rtl">
+              {enteredDevice}
+            </h3>
+            <h3 className="text-lg" dir="rtl">
+              توضیحات: {enteredDescription}
+            </h3>
+            <h3 className="text-lg" dir="rtl">
+              نوع تعمیر: {enteredServiceKind}
+            </h3>
 
-          <div className="divider"></div>
-
-          <select
-            className="select select-bordered w-full max-w-xs mt-6"
-            onChange={(e) => setEnteredPaymentKind(e.target.value)}
-          >
-            <option className="text-center content-center" dir="rtl">
-              پرداخت از طریق درگاه بانکی
-            </option>
-            <option className="text-center content-center" dir="rtl">
-              کارت به کارت
-            </option>
-            <option selected className="text-center content-center" dir="rtl">
-              پرداخت حضوری
-            </option>
-          </select>
-
-          {enteredPaymentKind === 'کارت به کارت' && (
-            <div>
-              <h3 className="mt-3" dir="rtl">
-                انتقال وجه به کارت بانک پاسارگاد، به نام با شماره:
+            {isExpress && (
+              <h3 className="text-lg" dir="rtl">
+                خدمت پرسرعت
               </h3>
-              <h3 className="mt-3 text-center font-bold">
-                ۵۰۲۲-۲۹۱۰-۶۳۰۰-۴۰۲۰
-              </h3>
+            )}
+
+            <h3 className="text-lg text-primary" dir="rtl">
+              پیش‌پرداخت : {enteredPrice}
+            </h3>
+
+            <div className="divider"></div>
+
+            <h3 className="text-lg" dir="rtl">
+              کد پستی: {postalCodeNum}
+            </h3>
+            <h3 className="text-lg" dir="rtl">
+              آدرس: {addressStr}
+            </h3>
+
+            <div className="divider"></div>
+
+            <select
+              className="select select-bordered w-full max-w-xs mt-6"
+              onChange={(e) => setEnteredPaymentKind(e.target.value)}
+            >
+              <option className="text-center content-center" dir="rtl">
+                پرداخت از طریق درگاه بانکی
+              </option>
+              <option className="text-center content-center" dir="rtl">
+                کارت به کارت
+              </option>
+              <option selected className="text-center content-center" dir="rtl">
+                پرداخت حضوری
+              </option>
+            </select>
+
+            {enteredPaymentKind === 'کارت به کارت' && (
+              <div>
+                <h3 className="mt-3" dir="rtl">
+                  انتقال وجه به کارت بانک پاسارگاد، به نام با شماره:
+                </h3>
+                <h3 className="mt-3 text-center font-bold">
+                  ۵۰۲۲-۲۹۱۰-۶۳۰۰-۴۰۲۰
+                </h3>
+              </div>
+            )}
+
+            <div className="form-control mt-6">
+              <button type="submit" className="btn btn-primary">
+                ثبت و پرداخت
+              </button>
             </div>
-          )}
-
-          <div className="form-control mt-6">
-            <button type="submit" className="btn btn-primary">
-              ثبت و پرداخت
-            </button>
-          </div>
-        </form>
-      </CardComponent>
-      <FooterNotMain />
-    </div>
+          </form>
+        </CardComponent>
+        <FooterNotMain />
+      </div>
+    </Fragment>
   )
 }
 

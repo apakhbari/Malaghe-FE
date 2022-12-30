@@ -1,35 +1,51 @@
-import CardComponent from '../components/layout/card'
+import CardDescriptionComponent from '../components/layout/cardDescription'
 import FooterNotMain from '../components/layout/footernotmain'
 import Navbar from '../components/layout/navbar/navbar'
 
 import { CLIENT_VERSION } from '../envConfig'
+import Head from 'next/head'
+import { Fragment } from 'react'
 
 function AboutUs() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen overflow-hidden mx-auto">
-      <Navbar />
-      <CardComponent>
-        <h3 dir="rtl" className="text-2xl mb-2 text-neutral-content">
-          درباره ما
-        </h3>
+    <Fragment>
+      <Head>
+        <title>{CLIENT_NAME_FA} - درباره ما</title>
+      </Head>
 
-        <p className="text-end py-1 text-neutral-content">:آدرس</p>
-        <p className="text-end py-1 text-neutral-content">:شماره تماس</p>
-        <p className="text-end py-1 text-neutral-content">: ایمیل</p>
-        <p className="text-end py-1 text-neutral-content">:کد پستی</p>
+      <div className="flex flex-col items-center justify-center h-screen overflow-hidden mx-auto">
+        <Navbar />
+        <CardDescriptionComponent>
+          <h3 dir="rtl" className="text-2xl mb-2 text-neutral-content">
+            درباره ما
+          </h3>
 
-        <p className="text-center pt-8 pb-1 text-neutral-content">
-          {CLIENT_VERSION} : نسخه
-        </p>
-        <p className="text-center py-1 text-neutral-content">
-          .تمامی حقوق محفوظ است
-        </p>
-        <p className="text-center py-1 text-neutral-content">
-          Copyright © 2022
-        </p>
-      </CardComponent>
-      <FooterNotMain />
-    </div>
+          <p className="text-center py-1 text-neutral-content" dir="rtl">
+            آدرس: پاکدشت، جاده خاوران،عباس آباد علاقبند شهرک کاوه
+          </p>
+          <p className="text-center py-1 text-neutral-content">
+            ۰۹۹۳۸۵۱۳۷۲۴ :شماره تماس
+          </p>
+          <p className="text-center py-1 text-neutral-content">
+            krachianamin@gmail.com : ایمیل
+          </p>
+          <p className="text-center py-1 text-neutral-content">
+            ۱۸۴۶۱۴۶۹۵۸ :کد پستی
+          </p>
+
+          <p className="text-center pt-8 pb-1 text-neutral-content">
+            {CLIENT_VERSION} : نسخه
+          </p>
+          <p className="text-center py-1 text-neutral-content">
+            .تمامی حقوق محفوظ است
+          </p>
+          <p className="text-center py-1 text-neutral-content">
+            Copyright © 2022
+          </p>
+        </CardDescriptionComponent>
+        <FooterNotMain />
+      </div>
+    </Fragment>
   )
 }
 

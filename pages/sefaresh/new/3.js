@@ -1,10 +1,13 @@
-import { useEffect, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 
 import Navbar from '../../../components/layout/navbar/navbar'
 import CardComponent from '../../../components/layout/card'
 import FooterNotMain from '../../../components/layout/footernotmain'
+
+import { CLIENT_NAME_FA } from '../../../envConfig'
 
 const RequestService3 = () => {
   const router = useRouter()
@@ -69,80 +72,85 @@ const RequestService3 = () => {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen mx-auto">
-      <Navbar />
-      <CardComponent>
-        <form onSubmit={onSubmit} className="card-body">
-          <h3 dir="rtl" className="text-2xl mb-2 text-neutral-content">
-            ثبت درخواست تعمیر
-          </h3>
-          <ul className="steps mb-2">
-            <li
-              data-content="3"
-              className="step step-primary text-neutral-content"
-            >
-              ثبت
-            </li>
-            <li
-              data-content="2"
-              className="step step-primary text-neutral-content"
-            >
-              آدرس
-            </li>
-            <li
-              data-content="1"
-              className="step step-primary text-neutral-content"
-            >
-              اطلاعات پایه
-            </li>
-          </ul>
-          <div className="divider">اطلاعات وارد شده</div>
-
-          <div className="flex justify-around" dir="rtl">
-            <h3 className=" text-lg">
-              {enteredGender === 'زن'
-                ? ' خانم ' + enteredName
-                : ' آقای ' + enteredName}
+    <Fragment>
+      <Head>
+        <title>{CLIENT_NAME_FA} - ۳ درخواست تعمیر</title>
+      </Head>
+      <div className="flex flex-col items-center justify-center h-screen mx-auto">
+        <Navbar />
+        <CardComponent>
+          <form onSubmit={onSubmit} className="card-body">
+            <h3 dir="rtl" className="text-2xl mb-2 text-neutral-content">
+              ثبت درخواست تعمیر
             </h3>
-            <h3 className=" text-lg">{enteredMobile}</h3>
-          </div>
+            <ul className="steps mb-2">
+              <li
+                data-content="3"
+                className="step step-primary text-neutral-content"
+              >
+                ثبت
+              </li>
+              <li
+                data-content="2"
+                className="step step-primary text-neutral-content"
+              >
+                آدرس
+              </li>
+              <li
+                data-content="1"
+                className="step step-primary text-neutral-content"
+              >
+                اطلاعات پایه
+              </li>
+            </ul>
+            <div className="divider">اطلاعات وارد شده</div>
 
-          <div className="divider"></div>
+            <div className="flex justify-around" dir="rtl">
+              <h3 className=" text-lg">
+                {enteredGender === 'زن'
+                  ? ' خانم ' + enteredName
+                  : ' آقای ' + enteredName}
+              </h3>
+              <h3 className=" text-lg">{enteredMobile}</h3>
+            </div>
 
-          <h3 className="text-lg" dir="rtl">
-            {enteredDevice}
-          </h3>
-          <h3 className="text-lg" dir="rtl">
-            توضیحات: {enteredDescription}
-          </h3>
-          <h3 className="text-lg" dir="rtl">
-            نوع تعمیر: {enteredServiceKind}
-          </h3>
+            <div className="divider"></div>
 
-          {isExpress && (
             <h3 className="text-lg" dir="rtl">
-              خدمت پرسرعت
+              {enteredDevice}
             </h3>
-          )}
+            <h3 className="text-lg" dir="rtl">
+              توضیحات: {enteredDescription}
+            </h3>
+            <h3 className="text-lg" dir="rtl">
+              نوع تعمیر: {enteredServiceKind}
+            </h3>
 
-          <div className="divider"></div>
+            {isExpress && (
+              <h3 className="text-lg" dir="rtl">
+                خدمت پرسرعت
+              </h3>
+            )}
 
-          <h3 className="text-lg" dir="rtl">
-            کد پستی: {postalCodeNum}
-          </h3>
-          <h3 className="text-lg" dir="rtl">
-            آدرس: {addressStr}
-          </h3>
+            <div className="divider"></div>
 
-          <div className="form-control mt-6">
-            <button type="submit" className="btn btn-primary">
-              ثبت درخواست
-            </button>
-          </div>
-        </form>
-      </CardComponent>
-      <FooterNotMain />
-    </div>
+            <h3 className="text-lg" dir="rtl">
+              کد پستی: {postalCodeNum}
+            </h3>
+            <h3 className="text-lg" dir="rtl">
+              آدرس: {addressStr}
+            </h3>
+
+            <div className="form-control mt-6">
+              <button type="submit" className="btn btn-primary">
+                ثبت درخواست
+              </button>
+            </div>
+          </form>
+        </CardComponent>
+        <FooterNotMain />
+      </div>
+    </Fragment>
   )
 }
 

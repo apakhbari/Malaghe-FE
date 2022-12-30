@@ -1,4 +1,4 @@
-import { useEffect, useContext, Fragment } from 'react'
+import { useContext, Fragment } from 'react'
 
 import { useRouter } from 'next/router'
 

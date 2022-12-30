@@ -1,10 +1,22 @@
+import { Fragment } from 'react'
 import CardDescriptionComponent from '../components/layout/cardDescription'
 import FooterNotMain from '../components/layout/footernotmain'
+import MobileDeveloping from '../components/layout/mobileDeveloping'
 import Navbar from '../components/layout/navbar/navbar'
+
+import Head from 'next/head'
+import { Fragment } from 'react'
+import { CLIENT_NAME_FA } from '../envConfig'
 
 function Privacy() {
   return (
-    <div>
+    <Fragment>
+      <Head>
+        <title>{CLIENT_NAME_FA} - حریم خصوصی کاربر</title>
+      </Head>
+      <div className="sm:hidden">
+        <MobileDeveloping />
+      </div>
       <div className="flex flex-col items-center justify-center h-screen overflow-hidden mx-auto text-neutral-content">
         <Navbar />
         <CardDescriptionComponent>
@@ -57,12 +69,12 @@ function Privacy() {
           </p>
           <br />
           <p className="py-1 text-2xl text-secondary text-center" dir="rtl">
-            تلفن تماس : ۰۹۰۱۷۸۲۹۹۲۲
+            شماره تماس : ۰۹۹۳۸۵۱۳۷۲۴
           </p>
         </CardDescriptionComponent>
         <FooterNotMain />
       </div>
-    </div>
+    </Fragment>
   )
 }
 

@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types'
-
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
@@ -14,6 +12,8 @@ import IconMag from '../../../assets/icons/svg/iconmag'
 import IconHamburger from '../../../assets/icons/svg/iconhamburger'
 import IconTheme from '../../../assets/icons/svg/icontheme'
 import CartDropDown from './navbarhelper/cartdropdown'
+
+import { CLIENT_NAME_FA } from '../../../envConfig'
 
 const Navbar = () => {
   const router = useRouter()
@@ -147,7 +147,7 @@ const Navbar = () => {
               href="/"
               className="normal-case text-3xl hover:underline text-primary-content"
             >
-              ملاقه
+              {CLIENT_NAME_FA}
             </Link>
           </div>
         </div>

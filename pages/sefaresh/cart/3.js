@@ -1,12 +1,15 @@
-import { useEffect, useState, useContext } from 'react'
+import { useEffect, useState, useContext, Fragment } from 'react'
 
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 
 import Navbar from '../../../components/layout/navbar/navbar'
 import CardComponent from '../../../components/layout/card'
 import FooterNotMain from '../../../components/layout/footernotmain'
 import CartsContext from '../../../store/cart-context'
 import GroupDigital from '../../../hooks/groupDigital'
+
+import { CLIENT_NAME_FA } from '../../../envConfig'
 
 const RequestService3 = () => {
   const router = useRouter()
@@ -85,129 +88,135 @@ const RequestService3 = () => {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen mx-auto">
-      <Navbar />
-      <CardComponent>
-        <form onSubmit={onSubmit} className="card-body">
-          <h3 dir="rtl" className="text-2xl mb-2 text-neutral-content">
-            ثبت درخواست خرید
-          </h3>
-          <ul className="steps">
-            <li
-              data-content="3"
-              className="step step-primary text-neutral-content"
-            >
-              پرداخت
-            </li>
-            <li
-              data-content="2"
-              className="step step-primary text-neutral-content"
-            >
-              آدرس
-            </li>
-            <li
-              data-content="1"
-              className="step step-primary text-neutral-content"
-            >
-              اطلاعات پایه
-            </li>
-          </ul>
+    <Fragment>
+      <Head>
+        <title>{CLIENT_NAME_FA} - ۳ درخواست خرید</title>
+      </Head>
 
-          <div className="divider">اطلاعات وارد شده</div>
-
-          <div className="flex justify-around" dir="rtl">
-            <h3 className=" text-lg">
-              {enteredGender === 'زن'
-                ? ' خانم ' + enteredName
-                : ' آقای ' + enteredName}
+      <div className="flex flex-col items-center justify-center h-screen mx-auto">
+        <Navbar />
+        <CardComponent>
+          <form onSubmit={onSubmit} className="card-body">
+            <h3 dir="rtl" className="text-2xl mb-2 text-neutral-content">
+              ثبت درخواست خرید
             </h3>
-            <h3 className=" text-lg">{enteredMobile}</h3>
-          </div>
+            <ul className="steps">
+              <li
+                data-content="3"
+                className="step step-primary text-neutral-content"
+              >
+                پرداخت
+              </li>
+              <li
+                data-content="2"
+                className="step step-primary text-neutral-content"
+              >
+                آدرس
+              </li>
+              <li
+                data-content="1"
+                className="step step-primary text-neutral-content"
+              >
+                اطلاعات پایه
+              </li>
+            </ul>
 
-          <div className="divider"></div>
+            <div className="divider">اطلاعات وارد شده</div>
 
-          <h3 className="text-lg" dir="rtl">
-            توضیحات: {enteredDescription}
-          </h3>
+            <div className="flex justify-around" dir="rtl">
+              <h3 className=" text-lg">
+                {enteredGender === 'زن'
+                  ? ' خانم ' + enteredName
+                  : ' آقای ' + enteredName}
+              </h3>
+              <h3 className=" text-lg">{enteredMobile}</h3>
+            </div>
 
-          {isExpress && (
+            <div className="divider"></div>
+
             <h3 className="text-lg" dir="rtl">
-              خدمت پرسرعت
+              توضیحات: {enteredDescription}
             </h3>
-          )}
 
-          <div className="divider"></div>
+            {isExpress && (
+              <h3 className="text-lg" dir="rtl">
+                خدمت پرسرعت
+              </h3>
+            )}
 
-          <h3 className="text-lg" dir="rtl">
-            کد پستی: {postalCodeNum}
-          </h3>
-          <h3 className="text-lg" dir="rtl">
-            آدرس: {addressStr}
-          </h3>
+            <div className="divider"></div>
 
-          <div className="divider">اطلاعات پرداخت</div>
+            <h3 className="text-lg" dir="rtl">
+              کد پستی: {postalCodeNum}
+            </h3>
+            <h3 className="text-lg" dir="rtl">
+              آدرس: {addressStr}
+            </h3>
 
-          <select
-            className="select select-bordered w-full max-w-xs mt-6"
-            onChange={(e) => setEnteredPaymentKind(e.target.value)}
-          >
-            <option selected className="text-center content-center" dir="rtl">
-              پرداخت از طریق درگاه بانکی
-            </option>
-            <option className="text-center content-center" dir="rtl">
-              کارت به کارت
-            </option>
-            <option className="text-center content-center" dir="rtl">
-              پرداخت حضوری
-            </option>
-          </select>
+            <div className="divider">اطلاعات پرداخت</div>
 
-          <div className="form-control">
-            <div className="form-control mx-auto text-neutral-content">
-              <div dir="rtl" className="flex justify-between mt-6">
-                <p className=" text-xl">مبلغ :</p>
-                <p className=" text-xl">{GroupDigital(overAllPrice)} تومان</p>
-              </div>
-            </div>
-            <br />
-          </div>
-          <div>
+            <select
+              className="select select-bordered w-full max-w-xs mt-6"
+              onChange={(e) => setEnteredPaymentKind(e.target.value)}
+            >
+              <option selected className="text-center content-center" dir="rtl">
+                پرداخت از طریق درگاه بانکی
+              </option>
+              <option className="text-center content-center" dir="rtl">
+                کارت به کارت
+              </option>
+              <option className="text-center content-center" dir="rtl">
+                پرداخت حضوری
+              </option>
+            </select>
+
             <div className="form-control">
-              <div className="relative w-full justify-center text-center">
-                <button className="btn btn-primary absolute top-0 right-0 rounded-l-none">
-                  اعمال کد تخفیف
-                </button>
-                <input
-                  type="text"
-                  placeholder="کد تخفیف"
-                  class="input input-bordered w-full pr-16"
-                />
+              <div className="form-control mx-auto text-neutral-content">
+                <div dir="rtl" className="flex justify-between mt-6">
+                  <p className=" text-xl">مبلغ :</p>
+                  <p className=" text-xl">{GroupDigital(overAllPrice)} تومان</p>
+                </div>
+              </div>
+              <br />
+            </div>
+            <div>
+              <div className="form-control">
+                <div className="relative w-full justify-center text-center">
+                  <button className="btn btn-primary absolute top-0 right-0 rounded-l-none">
+                    اعمال کد تخفیف
+                  </button>
+                  <input
+                    type="text"
+                    placeholder="کد تخفیف"
+                    class="input input-bordered w-full pr-16"
+                  />
+                </div>
               </div>
             </div>
-          </div>
 
-          {enteredPaymentKind === 'کارت به کارت' && (
-            <div>
-              <h3 className="mt-3" dir="rtl">
-                انتقال وجه به کارت بانک پاسارگاد، به نام با شماره:
-              </h3>
-              <h3 className="mt-3 text-center font-bold">
-                ۵۰۲۲-۲۹۱۰-۶۳۰۰-۴۰۲۰
-              </h3>
+            {enteredPaymentKind === 'کارت به کارت' && (
+              <div>
+                <h3 className="mt-3" dir="rtl">
+                  انتقال وجه به کارت بانک پاسارگاد، به نام با شماره:
+                </h3>
+                <h3 className="mt-3 text-center font-bold">
+                  ۵۰۲۲-۲۹۱۰-۶۳۰۰-۴۰۲۰
+                </h3>
+              </div>
+            )}
+
+            <div className="form-control mt-6">
+              <button type="submit" className="btn btn-primary">
+                {enteredPaymentKind === 'پرداخت از طریق درگاه بانکی'
+                  ? 'انتقال به درگاه پرداخت'
+                  : 'ثبت درخواست'}
+              </button>
             </div>
-          )}
-
-          <div className="form-control mt-6">
-            <button type="submit" className="btn btn-primary">
-              {enteredPaymentKind === 'پرداخت از طریق درگاه بانکی'
-                ? 'انتقال به درگاه پرداخت'
-                : 'ثبت درخواست'}
-            </button>
-          </div>
-        </form>
-      </CardComponent>
-      <FooterNotMain />
-    </div>
+          </form>
+        </CardComponent>
+        <FooterNotMain />
+      </div>
+    </Fragment>
   )
 }
 
