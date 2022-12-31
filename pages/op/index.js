@@ -50,9 +50,9 @@ function Dashboard() {
 
     router.push(
       {
-        pathname: '/op/newService/1',
+        pathname: '/op/new-service/1',
       },
-      '/op/newService/1'
+      '/op/new-service/1'
     )
   }
 

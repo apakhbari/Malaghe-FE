@@ -15,13 +15,13 @@ const Footer = () => {
           ما
         </span>
         <Link
-          href="/aboutus"
+          href="/about-us"
           className="link link-hover w-full justify-center text-center"
         >
           درباره ما
         </Link>
         <Link
-          href="/contactus"
+          href="/contact-us"
           className="link link-hover w-full justify-center text-center"
         >
           تماس با ما

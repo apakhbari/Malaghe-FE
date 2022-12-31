@@ -70,7 +70,7 @@ const RequestService1 = () => {
     if (error.length === 0) {
       router.replace(
         {
-          pathname: '/op/newService/2',
+          pathname: '/op/new-service/2',
           query: {
             enteredName,
             enteredDevice,
@@ -82,7 +82,7 @@ const RequestService1 = () => {
             enteredPrice,
           },
         },
-        '/op/newService/2'
+        '/op/new-service/2'
       )
     }
   }

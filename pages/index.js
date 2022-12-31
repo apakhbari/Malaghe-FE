@@ -24,7 +24,7 @@ function Home() {
 
   const onAboutUsClick = (e) => {
     e.preventDefault()
-    router.push('/aboutus')
+    router.push('/about-us')
   }
 
   const onWorkFlowClick = (e) => {

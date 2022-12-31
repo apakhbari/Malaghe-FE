@@ -145,7 +145,7 @@ const Navbar = () => {
           <div>
             <Link
               href="/"
-              className="normal-case text-3xl hover:underline text-primary-content"
+              className="normal-case text-3xl hover:underline underline-offset-2 text-primary-content"
             >
               {CLIENT_NAME_FA}
             </Link>
