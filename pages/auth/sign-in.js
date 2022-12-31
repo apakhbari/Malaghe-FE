@@ -46,7 +46,7 @@ const SignIn = ({ data }) => {
 
   const handleClick = (e) => {
     e.preventDefault()
-    router.push('/auth/signup')
+    router.push('/auth/sign-up')
   }
 
   const onSubmit = async (event) => {

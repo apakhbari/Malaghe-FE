@@ -228,7 +228,7 @@ export async function getServerSideProps(context) {
   if (!data) {
     return {
       redirect: {
-        destination: '/auth/signin',
+        destination: '/auth/sign-in',
         permanent: false,
       },
     }
@@ -237,7 +237,7 @@ export async function getServerSideProps(context) {
   if (!data.currentUser) {
     return {
       redirect: {
-        destination: '/auth/signin',
+        destination: '/auth/sign-in',
         permanent: false,
       },
     }
@@ -246,7 +246,7 @@ export async function getServerSideProps(context) {
   if (!data.currentUser.id) {
     return {
       redirect: {
-        destination: '/auth/signin',
+        destination: '/auth/sign-in',
         permanent: false,
       },
     }

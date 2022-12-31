@@ -51,7 +51,7 @@ const Navbar = () => {
                 {!router.pathname.includes('/auth/sign') && (
                   <li>
                     <Link
-                      href="/auth/signin"
+                      href="/auth/sign-in"
                       className="btn btn-outline btn-secondary m-1 normal-case text-xl mx-4"
                     >
                       داشبورد
@@ -110,7 +110,7 @@ const Navbar = () => {
 
             {!router.pathname.includes('/auth/sign') && (
               <Link
-                href="/auth/signin"
+                href="/auth/sign-in"
                 className="btn btn-outline normal-case text-xl mx-4 text-primary-content"
               >
                 داشبورد
