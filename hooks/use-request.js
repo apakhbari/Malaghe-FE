@@ -13,6 +13,7 @@ export default ({ url, method, body, onSuccess }) => {
       const response = await axios[method](newUrl, {
         ...removeEmpty(body),
         ...props,
+        withCredentials: true,
       })
 
       if (onSuccess) {
