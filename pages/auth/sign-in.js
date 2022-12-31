@@ -144,7 +144,7 @@ const SignIn = ({ data }) => {
 
 export async function getServerSideProps(context) {
   const { data } = await axios.get(
-    'https://malaghe-be.malaghe.svc:3000/api/v1/users/currentuser'
+    'http://malaghe-be.malaghe.svc:3000/api/v1/users/currentuser'
   )
 
   if (data) {
