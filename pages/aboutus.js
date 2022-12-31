@@ -2,7 +2,7 @@ import CardDescriptionComponent from '../components/layout/cardDescription'
 import FooterNotMain from '../components/layout/footernotmain'
 import Navbar from '../components/layout/navbar/navbar'
 
-import { CLIENT_VERSION } from '../envConfig'
+import { CLIENT_VERSION, CLIENT_NAME_FA } from '../envConfig'
 import Head from 'next/head'
 import { Fragment } from 'react'
 
