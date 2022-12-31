@@ -4,3 +4,5 @@ export const CLIENT_VERSION = '۱.۰'
 export const CLIENT_COPYRIGHT = ' کپی‌رایت © ۲۰۲۲'
 export const CLIENT_DESCRIPTION =
   'راهکارهای صنعتی آشپزخانه' || process.env.CLIENT_DESCRIPTION
+
+export const NODE_ENV = 'development'
