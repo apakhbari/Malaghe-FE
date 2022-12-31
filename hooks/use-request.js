@@ -4,11 +4,13 @@ import { useState } from 'react'
 export default ({ url, method, body, onSuccess }) => {
   const [errors, setErrors] = useState()
 
+  var newUrl = 'https://malaghe-be.malaghe.svc' + url
+
   const doRequest = async (props = {}) => {
     try {
       setErrors(null)
 
-      const response = await axios[method](url, {
+      const response = await axios[method](newUrl, {
         ...removeEmpty(body),
         ...props,
       })
