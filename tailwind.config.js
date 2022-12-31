@@ -39,6 +39,12 @@ module.exports = {
       'pastel',
       'retro',
       {
+        wireframe: {
+          ...require('daisyui/src/colors/themes')['[data-theme=wireframe]'],
+          primary: '#1b90cd',
+          secondary: '#35da6f',
+          'primary-content': 'white',
+        },
         darktheme: {
           primary: '#0284C7',
           secondary: '#1FD65F',
@@ -49,12 +55,6 @@ module.exports = {
           success: '#36D399',
           warning: '#FBBD23',
           error: '#F87272',
-        },
-        wireframe: {
-          ...require('daisyui/src/colors/themes')['[data-theme=wireframe]'],
-          primary: '#1b90cd',
-          secondary: '#35da6f',
-          'primary-content': 'white',
         },
         colors: {
           gold: '#BAA333',
