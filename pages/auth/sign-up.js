@@ -36,7 +36,7 @@ const SignUp = () => {
       mobile,
       password,
     },
-    onSuccess: (response) => router.push('/dashboard'),
+    onSuccess: (response) => router.push('/'),
   })
 
   const handleClick = (e) => {
