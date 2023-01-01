@@ -38,7 +38,7 @@ const SignUp = () => {
       mobile,
       password,
     },
-    onSuccess: (response) => cookieCutter.set('express:sess', response), //router.push('/'),
+    onSuccess: (response) => cookieCutter.set('currentUser', response), //router.push('/'),
   })
 
   const handleClick = (e) => {
