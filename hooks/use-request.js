@@ -4,16 +4,17 @@ import { useState } from 'react'
 export default ({ url, method, body, onSuccess }) => {
   const [errors, setErrors] = useState()
 
-  var newUrl = 'http://malaghe-be.malaghe.svc:3000' + url
+  var newUrl = 'https://api-karachian.darkube.app' + url
 
   const doRequest = async (props = {}) => {
     try {
       setErrors(null)
 
+      axios.defaults.withCredentials = true
+
       const response = await axios[method](newUrl, {
         ...removeEmpty(body),
         ...props,
-        withCredentials: true,
       })
 
       if (onSuccess) {
