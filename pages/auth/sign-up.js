@@ -28,6 +28,11 @@ const SignUp = () => {
   const [password, setPassword] = useState('')
   const [gender, setGender] = useState('')
 
+  const onSuccessHandler = (data) => {
+    cookieCutter.set('currentUser', data)
+    cookieCutter.set('jwt', data)
+  }
+
   const { doRequest, errors } = useRequest({
     url: '/api/v1/users/signup',
     method: 'post',
@@ -38,7 +43,7 @@ const SignUp = () => {
       mobile,
       password,
     },
-    onSuccess: (response) => cookieCutter.set('currentUser', response), //router.push('/'),
+    onSuccess: (response) => onSuccessHandler(response), //router.push('/'),
   })
 
   const handleClick = (e) => {
