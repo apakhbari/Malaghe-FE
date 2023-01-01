@@ -10,7 +10,7 @@ export default ({ url, method, body, onSuccess }) => {
     try {
       setErrors(null)
 
-      axios.defaults.withCredentials = true
+      //axios.defaults.withCredentials = true
 
       const response = await axios[method](newUrl, {
         ...removeEmpty(body),
