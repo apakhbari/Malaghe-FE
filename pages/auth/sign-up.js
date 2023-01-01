@@ -15,6 +15,8 @@ import ParseJwt from '../../hooks/jwtDecode'
 
 import { CLIENT_NAME_FA } from '../../envConfig'
 
+import cookieCutter from 'cookie-cutter'
+
 const SignUp = () => {
   const router = useRouter()
 
@@ -36,7 +38,7 @@ const SignUp = () => {
       mobile,
       password,
     },
-    onSuccess: (response) => router.push('/'),
+    onSuccess: (response) => cookieCutter.set('express:sess', response), //router.push('/'),
   })
 
   const handleClick = (e) => {
