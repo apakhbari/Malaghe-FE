@@ -18,6 +18,7 @@
     "cookie-cutter": "^0.2.0",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.5",
+    "http-proxy": "^1.18.1",
     "jsontokens": "^4.0.1",
     "jwt-decode": "^3.1.2",
     "next": "13.0.5",
