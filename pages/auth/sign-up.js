@@ -29,8 +29,9 @@ const SignUp = () => {
   const [gender, setGender] = useState('')
 
   const onSuccessHandler = (data) => {
-    cookieCutter.set('currentUser', data)
-    cookieCutter.set('jwt', data)
+    //cookieCutter.set('currentUser', data)
+    //cookieCutter.set('jwt', data)
+    console.log(data)
   }
 
   const { doRequest, errors } = useRequest({
