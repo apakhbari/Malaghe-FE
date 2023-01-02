@@ -4,7 +4,7 @@ import { useState } from 'react'
 export default ({ url, method, body, onSuccess }) => {
   const [errors, setErrors] = useState()
 
-  var newUrl = 'https://api-karachian.darkube.app' + url
+  var newUrl = 'http://localhost' + url
 
   const doRequest = async (props = {}) => {
     try {
