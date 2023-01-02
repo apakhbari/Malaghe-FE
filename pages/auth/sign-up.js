@@ -56,6 +56,9 @@ const SignUp = () => {
 
     var error = ''
 
+    {
+      /*
+
     if (fiName.length < 2) {
       new Snackbar('خطا! نام باید حداقل ۲ کاراکتر باشد', {
         position: 'bottom-right',
@@ -68,12 +71,13 @@ const SignUp = () => {
       })
       error = error + 'laName'
     }
-    if (mobile.length !== 11) {
+  if (mobile.length !== 11) {
       new Snackbar('خطا! موبایل باید ۱۱ رقم باشد', {
         position: 'bottom-right',
       })
       error = error + 'mobile'
     }
+
     if (gender.length < 2) {
       new Snackbar('خطا! لطفا جنسیت را انتخاب کنید', {
         position: 'bottom-right',
@@ -85,6 +89,8 @@ const SignUp = () => {
         position: 'bottom-right',
       })
       error = error + 'password'
+    }
+        */
     }
 
     if (error.length === 0) {
