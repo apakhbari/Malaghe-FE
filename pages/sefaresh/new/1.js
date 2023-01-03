@@ -265,6 +265,8 @@ export async function getServerSideProps(context) {
 
   const { accountId } = context.query
 
+  console.log(`${APP_URL}'/api/v1/users/service/${accountId}`)
+
   const res = await axios.get(`${APP_URL}'/api/v1/users/service/${accountId}`, {
     withCredentials: true,
     headers: {
