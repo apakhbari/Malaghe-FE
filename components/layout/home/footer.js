@@ -105,7 +105,7 @@ const Footer = () => {
         <p className="justify-center text-center w-full" dir="rtl">
           پاکدشت، جاده خاوران،عباس آباد علاقبند شهرک کاوه
         </p>
-        <p className="justify-center text-center w-full" dir="rtl">
+        <p className="justify-center text-center w-full">
           krachianamin@gmail.com - ۰۹۹۳۸۵۱۳۷۲۴
         </p>
       </div>
