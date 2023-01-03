@@ -13,8 +13,6 @@ import { CLIENT_NAME_FA } from '../../envConfig'
 
 import GroupDigital from '../../hooks/groupDigital'
 
-var slugify = require('slugify-persian')
-
 const NewStore = () => {
   const router = useRouter()
 
@@ -42,7 +40,6 @@ const NewStore = () => {
     method: 'post',
     body: {
       title: strTitle,
-      slug: slugify(strTitle),
       description: strDescription,
       summary: strSummary,
       price: numPrice,
