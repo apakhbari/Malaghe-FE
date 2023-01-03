@@ -268,26 +268,23 @@ export async function getServerSideProps(context) {
   const data = await res.data
 
   {
-    /* 
-
-  if (!data) {
-    return {
-      redirect: {
-        destination: '/auth/sign-in',
-        permanent: false,
-      },
+    if (!data) {
+      return {
+        redirect: {
+          destination: '/auth/sign-in',
+          permanent: false,
+        },
+      }
     }
-  }
 
-  if (!data.currentUser.id) {
-    return {
-      redirect: {
-        destination: '/auth/sign-in', //`${APP_URL}/dashboard`
-        permanent: false,
-      },
+    if (!data.currentUser.id) {
+      return {
+        redirect: {
+          destination: '/auth/sign-in',
+          permanent: false,
+        },
+      }
     }
-  }
-  */
   }
 
   return { props: { data } }
