@@ -277,6 +277,15 @@ export async function getServerSideProps(context) {
       }
     }
 
+    if (!data.currentUser) {
+      return {
+        redirect: {
+          destination: '/auth/sign-in',
+          permanent: false,
+        },
+      }
+    }
+
     if (!data.currentUser.id) {
       return {
         redirect: {

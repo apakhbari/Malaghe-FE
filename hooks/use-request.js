@@ -1,10 +1,12 @@
 import axios from 'axios'
 import { useState } from 'react'
 
+import { APP_URL } from '../envConfig'
+
 export default ({ url, method, body, onSuccess }) => {
   const [errors, setErrors] = useState()
 
-  var newUrl = 'https://malaghe.darkube.app' + url
+  var newUrl = `${APP_URL}` + url
 
   const doRequest = async (props = {}) => {
     try {
