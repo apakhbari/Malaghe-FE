@@ -124,7 +124,9 @@ function Account({ data }) {
   return (
     <Fragment>
       <Head>
-        <title>{CLIENT_NAME_FA} - اکانت</title>
+        <title>
+          {CLIENT_NAME_FA} - {firstName + lastName}
+        </title>
       </Head>
 
       <div className=" md:hidden">

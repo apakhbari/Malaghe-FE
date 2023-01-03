@@ -49,7 +49,9 @@ function StoreSlug({ data }) {
   return (
     <Fragment>
       <Head>
-        <title>{CLIENT_NAME_FA} - فروشگاه</title>
+        <title>
+          {CLIENT_NAME_FA} - {data.title}
+        </title>
       </Head>
 
       <div className="sm:hidden">
