@@ -68,13 +68,7 @@ const NewStore = () => {
   const onSubmit = async (event) => {
     event.preventDefault()
 
-    //console.log(slugify(strTitle))
-
-    await axios.post('/api/v1/store', {
-      title: strTitle,
-    })
-
-    //doRequest()
+    doRequest()
   }
 
   return (
@@ -141,7 +135,7 @@ const NewStore = () => {
 
               {numPrice && (
                 <h3 className="mx-auto  items-center justify-center content-center mb-2">
-                  ${GroupDigital(numPrice)}
+                  {GroupDigital(numPrice)} تومن
                 </h3>
               )}
 
