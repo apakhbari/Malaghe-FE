@@ -139,9 +139,11 @@ const NewStore = () => {
                 </label>
               </div>
 
-              <h3 className="mx-auto  items-center justify-center content-center mb-2">
-                ${GroupDigital(numPrice)}
-              </h3>
+              {numPrice && (
+                <h3 className="mx-auto  items-center justify-center content-center mb-2">
+                  ${GroupDigital(numPrice)}
+                </h3>
+              )}
 
               <div className="form-control mx-auto  items-center justify-center content-center mb-2">
                 <label className="input-group">
@@ -327,7 +329,7 @@ const NewStore = () => {
                     </label>
                   </div>
 
-                  {boolHasDiscount && (
+                  {enumDiscountKind && (
                     <h2
                       className=" mx-auto  items-center justify-center content-center mb-2"
                       dir="rtl"
