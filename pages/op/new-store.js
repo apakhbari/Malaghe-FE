@@ -327,18 +327,20 @@ const NewStore = () => {
                     </label>
                   </div>
 
-                  {hasDiscount && (
+                  {boolHasDiscount && (
                     <h2
                       className=" mx-auto  items-center justify-center content-center mb-2"
                       dir="rtl"
                     >
-                      {props.discountKind === 'درصد'
+                      {enumDiscountKind === 'درصد'
                         ? `${GroupDigital(
-                            Math.round(((100 - discountedPrice) * price) / 100)
+                            Math.round(
+                              ((100 - numDiscountedPrice) * numPrice) / 100
+                            )
                           )}  تومن`
-                        : `${GroupDigital(discountedPrice)}  تومن`}
+                        : `${GroupDigital(numDiscountedPrice)}  تومن`}
                       <span className="line-through text-xs">
-                        {GroupDigital(price)}
+                        {GroupDigital(numPrice)}
                       </span>
                     </h2>
                   )}
