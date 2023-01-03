@@ -2,6 +2,7 @@ import { useState, useContext, Fragment } from 'react'
 
 import { useRouter } from 'next/router'
 import Head from 'next/head'
+import { cookies } from 'next/headers'
 
 import Navbar from '../../components/layout/navbar/navbar'
 
@@ -210,12 +211,16 @@ export async function getServerSideProps(context) {
   //const { data } = await axios.get(
   //'https://malaghe.darkube.app/api/v1/users/currentuser')
 
+  const cookie = cookies().get('express:sess')?.value
+
+  console.log(cookie)
+
   const res = await axios.get(
     'http://malaghe-be.malaghe.svc:3000/api/v1/users/currentuser',
     {
       withCredentials: true,
       headers: {
-        Cookie: context.headers.cookie,
+        Cookie: cookie,
       },
     }
   )
