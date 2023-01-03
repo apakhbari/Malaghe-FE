@@ -14,11 +14,19 @@ function BuildClient({ req }) {
 
     return axios.create({
       baseUrl: `${APP_URL}`,
+      withCredentials: true,
+      headers: {
+        Cookie: context.req.headers.cookie,
+      },
     })
   } else {
     // We must be on the browser
     return axios.create({
       baseUrl: `${APP_URL}`,
+      withCredentials: true,
+      headers: {
+        Cookie: context.req.headers.cookie,
+      },
     })
   }
 }
