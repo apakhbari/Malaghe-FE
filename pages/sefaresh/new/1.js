@@ -265,9 +265,9 @@ export async function getServerSideProps(context) {
 
   const id = context.query.accountId
 
-  console.log(`${APP_URL}'/api/v1/users/service/${id}`)
+  console.log(`${APP_URL}/api/v1/users/service/${id}`)
 
-  const res = await axios.get(`${APP_URL}'/api/v1/users/service/${id}`, {
+  const res = await axios.get(`${APP_URL}/api/v1/users/service/${id}`, {
     withCredentials: true,
     headers: {
       Cookie: context.req.headers.cookie,
