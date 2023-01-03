@@ -167,7 +167,7 @@ export async function getServerSideProps(context) {
       if (data.currentUser.id) {
         return {
           redirect: {
-            destination: 'http://malaghe-fe.malaghe.svc:3000/',
+            destination: 'https://malaghe.darkube.app/',
             permanent: false,
           },
         }

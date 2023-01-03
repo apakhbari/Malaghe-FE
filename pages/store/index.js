@@ -248,7 +248,7 @@ export async function getServerSideProps(context) {
   //const accountId = context.params
   var id = context.query.accountId
 
-  const { data } = await axios.get('http://api:3000/api/v1/store')
+  const { data } = await axios.get('https://malaghe.darkube.app/api/v1/store')
 
   return {
     props: RemoveUndefinedsToPleaseNext({ data }),

@@ -18,7 +18,7 @@ import { CLIENT_NAME_FA } from '../../envConfig'
 
 import cookieCutter from 'cookie-cutter'
 
-const SignUp = () => {
+const SignUp = ({ data }) => {
   const router = useRouter()
 
   const userCtx = useContext(UserCredentialsContext)
@@ -28,6 +28,8 @@ const SignUp = () => {
   const [mobile, setMobile] = useState('')
   const [password, setPassword] = useState('')
   const [gender, setGender] = useState('')
+
+  console.log(data)
 
   const onSuccessHandler = (data) => {
     //cookieCutter.set('currentUser', data)
@@ -211,21 +213,21 @@ export async function getServerSideProps(context) {
   //const { data } = await axios.get(
   //'https://malaghe.darkube.app/api/v1/users/currentuser')
 
-  const cookie = cookies().get('express:sess')?.value
-
-  console.log(cookie)
-
   const res = await axios.get(
     'http://malaghe-be.malaghe.svc:3000/api/v1/users/currentuser',
     {
       withCredentials: true,
       headers: {
-        Cookie: cookie,
+        Cookie: context.req.headers.cookie,
       },
     }
   )
   const data = await res.data
 
+  return { props: { data } }
+
+  {
+    /* 
   if (data) {
     if (data.currentUser) {
       if (data.currentUser.id) {
@@ -239,7 +241,6 @@ export async function getServerSideProps(context) {
     }
   }
 
-  return { props: { data } }
 
   if (data) {
     if (data.currentUser) {
@@ -256,6 +257,8 @@ export async function getServerSideProps(context) {
 
   return {
     props: { data }, // will be passed to the page component as props
+  }
+  */
   }
 }
 
