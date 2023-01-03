@@ -433,7 +433,11 @@ export async function getServerSideProps(context) {
   console.log('accountId2: ' + accountId2)
   console.log(context.query)
 
+  console.log(context.props)
+
   console.log('id: ' + id)
+
+  console.log(context)
 
   const client = BuildClient(context)
 
