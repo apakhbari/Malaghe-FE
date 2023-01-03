@@ -50,7 +50,7 @@ function StoreSlug({ data }) {
         <title>{CLIENT_NAME_FA} - فروشگاه</title>
       </Head>
 
-      <div>
+      <div className="sm:hidden">
         <MobileDeveloping />
       </div>
       <div className="grid grid-cols-3 h-screen">
