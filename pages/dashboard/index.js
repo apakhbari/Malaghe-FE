@@ -266,6 +266,9 @@ export async function getServerSideProps(context) {
   })
   const data = await res.data
 
+  {
+    /* 
+
   if (!data) {
     return {
       redirect: {
@@ -282,6 +285,8 @@ export async function getServerSideProps(context) {
         permanent: false,
       },
     }
+  }
+  */
   }
 
   return { props: { data } }

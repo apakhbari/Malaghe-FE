@@ -14,7 +14,7 @@ import Snackbar from 'awesome-snackbar'
 import UserCredentialsContext from '../../store/user-context'
 import ParseJwt from '../../hooks/jwtDecode'
 
-import { CLIENT_NAME_FA } from '../../envConfig'
+import { CLIENT_NAME_FA, APP_URL } from '../../envConfig'
 
 import cookieCutter from 'cookie-cutter'
 
