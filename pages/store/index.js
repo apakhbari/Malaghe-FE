@@ -23,7 +23,7 @@ import CartDropDown from '../../components/layout/navbar/navbarhelper/cartdropdo
 import Snackbar from 'awesome-snackbar'
 
 import axios from 'axios'
-import { CLIENT_NAME_FA } from '../../envConfig'
+import { CLIENT_NAME_FA, APP_URL } from '../../envConfig'
 
 function Store(data) {
   console.log(data)
@@ -247,10 +247,7 @@ function Store(data) {
 }
 
 export async function getServerSideProps(context) {
-  //const accountId = context.params
-  var id = context.query.accountId
-
-  const { data } = await axios.get('https://malaghe.darkube.app/api/v1/store')
+  const { data } = await axios.get(`${APP_URL}/api/v1/store`)
 
   return {
     props: RemoveUndefinedsToPleaseNext({ data }),

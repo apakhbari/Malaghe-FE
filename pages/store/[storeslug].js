@@ -209,11 +209,9 @@ function StoreSlug({ data }) {
 }
 
 export async function getServerSideProps(context) {
-  //const accountId = context.params
   var id = context.query.id
 
-  const client = BuildClient(context)
-  const { data } = await client.get(`/api/v1/store/${id}`)
+  const { data } = await axios.get(`${APP_URL}/api/v1/store/${id}`)
   return {
     props: RemoveUndefinedsToPleaseNext({ data }),
   }

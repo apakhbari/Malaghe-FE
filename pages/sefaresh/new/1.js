@@ -247,22 +247,6 @@ const RequestService1 = ({ data }) => {
 }
 
 export async function getServerSideProps(context) {
-  {
-    /* 
-  //const accountId = context.params
-  var id = context.query.accountId
-
-  const client = BuildClient(context)
-  const { data } = await client.get(
-    '/api/v1/users/service/' + context.query.accountId
-  )
-  return {
-    props: RemoveUndefinedsToPleaseNext({ data }),
-  }
-}
-*/
-  }
-
   const id = context.query.accountId
 
   console.log(`${APP_URL}/api/v1/users/service/${id}`)
