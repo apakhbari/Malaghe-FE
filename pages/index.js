@@ -58,19 +58,19 @@ function Home() {
           <div className="grid grid-cols-5 gap-5 mx-4">
             <div
               className="rounded-box bg-secondary/80 items-center text-center mx-auto p-12 transition ease-in-out hover:scale-105 hover:cursor-pointer shadow"
-              onClick={onPrivacyClick}
+              onClick={onAboutUsClick}
             >
               <p dir="rtl" className="text-3xl font-extrabold text-center ">
-                درباره حریم خصوصی کاربران
+                درباره ما
               </p>
             </div>
 
             <div
               className="flex justify-around items-center rounded-box bg-accent-content/30 transition ease-in-out hover:scale-105 hover:cursor-pointer shadow"
-              onClick={onAboutUsClick}
+              onClick={onPrivacyClick}
             >
               <p dir="rtl" className="text-3xl font-extrabold text-center ">
-                درباره ما
+                درباره حریم خصوصی کاربران
               </p>
             </div>
 
