@@ -13,6 +13,8 @@ import FooterNotMain from '../../../components/layout/footernotmain'
 import Snackbar from 'awesome-snackbar'
 import { CLIENT_NAME_FA } from '../../../envConfig'
 
+import axios from 'axios'
+
 const RequestService1 = ({ data }) => {
   const router = useRouter()
 

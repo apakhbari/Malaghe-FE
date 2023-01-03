@@ -25,6 +25,8 @@ import UserCredentialsContext from '../../store/user-context'
 
 import { CLIENT_NAME_FA } from '../../envConfig'
 
+import axios from 'axios'
+
 var slugify = require('slugify-persian')
 
 function Dashboard() {

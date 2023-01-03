@@ -18,6 +18,8 @@ import GroupDigital from '../../hooks/groupDigital'
 import { CLIENT_NAME_FA } from '../../envConfig'
 import MobileDeveloping from '../../components/layout/mobileDeveloping'
 
+import axios from 'axios'
+
 function StoreSlug({ data }) {
   const router = useRouter()
 
