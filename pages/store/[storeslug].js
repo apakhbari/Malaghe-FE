@@ -174,25 +174,23 @@ function StoreSlug({ data }) {
               </div>
             </div>
 
-            <div className="flex justify-around">
-              <div
-                className="btn btn-primary"
-                dir="rtl"
-                onClick={clickOnAddCart}
-              >
-                + اضافه به سبد خرید
-              </div>
+            <label className="input-group mx-auto">
+              <input
+                type="number"
+                placeholder="1"
+                value={quantity}
+                onChange={(e) => setQuantity(e.target.value)}
+                className="input input-bordered"
+              />
+              <span>تعداد</span>
+            </label>
 
-              <label className="input-group">
-                <input
-                  type="number"
-                  placeholder="1"
-                  value={quantity}
-                  onChange={(e) => setQuantity(e.target.value)}
-                  className="input input-bordered"
-                />
-                <span>تعداد</span>
-              </label>
+            <div
+              className="btn btn-primary mx-3 shadow mt-4"
+              dir="rtl"
+              onClick={clickOnAddCart}
+            >
+              + اضافه به سبد خرید
             </div>
           </div>
 
