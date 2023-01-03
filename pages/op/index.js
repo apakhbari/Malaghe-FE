@@ -23,7 +23,7 @@ import NavBarTheme from '../../components/layout/navbar/navbarhelper/navbartheme
 
 import UserCredentialsContext from '../../store/user-context'
 
-import { CLIENT_NAME_FA } from '../../envConfig'
+import { CLIENT_NAME_FA, APP_URL } from '../../envConfig'
 
 import axios from 'axios'
 

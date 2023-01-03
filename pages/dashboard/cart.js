@@ -23,7 +23,7 @@ import CartComponent from '../../components/layout/dashboard/cartcomponent'
 
 import NavBarTheme from '../../components/layout/navbar/navbarhelper/navbartheme'
 import GroupDigital from '../../hooks/groupDigital'
-import { CLIENT_NAME_FA } from '../../envConfig'
+import { CLIENT_NAME_FA, APP_URL } from '../../envConfig'
 import MobileDeveloping from '../../components/layout/mobileDeveloping'
 
 import axios from 'axios'

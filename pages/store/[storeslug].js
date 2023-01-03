@@ -15,7 +15,7 @@ import IconMag from '../../assets/icons/svg/iconmag'
 import CartsContext from '../../store/cart-context'
 
 import GroupDigital from '../../hooks/groupDigital'
-import { CLIENT_NAME_FA } from '../../envConfig'
+import { CLIENT_NAME_FA, APP_URL } from '../../envConfig'
 import MobileDeveloping from '../../components/layout/mobileDeveloping'
 
 import axios from 'axios'
