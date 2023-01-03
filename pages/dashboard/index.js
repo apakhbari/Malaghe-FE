@@ -33,6 +33,7 @@ function Dashboard({ data }) {
   const cartsCtx = useContext(CartsContext)
 
   console.log(data)
+  console.log('accountId:' + `${data.currentUser.id}`)
 
   const { doRequest } = useRequest({
     url: '/api/v1/users/signout',
@@ -264,7 +265,7 @@ export async function getServerSideProps(context) {
       Cookie: context.req.headers.cookie,
     },
   })
-  const { data } = await res.data
+  const data = await res.data
 
   {
     /* 
