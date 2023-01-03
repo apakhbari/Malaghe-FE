@@ -423,25 +423,13 @@ function Account({ data }) {
 }
 
 export async function getServerSideProps(context) {
-  const accountId = context.params.id
-  const accountId2 = context.query.id
-  var id = context.query['id']
+  const { id } = context.query
 
-  console.log('accountId: ' + accountId)
-  console.log(context.params)
-
-  console.log('accountId2: ' + accountId2)
-  console.log(context.query)
-
-  console.log(context.props)
-
-  console.log('id: ' + id)
-
-  console.log(context)
+  console.log(id)
 
   const client = BuildClient(context)
 
-  const { data } = await client.get(`/api/v1/users/${accountId}`)
+  const { data } = await client.get(`/api/v1/users/${id}`)
   return {
     props: RemoveUndefinedsToPleaseNext({ data }),
   }
