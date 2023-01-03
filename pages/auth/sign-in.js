@@ -41,7 +41,7 @@ const SignIn = ({ data }) => {
       mobile,
       password,
     },
-    onSuccess: () => router.push('/dashboard'),
+    onSuccess: (response) => console.log(response), //router.push('/dashboard'),
   })
 
   const handleClick = (e) => {
