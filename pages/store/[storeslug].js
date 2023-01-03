@@ -174,7 +174,7 @@ function StoreSlug({ data }) {
               </div>
             </div>
 
-            <div className="flex flex-col">
+            <div className="flex flex-col justify-between">
               <label className="input-group">
                 <input
                   type="number"
@@ -185,14 +185,14 @@ function StoreSlug({ data }) {
                 />
                 <span>تعداد</span>
               </label>
-            </div>
 
-            <div
-              className="btn btn-primary mx-3 shadow mt-4"
-              dir="rtl"
-              onClick={clickOnAddCart}
-            >
-              + اضافه به سبد خرید
+              <div
+                className="btn btn-primary mx-3 shadow mt-4"
+                dir="rtl"
+                onClick={clickOnAddCart}
+              >
+                + اضافه به سبد خرید
+              </div>
             </div>
           </div>
 
