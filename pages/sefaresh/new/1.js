@@ -181,6 +181,8 @@ const RequestService1 = ({ data }) => {
                   <span className="text-center">شماره تلفن</span>
                 </label>
 
+                <div className="divider"></div>
+
                 <label className="input-group mt-3">
                   <input
                     type="text"
