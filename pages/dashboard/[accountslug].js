@@ -125,7 +125,7 @@ function Account({ data }) {
     <Fragment>
       <Head>
         <title>
-          {CLIENT_NAME_FA} - {firstName + lastName}
+          {CLIENT_NAME_FA} - {firstName + ' ' + lastName}
         </title>
       </Head>
 
