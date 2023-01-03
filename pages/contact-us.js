@@ -43,7 +43,7 @@ function ContactUs() {
                 <input
                   type="text"
                   ref={nameRef}
-                  placeholder="احسان عبدالهی"
+                  placeholder="علی عبدالهی"
                   className="input input-bordered  text-center w-full"
                 />
                 <span className=" text-center">نام</span>
