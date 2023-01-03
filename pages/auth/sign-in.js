@@ -156,7 +156,7 @@ export async function getServerSideProps(context) {
     {
       withCredentials: true,
       headers: {
-        Cookie: cookie,
+        Cookie: context.req.headers.cookie,
       },
     }
   )
