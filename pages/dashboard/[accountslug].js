@@ -423,11 +423,11 @@ function Account({ data }) {
 }
 
 export async function getServerSideProps(context) {
-  const accountId = context.query.id
+  const accountId = context.params.id
   //const accountId2 = context.query.currentUser.id
 
   console.log('accountId: ' + accountId)
-  console.log(context.query)
+  console.log(context.params)
 
   const client = BuildClient(context)
 
