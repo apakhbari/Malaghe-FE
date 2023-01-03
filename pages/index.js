@@ -66,7 +66,7 @@ function Home() {
             </div>
 
             <div
-              className="rounded-box bg-accent-content/50 items-center text-center mx-auto p-12 transition ease-in-out hover:scale-105 hover:cursor-pointer shadow"
+              className="rounded-box bg-accent-content/40 items-center text-center mx-auto p-12 transition ease-in-out hover:scale-105 hover:cursor-pointer shadow"
               onClick={onPrivacyClick}
             >
               <p dir="rtl" className="text-3xl font-extrabold text-center ">

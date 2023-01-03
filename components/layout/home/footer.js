@@ -102,6 +102,12 @@ const Footer = () => {
         <p className="justify-center text-center w-full" dir="rtl">
           تمامی حقوق برای {CLIENT_NAME_FA} محفوظ است.
         </p>
+        <p className="justify-center text-center w-full" dir="rtl">
+          پاکدشت، جاده خاوران،عباس آباد علاقبند شهرک کاوه
+        </p>
+        <p className="justify-center text-center w-full" dir="rtl">
+          ۰۹۹۳۸۵۱۳۷۲۴ - krachianamin@gmail.com
+        </p>
       </div>
     </footer>
   )
