@@ -1,5 +1,7 @@
 import axios from 'axios'
 
+import { APP_URL } from '../envConfig'
+
 function BuildClient({ req }) {
   if (typeof window === 'undefined') {
     // We are on the server
@@ -11,12 +13,12 @@ function BuildClient({ req }) {
     //})
 
     return axios.create({
-      baseUrl: 'http://api:5000/',
+      baseUrl: `${APP_URL}`,
     })
   } else {
     // We must be on the browser
     return axios.create({
-      baseUrl: 'http://api:5000/',
+      baseUrl: `${APP_URL}`,
     })
   }
 }

@@ -21,31 +21,18 @@ import NotificationDropDown from '../../components/layout/store/notificationdrop
 import CartsContext from '../../store/cart-context'
 import NavBarTheme from '../../components/layout/navbar/navbarhelper/navbartheme'
 
-import UserCredentialsContext from '../../store/user-context'
-
 import axios from 'axios'
-import { CLIENT_NAME_FA } from '../../envConfig'
+import { CLIENT_NAME_FA, APP_URL } from '../../envConfig'
 import MobileDeveloping from '../../components/layout/mobileDeveloping'
 
 var slugify = require('slugify-persian')
 
-function Dashboard() {
+function Dashboard({ data }) {
   const router = useRouter()
 
   const cartsCtx = useContext(CartsContext)
-  const userCtx = useContext(UserCredentialsContext)
 
-  var data = { gender: 1 }
-
-  console.log(userCtx.totalUserCredential)
-
-  if (userCtx.totalUserCredential === 1) {
-    data = userCtx.userCredential[0].decoded
-
-    console.log(data)
-
-    //router.push('/auth/signin')
-  }
+  console.log(data)
 
   const { doRequest } = useRequest({
     url: '/api/v1/users/signout',
@@ -65,7 +52,7 @@ function Dashboard() {
     router.push(
       {
         pathname: '/sefaresh/new/1',
-        query: { accountId: `${data.id}` },
+        query: { accountId: `${data.currentUser.id}` },
       },
       '/sefaresh/new/1'
     )
@@ -85,14 +72,20 @@ function Dashboard() {
   const onAccountClick = (e) => {
     e.preventDefault()
 
-    console.log(slugify(data.fiName + ' ' + data.laName))
+    console.log(
+      slugify(data.currentUser.fiName + ' ' + data.currentUser.laName)
+    )
 
     router.push(
       {
-        pathname: `/dashboard/${slugify(data.fiName + ' ' + data.laName)}`,
-        query: { id: data.id },
+        pathname: `/dashboard/${slugify(
+          data.currentUser.fiName + ' ' + data.currentUser.laName
+        )}`,
+        query: { id: data.currentUser.id },
       },
-      `/dashboard/${slugify(data.fiName + ' ' + data.laName)}`
+      `/dashboard/${slugify(
+        data.currentUser.fiName + ' ' + data.currentUser.laName
+      )}`
     )
   }
 
@@ -231,9 +224,9 @@ function Dashboard() {
                     className="cursor-pointer content-center justify-center text-neutral-content"
                     dir="rtl"
                   >
-                    {data.gender === 'زن'
-                      ? ' خانم ' + data.laName
-                      : ' آقای ' + data.laName}
+                    {data.currentUser.gender === 'زن'
+                      ? ' خانم ' + data.currentUser.laName
+                      : ' آقای ' + data.currentUser.laName}
                   </div>
                   <div className="text-sm text-neutral-content text-opacity-70">
                     اکانت فعال
@@ -243,7 +236,7 @@ function Dashboard() {
                 <div class="avatar online placeholder cursor-pointer">
                   <div class="bg-primary-focus text-neutral-content rounded-full w-16">
                     <span class="text-xl text-neutral-content">
-                      {data.fiName + data.laName}
+                      {data.currentUser.fiName + data.currentUser.laName}
                     </span>
                   </div>
                 </div>
@@ -265,7 +258,13 @@ function Dashboard() {
 }
 
 export async function getServerSideProps(context) {
-  const { data } = await axios.get('http://api:3000/api/v1/users/currentuser')
+  const res = await axios.get(`${APP_URL}/api/v1/users/currentuser`, {
+    withCredentials: true,
+    headers: {
+      Cookie: context.req.headers.cookie,
+    },
+  })
+  const data = await res.data
 
   if (!data) {
     return {
@@ -279,7 +278,7 @@ export async function getServerSideProps(context) {
   if (!data.id) {
     return {
       redirect: {
-        destination: '/auth/sign-in',
+        destination: '/auth/sign-in', //`${APP_URL}/dashboard`
         permanent: false,
       },
     }

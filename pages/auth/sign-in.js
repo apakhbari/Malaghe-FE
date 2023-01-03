@@ -15,14 +15,13 @@ import Snackbar from 'awesome-snackbar'
 import UserCredentialsContext from '../../store/user-context'
 
 import axios from 'axios'
-import { CLIENT_NAME_FA } from '../../envConfig'
+import { CLIENT_NAME_FA, APP_URL } from '../../envConfig'
 
 const SignIn = ({ data }) => {
   const router = useRouter()
 
   const [mobile, setMobile] = useState('')
   const [password, setPassword] = useState('')
-  console.log(data)
   const userCtx = useContext(UserCredentialsContext)
 
   if (userCtx.totalUserCredential === 1) {
@@ -144,22 +143,14 @@ const SignIn = ({ data }) => {
 }
 
 export async function getServerSideProps(context) {
-  //const { data } = await axios.get(
-  //'https://malaghe.darkube.app/api/v1/users/currentuser')
-
-  //const cookie = cookies().get('express:sess')?.value
-
   console.log(context.req.headers.cookie)
 
-  const res = await axios.get(
-    'https://malaghe.darkube.app/api/v1/users/currentuser',
-    {
-      withCredentials: true,
-      headers: {
-        Cookie: context.req.headers.cookie,
-      },
-    }
-  )
+  const res = await axios.get(`${APP_URL}/api/v1/users/currentuser`, {
+    withCredentials: true,
+    headers: {
+      Cookie: context.req.headers.cookie,
+    },
+  })
   const data = await res.data
 
   if (data) {
@@ -167,7 +158,7 @@ export async function getServerSideProps(context) {
       if (data.currentUser.id) {
         return {
           redirect: {
-            destination: 'https://malaghe.darkube.app/',
+            destination: `${APP_URL}/dashboard`,
             permanent: false,
           },
         }
@@ -176,23 +167,6 @@ export async function getServerSideProps(context) {
   }
 
   return { props: { data } }
-
-  if (data) {
-    if (data.currentUser) {
-      if (data.currentUser.id) {
-        return {
-          redirect: {
-            destination: 'http://malaghe-fe.malaghe.svc:3000/',
-            permanent: false,
-          },
-        }
-      }
-    }
-  }
-
-  return {
-    props: { data }, // will be passed to the page component as props
-  }
 }
 
 export default SignIn

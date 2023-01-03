@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { useState, useEffect, Fragment } from 'react'
 import FooterNotMain from '../../components/layout/footernotmain'
 
+import Head from 'next/head'
+
 import { themeChange } from 'theme-change'
 
 import NavBarTheme from '../../components/layout/navbar/navbarhelper/navbartheme'

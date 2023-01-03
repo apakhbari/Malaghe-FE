@@ -212,56 +212,30 @@ const SignUp = ({ data }) => {
 }
 
 export async function getServerSideProps(context) {
-  //const { data } = await axios.get(
-  //'https://malaghe.darkube.app/api/v1/users/currentuser')
+  console.log(context.req.headers.cookie)
 
-  const res = await axios.get(
-    'http://malaghe-be.malaghe.svc:3000/api/v1/users/currentuser',
-    {
-      withCredentials: true,
-      headers: {
-        Cookie: context.req.headers.cookie,
-      },
-    }
-  )
+  const res = await axios.get(`${APP_URL}/api/v1/users/currentuser`, {
+    withCredentials: true,
+    headers: {
+      Cookie: context.req.headers.cookie,
+    },
+  })
   const data = await res.data
 
+  if (data) {
+    if (data.currentUser) {
+      if (data.currentUser.id) {
+        return {
+          redirect: {
+            destination: `${APP_URL}/dashboard`,
+            permanent: false,
+          },
+        }
+      }
+    }
+  }
+
   return { props: { data } }
-
-  {
-    /* 
-  if (data) {
-    if (data.currentUser) {
-      if (data.currentUser.id) {
-        return {
-          redirect: {
-            destination: 'http://malaghe-fe.malaghe.svc:3000/',
-            permanent: false,
-          },
-        }
-      }
-    }
-  }
-
-
-  if (data) {
-    if (data.currentUser) {
-      if (data.currentUser.id) {
-        return {
-          redirect: {
-            destination: 'http://malaghe-fe.malaghe.svc:3000/',
-            permanent: false,
-          },
-        }
-      }
-    }
-  }
-
-  return {
-    props: { data }, // will be passed to the page component as props
-  }
-  */
-  }
 }
 
 export default SignUp

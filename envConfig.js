@@ -6,3 +6,5 @@ export const CLIENT_DESCRIPTION =
   'راهکارهای صنعتی آشپزخانه' || process.env.CLIENT_DESCRIPTION
 
 export const NODE_ENV = 'development'
+
+export const APP_URL = 'https://malaghe.darkube.app'
