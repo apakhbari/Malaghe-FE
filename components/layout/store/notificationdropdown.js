@@ -26,9 +26,11 @@ function NotificationDropDown() {
         <li className="text-right" dir="rtl">
           <a>خوش آمدید!</a>
         </li>
+        {/*
         <li className="text-right" dir="rtl">
           <a>۱۵٪ تخفیف به مناسبت افتتاحیه</a>
         </li>
+         */}
       </ul>
     </div>
   )

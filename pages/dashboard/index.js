@@ -278,7 +278,7 @@ export async function getServerSideProps(context) {
     }
   }
 
-  if (!data.id) {
+  if (!data.currentUser.id) {
     return {
       redirect: {
         destination: '/auth/sign-in', //`${APP_URL}/dashboard`
