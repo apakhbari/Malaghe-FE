@@ -35,7 +35,7 @@ const NewStore = () => {
   const [enumGoodKind, setEnumGoodKind] = useState()
 
   const { doRequest, errors } = useRequest({
-    url: 'api/v1/store',
+    url: '/api/v1/store',
 
     method: 'post',
     body: {
