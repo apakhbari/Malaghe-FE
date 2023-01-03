@@ -106,7 +106,7 @@ const Footer = () => {
           پاکدشت، جاده خاوران،عباس آباد علاقبند شهرک کاوه
         </p>
         <p className="justify-center text-center w-full" dir="rtl">
-          ۰۹۹۳۸۵۱۳۷۲۴ - krachianamin@gmail.com
+          krachianamin@gmail.com - ۰۹۹۳۸۵۱۳۷۲۴
         </p>
       </div>
     </footer>
