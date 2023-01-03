@@ -58,7 +58,7 @@ const RequestService3 = () => {
         <CardComponent>
           <form onSubmit={onSubmit} className="card-body">
             <h3 dir="rtl" className="text-2xl mb-2 text-neutral-content">
-              پرداخت
+              پیش‌پرداخت
             </h3>
 
             <h3 dir="rtl" className="text-xl text-neutral-content">

@@ -11,6 +11,8 @@ import CardComponent from '../../components/layout/card'
 import axios from 'axios'
 import { CLIENT_NAME_FA } from '../../envConfig'
 
+import GroupDigital from '../../hooks/groupDigital'
+
 var slugify = require('slugify-persian')
 
 const NewStore = () => {
@@ -58,6 +60,7 @@ const NewStore = () => {
       goodKind: enumGoodKind,
       hasMag: boolHasMag,
       magLink: strMagLink,
+      createdBy: '63b40e8a137fab00190dc0c6',
     },
     onSuccess: () => router.push('/store'),
   })
@@ -135,6 +138,10 @@ const NewStore = () => {
                   <span className="  text-center">قیمت اولیه (ت)</span>
                 </label>
               </div>
+
+              <h3 className="mx-auto  items-center justify-center content-center mb-2">
+                GroupDigital(numPrice)
+              </h3>
 
               <div className="form-control mx-auto  items-center justify-center content-center mb-2">
                 <label className="input-group">
@@ -319,6 +326,22 @@ const NewStore = () => {
                       <span className="text-center">مقدار تخفیف</span>
                     </label>
                   </div>
+
+                  {hasDiscount && (
+                    <h2
+                      className=" mx-auto  items-center justify-center content-center mb-2"
+                      dir="rtl"
+                    >
+                      {props.discountKind === 'درصد'
+                        ? `${GroupDigital(
+                            Math.round(((100 - discountedPrice) * price) / 100)
+                          )}  تومن`
+                        : `${GroupDigital(discountedPrice)}  تومن`}
+                      <span className="line-through text-xs">
+                        {GroupDigital(price)}
+                      </span>
+                    </h2>
+                  )}
                 </Fragment>
               )}
 
