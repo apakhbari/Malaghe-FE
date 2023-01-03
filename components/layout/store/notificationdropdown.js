@@ -2,8 +2,8 @@ function NotificationDropDown() {
   return (
     <div className="dropdown">
       <div className="rounded-full p-2 hover:cursor-pointer" tabIndex={0}>
-        <div class="avatar online placeholder cursor-pointer">
-          <div class="text-neutral-content rounded-full">
+        <div className="avatar online placeholder cursor-pointer">
+          <div className="text-neutral-content rounded-full">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"

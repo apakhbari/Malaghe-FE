@@ -188,7 +188,7 @@ const RequestService3 = () => {
                   <input
                     type="text"
                     placeholder="کد تخفیف"
-                    class="input input-bordered w-full pr-16"
+                    className="input input-bordered w-full pr-16"
                   />
                 </div>
               </div>

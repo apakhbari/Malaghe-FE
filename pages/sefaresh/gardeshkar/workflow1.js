@@ -24,7 +24,7 @@ function workflow1() {
               گردش کار
             </h3>
 
-            <ol class="relative border-l border-accent">
+            <ol className="relative border-l border-accent">
               <Workflow />
               <Workflow2 />
             </ol>

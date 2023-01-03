@@ -9,8 +9,8 @@ import {
 function FooterNotMain() {
   return (
     <div>
-      <footer class="footer absolute inset-x-0 bottom-0 items-center p-4 bg-neutral text-neutral-content">
-        <div class="grid-flow-col gap-4 place-content-end justify-self-end items-center">
+      <footer className="footer absolute inset-x-0 bottom-0 items-center p-4 bg-neutral text-neutral-content">
+        <div className="grid-flow-col gap-4 place-content-end justify-self-end items-center">
           <div>
             <p dir="rtl">
               نسخه: {CLIENT_VERSION} - {CLIENT_COPYRIGHT}

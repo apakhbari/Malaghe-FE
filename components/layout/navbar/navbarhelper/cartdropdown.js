@@ -47,8 +47,8 @@ function CartDropDown(props) {
           <div className="rounded-full p-2 hover:cursor-pointer" tabIndex={0}>
             <div className="indicator">
               <span className="indicator-item indicator-bottom badge badge-secondary"></span>
-              <div class="avatar placeholder cursor-pointer">
-                <div class={props.stylingProps}>
+              <div className="avatar placeholder cursor-pointer">
+                <div className={props.stylingProps}>
                   <IconCart stylingProps={'w-6 h-6'} />
                 </div>
               </div>

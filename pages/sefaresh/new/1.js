@@ -172,11 +172,7 @@ const RequestService1 = ({ data }) => {
                     value={
                       enteredPhone === 'تخصیص داده نشده' ? '' : enteredPhone
                     }
-                    placeholder={
-                      enteredPhone === 'تخصیص داده نشده'
-                        ? '۰۲۱۲۲۶۵۱۲۳۴'
-                        : enteredPhone
-                    }
+                    placeholder={'۰۲۱۲۲۶۵۱۲۳۴'}
                   />
                   <span className="text-center">شماره تلفن</span>
                 </label>

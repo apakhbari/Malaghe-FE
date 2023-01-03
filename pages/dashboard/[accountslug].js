@@ -400,9 +400,9 @@ function Account({ data }) {
                   </div>
                 </div>
 
-                <div class="avatar online placeholder cursor-pointer">
-                  <div class="bg-primary-focus text-neutral-content rounded-full w-16">
-                    <span class="text-xl text-neutral-content">
+                <div className="avatar online placeholder cursor-pointer">
+                  <div className="bg-primary-focus text-neutral-content rounded-full w-16">
+                    <span className="text-xl text-neutral-content">
                       {firstName + lastName}
                     </span>
                   </div>

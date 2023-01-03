@@ -28,9 +28,9 @@ function StoreAtropos(props) {
 
   return (
     <Atropos rotateXMax={5} rotateYMax={5}>
-      <div class="group rounded-md flex items-center justify-center">
+      <div className="group rounded-md flex items-center justify-center">
         <div
-          class="card w-96 bg-neutral hover:opacity-90 hover:shadow-2xl cursor-pointer group-hover:bg-neutral-focus"
+          className="card w-96 bg-neutral hover:opacity-90 hover:shadow-2xl cursor-pointer group-hover:bg-neutral-focus"
           onClick={handleClick}
           data-atropos-offset="-5"
         >
@@ -43,7 +43,7 @@ function StoreAtropos(props) {
             />
           </figure>
           <div
-            class="card-body"
+            className="card-body"
             data-atropos-offset="6"
             activeOffset="40"
             shadowScale="1.05"
@@ -51,7 +51,7 @@ function StoreAtropos(props) {
             shadow="true"
           >
             <h2
-              class="card-title text-neutral-content"
+              className="card-title text-neutral-content"
               dir="rtl"
               data-atropos-offset="6"
             >
@@ -102,19 +102,19 @@ function StoreAtropos(props) {
                 {props.summary}
               </div>
             </p>
-            <div class="card-actions justify-start" data-atropos-offset="6">
+            <div className="card-actions justify-start" data-atropos-offset="6">
               {props.hasMag && (
-                <div class="badge badge-success" dir="rtl">
+                <div className="badge badge-success" dir="rtl">
                   + مجله
                 </div>
               )}
 
               {props.madeIn && (
-                <div class="badge badge-outline">تولید {props.madeIn}</div>
+                <div className="badge badge-outline">تولید {props.madeIn}</div>
               )}
 
               {props.goodKind && (
-                <div class="badge badge-outline badge-primary">
+                <div className="badge badge-outline badge-primary">
                   {props.goodKind}
                 </div>
               )}

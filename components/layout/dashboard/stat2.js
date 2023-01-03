@@ -1,8 +1,8 @@
 function Stat2() {
   return (
-    <div class="stats shadow bg-primary mt-2">
-      <div class="stat">
-        <div class="stat-figure text-secondary">
+    <div className="stats shadow bg-primary mt-2">
+      <div className="stat">
+        <div className="stat-figure text-secondary">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -18,12 +18,12 @@ function Stat2() {
             />
           </svg>
         </div>
-        <div class="stat-title text-primary-content">مرجوعی</div>
-        <div class="stat-value text-primary-content">۰</div>
+        <div className="stat-title text-primary-content">مرجوعی</div>
+        <div className="stat-value text-primary-content">۰</div>
       </div>
 
-      <div class="stat">
-        <div class="stat-figure text-secondary">
+      <div className="stat">
+        <div className="stat-figure text-secondary">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -39,12 +39,12 @@ function Stat2() {
             />
           </svg>
         </div>
-        <div class="stat-title text-primary-content">سفارش دریافت شده</div>
-        <div class="stat-value text-primary-content">۴</div>
+        <div className="stat-title text-primary-content">سفارش دریافت شده</div>
+        <div className="stat-value text-primary-content">۴</div>
       </div>
 
-      <div class="stat">
-        <div class="stat-figure text-secondary">
+      <div className="stat">
+        <div className="stat-figure text-secondary">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -60,8 +60,8 @@ function Stat2() {
             />
           </svg>
         </div>
-        <div class="stat-title text-primary-content">سفارش جاری</div>
-        <div class="stat-value text-primary-content">۰</div>
+        <div className="stat-title text-primary-content">سفارش جاری</div>
+        <div className="stat-value text-primary-content">۰</div>
       </div>
     </div>
   )

@@ -57,9 +57,9 @@ function Store(data) {
       </Head>
       <div className="h-screen">
         {/*{domLoaded && ( */}
-        <div class="drawer drawer-end">
-          <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
-          <div class="drawer-content">
+        <div className="drawer drawer-end">
+          <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
+          <div className="drawer-content">
             {/* Navbar Starts here */}
             <Fragment>
               <div className="fixed inset-x-0 top-0 object-center mt-2 mx-3 z-50">
@@ -85,7 +85,7 @@ function Store(data) {
                         </label>
                         <ul
                           tabindex="0"
-                          class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+                          className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
                         >
                           <li>
                             <Link
@@ -171,7 +171,7 @@ function Store(data) {
                     <div>
                       <label
                         for="my-drawer-4"
-                        class="drawer-button btn btn-circle btn-outline normal-case text-xl mx-4 text-primary-content"
+                        className="drawer-button btn btn-circle btn-outline normal-case text-xl mx-4 text-primary-content"
                       >
                         <IconMixer stylingProps={'w-6 h-6'} />
                       </label>
@@ -184,10 +184,10 @@ function Store(data) {
 
             {/*Contents Starts */}
 
-            <div class="p-8 pt-28">
+            <div className="p-8 pt-28">
               {domLoaded && (
                 <div
-                  class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-8"
+                  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-8"
                   dir="rtl"
                 >
                   {data &&
@@ -213,9 +213,9 @@ function Store(data) {
           </div>
           {/*Contents End */}
 
-          <div class="drawer-side">
-            <label for="my-drawer-4" class="drawer-overlay"></label>
-            <div class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+          <div className="drawer-side">
+            <label for="my-drawer-4" className="drawer-overlay"></label>
+            <div className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
               <h3 dir="rtl" className=" text-xl">
                 مرتب سازی
               </h3>

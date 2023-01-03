@@ -1,8 +1,8 @@
 function Stat1() {
   return (
-    <div class="stats shadow bg-primary">
-      <div class="stat">
-        <div class="stat-figure text-secondary">
+    <div className="stats shadow bg-primary">
+      <div className="stat">
+        <div className="stat-figure text-secondary">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -18,20 +18,20 @@ function Stat1() {
             />
           </svg>
         </div>
-        <div class="stat-title text-primary-content">امتیاز</div>
-        <div class="stat-value text-primary-content">۳۱K</div>
-        <div class="stat-desc text-primary-content" dir="rtl">
+        <div className="stat-title text-primary-content">امتیاز</div>
+        <div className="stat-value text-primary-content">۳۱K</div>
+        <div className="stat-desc text-primary-content" dir="rtl">
           ۴ اردیبهشت تا به حال
         </div>
       </div>
 
-      <div class="stat">
-        <div class="stat-figure text-secondary">
+      <div className="stat">
+        <div className="stat-figure text-secondary">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            class="inline-block w-8 h-8 stroke-current"
+            className="inline-block w-8 h-8 stroke-current"
           >
             <path
               stroke-linecap="round"
@@ -41,13 +41,13 @@ function Stat1() {
             ></path>
           </svg>
         </div>
-        <div class="stat-title text-primary-content">امتیاز ماه</div>
-        <div class="stat-value text-primary-content">۴,۲۰۰</div>
-        <div class="stat-desc text-primary-content">↗︎ ۴۰۰ (۲۲%)</div>
+        <div className="stat-title text-primary-content">امتیاز ماه</div>
+        <div className="stat-value text-primary-content">۴,۲۰۰</div>
+        <div className="stat-desc text-primary-content">↗︎ ۴۰۰ (۲۲%)</div>
       </div>
 
-      <div class="stat">
-        <div class="stat-figure text-secondary">
+      <div className="stat">
+        <div className="stat-figure text-secondary">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -68,9 +68,9 @@ function Stat1() {
             />
           </svg>
         </div>
-        <div class="stat-title text-primary-content"></div>
-        <div class="stat-value text-primary-content">۱,۲۰۰</div>
-        <div class="stat-desc text-primary-content">↘︎ ۹۰ (۱۴%)</div>
+        <div className="stat-title text-primary-content"></div>
+        <div className="stat-value text-primary-content">۱,۲۰۰</div>
+        <div className="stat-desc text-primary-content">↘︎ ۹۰ (۱۴%)</div>
       </div>
     </div>
   )

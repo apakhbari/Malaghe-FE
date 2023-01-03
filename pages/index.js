@@ -52,9 +52,9 @@ function Home() {
           name="home"
           className="relative w-full h-screen flex flex-col items-center justify-center"
         >
-          <div class="absolute top-28 left-72 w-72 h-72 bg-accent rounded-full mix-blend-multiply filter blur-xl -z-10  opacity-60 animate-blob"></div>
-          <div class="absolute top-36 right-64 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-xl -z-10  opacity-60 animate-blob animation-delay-4000"></div>
-          <div class="absolute left-72  w-72 h-72 bg-secondary rounded-full mix-blend-multiply filter blur-xl -z-10 opacity-60 animate-blob animation-delay-2000"></div>
+          <div className="absolute top-28 left-72 w-72 h-72 bg-accent rounded-full mix-blend-multiply filter blur-xl -z-10  opacity-60 animate-blob"></div>
+          <div className="absolute top-36 right-64 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-xl -z-10  opacity-60 animate-blob animation-delay-4000"></div>
+          <div className="absolute left-72  w-72 h-72 bg-secondary rounded-full mix-blend-multiply filter blur-xl -z-10 opacity-60 animate-blob animation-delay-2000"></div>
           <div className="grid grid-cols-5 gap-5 mx-4">
             <div
               className="flex justify-around items-center rounded-box bg-accent-content/30 transition ease-in-out hover:scale-105 hover:cursor-pointer shadow"
