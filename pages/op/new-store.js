@@ -140,7 +140,7 @@ const NewStore = () => {
               </div>
 
               <h3 className="mx-auto  items-center justify-center content-center mb-2">
-                GroupDigital(numPrice)
+                ${GroupDigital(numPrice)}
               </h3>
 
               <div className="form-control mx-auto  items-center justify-center content-center mb-2">
