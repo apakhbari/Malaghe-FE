@@ -16,7 +16,7 @@ function BuildClient({ req }) {
       baseUrl: `${APP_URL}`,
       withCredentials: true,
       headers: {
-        Cookie: context.req.headers.cookie,
+        Cookie: req.headers.cookie,
       },
     })
   } else {
