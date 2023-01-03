@@ -212,8 +212,6 @@ const SignUp = ({ data }) => {
 }
 
 export async function getServerSideProps(context) {
-  console.log(context.req.headers.cookie)
-
   const res = await axios.get(`${APP_URL}/api/v1/users/currentuser`, {
     withCredentials: true,
     headers: {

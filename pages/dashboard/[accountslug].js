@@ -28,7 +28,7 @@ import IconGearAccount from '../../assets/icons/svg/icongearaccount'
 import CartsContext from '../../store/cart-context'
 
 import NavBarTheme from '../../components/layout/navbar/navbarhelper/navbartheme'
-import { CLIENT_NAME_FA } from '../../envConfig'
+import { CLIENT_NAME_FA, APP_URL } from '../../envConfig'
 import MobileDeveloping from '../../components/layout/mobileDeveloping'
 
 function Account({ data }) {
@@ -427,9 +427,16 @@ export async function getServerSideProps(context) {
 
   console.log(id)
 
-  const client = BuildClient(context)
+  const res = await axios.get(`${APP_URL}/api/v1/users/${id}`, {
+    withCredentials: true,
+    headers: {
+      Cookie: context.req.headers.cookie,
+    },
+  })
+  const data = await res.data
 
-  const { data } = await client.get(`/api/v1/users/${id}`)
+  console.log(data)
+
   return {
     props: RemoveUndefinedsToPleaseNext({ data }),
   }
