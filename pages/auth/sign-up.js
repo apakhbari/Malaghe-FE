@@ -18,6 +18,8 @@ import { CLIENT_NAME_FA } from '../../envConfig'
 
 import cookieCutter from 'cookie-cutter'
 
+import axios from 'axios'
+
 const SignUp = ({ data }) => {
   const router = useRouter()
 
