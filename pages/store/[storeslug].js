@@ -1,4 +1,4 @@
-import { useEffect, useContext, Fragment } from 'react'
+import { useState, useEffect, useContext, Fragment } from 'react'
 import { useRouter } from 'next/router'
 
 import Head from 'next/head'
@@ -24,6 +24,8 @@ function StoreSlug({ data }) {
   const router = useRouter()
 
   const cartsCtx = useContext(CartsContext)
+
+  const [quantity, setQuantity] = useState(1)
 
   useEffect(() => {
     themeChange(false)
@@ -170,6 +172,19 @@ function StoreSlug({ data }) {
                 <div className="stat-value">{data.madeIn}</div>
                 <div className="stat-desc">{data.goodKind}</div>
               </div>
+            </div>
+
+            <div className="flex flex-col">
+              <label className="input-group">
+                <input
+                  type="number"
+                  placeholder="1"
+                  value={quantity}
+                  onChange={(e) => setQuantity(e.target.value)}
+                  className="input input-bordered"
+                />
+                <span>تعداد</span>
+              </label>
             </div>
 
             <div
