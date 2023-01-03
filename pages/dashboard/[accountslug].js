@@ -31,6 +31,8 @@ import NavBarTheme from '../../components/layout/navbar/navbarhelper/navbartheme
 import { CLIENT_NAME_FA, APP_URL } from '../../envConfig'
 import MobileDeveloping from '../../components/layout/mobileDeveloping'
 
+import axios from 'axios'
+
 function Account({ data }) {
   const router = useRouter()
 
