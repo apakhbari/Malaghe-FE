@@ -49,7 +49,7 @@ const SignUp = ({ data }) => {
       mobile,
       password,
     },
-    onSuccess: (response) => onSuccessHandler(response), //router.push('/'),
+    onSuccess: (response) => router.push('/dashboard'),
   })
 
   const handleClick = (e) => {
@@ -63,40 +63,37 @@ const SignUp = ({ data }) => {
     var error = ''
 
     {
-      /*
+      if (fiName.length < 2) {
+        new Snackbar('خطا! نام باید حداقل ۲ کاراکتر باشد', {
+          position: 'bottom-right',
+        })
+        error = error + 'fiName'
+      }
+      if (laName.length < 2) {
+        new Snackbar('خطا! نام خانوادگی باید حداقل ۲ کاراکتر باشد', {
+          position: 'bottom-right',
+        })
+        error = error + 'laName'
+      }
+      if (mobile.length !== 11) {
+        new Snackbar('خطا! موبایل باید ۱۱ رقم باشد', {
+          position: 'bottom-right',
+        })
+        error = error + 'mobile'
+      }
 
-    if (fiName.length < 2) {
-      new Snackbar('خطا! نام باید حداقل ۲ کاراکتر باشد', {
-        position: 'bottom-right',
-      })
-      error = error + 'fiName'
-    }
-    if (laName.length < 2) {
-      new Snackbar('خطا! نام خانوادگی باید حداقل ۲ کاراکتر باشد', {
-        position: 'bottom-right',
-      })
-      error = error + 'laName'
-    }
-  if (mobile.length !== 11) {
-      new Snackbar('خطا! موبایل باید ۱۱ رقم باشد', {
-        position: 'bottom-right',
-      })
-      error = error + 'mobile'
-    }
-
-    if (gender.length < 2) {
-      new Snackbar('خطا! لطفا جنسیت را انتخاب کنید', {
-        position: 'bottom-right',
-      })
-      error = error + 'gender'
-    }
-    if (password.length < 4) {
-      new Snackbar('خطا! رمز باید حداقل ۴ کاراکتر باشد', {
-        position: 'bottom-right',
-      })
-      error = error + 'password'
-    }
-        */
+      if (gender.length < 2) {
+        new Snackbar('خطا! لطفا جنسیت را انتخاب کنید', {
+          position: 'bottom-right',
+        })
+        error = error + 'gender'
+      }
+      if (password.length < 4) {
+        new Snackbar('خطا! رمز باید حداقل ۴ کاراکتر باشد', {
+          position: 'bottom-right',
+        })
+        error = error + 'password'
+      }
     }
 
     if (error.length === 0) {

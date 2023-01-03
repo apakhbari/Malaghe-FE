@@ -222,33 +222,40 @@ function CartPage({ data }) {
 }
 
 export async function getServerSideProps(context) {
-  const client = buildClient(context)
-  const { data } = await client.get('/api/v1/users/currentuser')
+  const res = await axios.get(`${APP_URL}/api/v1/users/currentuser`, {
+    withCredentials: true,
+    headers: {
+      Cookie: context.req.headers.cookie,
+    },
+  })
+  const data = await res.data
 
-  if (!data) {
-    return {
-      redirect: {
-        destination: '/auth/sign-in',
-        permanent: false,
-      },
+  {
+    if (!data) {
+      return {
+        redirect: {
+          destination: '/auth/sign-in',
+          permanent: false,
+        },
+      }
     }
-  }
 
-  if (!data.currentUser) {
-    return {
-      redirect: {
-        destination: '/auth/sign-in',
-        permanent: false,
-      },
+    if (!data.currentUser) {
+      return {
+        redirect: {
+          destination: '/auth/sign-in',
+          permanent: false,
+        },
+      }
     }
-  }
 
-  if (!data.currentUser.id) {
-    return {
-      redirect: {
-        destination: '/auth/sign-in',
-        permanent: false,
-      },
+    if (!data.currentUser.id) {
+      return {
+        redirect: {
+          destination: '/auth/sign-in',
+          permanent: false,
+        },
+      }
     }
   }
 

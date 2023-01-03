@@ -228,41 +228,45 @@ function Dashboard() {
   )
 }
 
-{
-  /*
 export async function getServerSideProps(context) {
-  const { data } = await axios.get('http://api:3000/api/v1/users/currentuser')
+  const res = await axios.get(`${APP_URL}/api/v1/users/currentuser`, {
+    withCredentials: true,
+    headers: {
+      Cookie: context.req.headers.cookie,
+    },
+  })
+  const data = await res.data
 
-  if (!data) {
-    return {
-      redirect: {
-        destination: '/auth/signin',
-        permanent: false,
-      },
+  {
+    if (!data) {
+      return {
+        redirect: {
+          destination: '/auth/sign-in',
+          permanent: false,
+        },
+      }
     }
-  }
 
-  if (!data) {
-    return {
-      redirect: {
-        destination: '/auth/signin',
-        permanent: false,
-      },
+    if (!data.currentUser) {
+      return {
+        redirect: {
+          destination: '/auth/sign-in',
+          permanent: false,
+        },
+      }
     }
-  }
 
-  if (!data.id) {
-    return {
-      redirect: {
-        destination: '/auth/signin',
-        permanent: false,
-      },
+    if (!data.currentUser.id) {
+      return {
+        redirect: {
+          destination: '/auth/sign-in',
+          permanent: false,
+        },
+      }
     }
   }
 
   return { props: { data } }
-}
-*/
 }
 
 export default Dashboard

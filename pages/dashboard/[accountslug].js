@@ -427,8 +427,6 @@ function Account({ data }) {
 export async function getServerSideProps(context) {
   const { id } = context.query
 
-  console.log(id)
-
   const res = await axios.get(`${APP_URL}/api/v1/users/${id}`, {
     withCredentials: true,
     headers: {
@@ -436,8 +434,6 @@ export async function getServerSideProps(context) {
     },
   })
   const data = await res.data
-
-  console.log(data)
 
   return {
     props: RemoveUndefinedsToPleaseNext({ data }),
