@@ -264,7 +264,7 @@ export async function getServerSideProps(context) {
       Cookie: context.req.headers.cookie,
     },
   })
-  const data = await res.data
+  const { data } = await res.data
 
   {
     /* 
