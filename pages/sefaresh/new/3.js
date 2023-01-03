@@ -108,15 +108,17 @@ const RequestService3 = () => {
             </ul>
             <div className="divider">اطلاعات وارد شده</div>
 
-            <div className="flex justify-around" dir="rtl">
-              <h3 className=" text-lg">
-                {enteredGender === 'زن'
-                  ? ' خانم ' + enteredName
-                  : ' آقای ' + enteredName}
-              </h3>
-              <h3 className=" text-lg">{enteredMobile}</h3>
-              <h3 className=" text-lg">{enteredPhone}</h3>
-            </div>
+            <h3 className=" text-lg" dir="rtl">
+              {enteredGender === 'زن'
+                ? ' خانم ' + enteredName
+                : ' آقای ' + enteredName}
+            </h3>
+            <h3 className=" text-lg" dir="rtl">
+              {enteredMobile}
+            </h3>
+            <h3 className=" text-lg" dir="rtl">
+              {enteredPhone}
+            </h3>
 
             <div className="divider"></div>
 

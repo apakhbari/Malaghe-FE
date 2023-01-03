@@ -121,7 +121,7 @@ const RequestService1 = ({ data }) => {
         <Navbar />
         <CardComponent>
           <form onSubmit={onSubmit} className="card-body">
-            <h3 dir="rtl" className="text-2xl mb-2 text-neutral-content">
+            <h3 dir="rtl" className="text-2xl text-neutral-content">
               ثبت درخواست تعمیر
             </h3>
 
@@ -140,9 +140,11 @@ const RequestService1 = ({ data }) => {
               </li>
             </ul>
 
+            <div className="divider"></div>
+
             <div className="form-control">
               <div className="form-control ">
-                <label className="input-group mt-6">
+                <label className="input-group">
                   <input
                     type="text"
                     value={enteredName}
@@ -179,7 +181,7 @@ const RequestService1 = ({ data }) => {
 
                 <div className="divider"></div>
 
-                <label className="input-group mt-3">
+                <label className="input-group">
                   <input
                     type="text"
                     value={enteredDevice}
@@ -211,9 +213,6 @@ const RequestService1 = ({ data }) => {
                   </option>
                   <option className="text-center content-center">تعمیر</option>
                   <option className="text-center content-center">تعویض</option>
-                  <option className="text-center content-center">
-                    عیب‌‌یابی
-                  </option>
                 </select>
 
                 <label className="label cursor-pointer w-full">
