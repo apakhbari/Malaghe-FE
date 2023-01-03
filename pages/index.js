@@ -57,7 +57,7 @@ function Home() {
           <div className="absolute left-72  w-72 h-72 bg-secondary rounded-full mix-blend-multiply filter blur-xl -z-10 opacity-60 animate-blob animation-delay-2000"></div>
           <div className="grid grid-cols-5 gap-5 mx-4">
             <div
-              className="rounded-box bg-secondary/80 items-center text-center mx-auto p-12 transition ease-in-out hover:scale-105 hover:cursor-pointer shadow"
+              className="flex bg-secondary/80  justify-around items-center rounded-box  transition ease-in-out hover:scale-105 hover:cursor-pointer shadow"
               onClick={onAboutUsClick}
             >
               <p dir="rtl" className="text-3xl font-extrabold text-center ">
@@ -66,7 +66,7 @@ function Home() {
             </div>
 
             <div
-              className="flex justify-around items-center rounded-box bg-accent-content/30 transition ease-in-out hover:scale-105 hover:cursor-pointer shadow"
+              className="rounded-box bg-accent-content/30 items-center text-center mx-auto p-12 transition ease-in-out hover:scale-105 hover:cursor-pointer shadow"
               onClick={onPrivacyClick}
             >
               <p dir="rtl" className="text-3xl font-extrabold text-center ">

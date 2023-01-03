@@ -187,7 +187,7 @@ function StoreSlug({ data }) {
               </label>
 
               <div
-                className="btn btn-primary mx-3 shadow mt-4"
+                className="btn btn-primary"
                 dir="rtl"
                 onClick={clickOnAddCart}
               >
