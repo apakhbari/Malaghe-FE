@@ -25,6 +25,7 @@ const RequestService1 = ({ data }) => {
   const [enteredDevice, setEnteredDevice] = useState('')
   const [enteredDescription, setEnteredDescription] = useState()
   const [enteredMobile, setEnteredMobile] = useState()
+  const [enteredPhone, setEnteredPhone] = useState()
   const [enteredServiceKind, setEnteredServiceKind] = useState('')
   const [isExpress, setIsExpress] = useState(false)
 
@@ -46,6 +47,7 @@ const RequestService1 = ({ data }) => {
         setEnteredName(data.fiName + ' ' + data.laName)
         setEnteredGender(data.gender)
         setEnteredMobile(data.mobile)
+        setEnteredPhone(data.phone)
       }, [data.id])
     }
   }
@@ -73,6 +75,12 @@ const RequestService1 = ({ data }) => {
         position: 'bottom-right',
       })
       error = error + 'enteredDevice'
+    }
+    if (enteredPhone.length < 2) {
+      new Snackbar('خطا! شماره تلفن باید حداقل ۲ کاراکتر باشد', {
+        position: 'bottom-right',
+      })
+      error = error + 'enteredPhone'
     }
     if (enteredServiceKind.length < 1) {
       new Snackbar('خطا! لطفا نوع تعمیر را انتخاب کنید', {
@@ -153,6 +161,23 @@ const RequestService1 = ({ data }) => {
                     className="input input-bordered  text-center w-full"
                   />
                   <span className="text-center">شماره موبایل</span>
+                </label>
+
+                <label className="input-group mt-3">
+                  <input
+                    type="number"
+                    onChange={(e) => setEnteredMobile(e.target.value)}
+                    className="input input-bordered  text-center w-full"
+                    value={
+                      enteredMobile === 'تخصیص داده نشده' ? '' : enteredMobile
+                    }
+                    placeholder={
+                      enteredMobile === 'تخصیص داده نشده'
+                        ? '۰۲۱۲۲۶۵۱۲۳۴'
+                        : enteredMobile
+                    }
+                  />
+                  <span className="text-center">شماره تلفن</span>
                 </label>
 
                 <label className="input-group mt-3">

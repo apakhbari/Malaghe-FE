@@ -131,7 +131,7 @@ const RequestService2 = () => {
                   value={addressStr === 'تخصیص داده نشده' ? '' : addressStr}
                   onChange={(e) => setAddressStr(e.target.value)}
                   placeholder={
-                    addressStr === 'تخصیص داده نشده'
+                    addressStr === 'تهران، بازار بزرگ'
                       ? 'تخصیص داده نشده'
                       : addressStr
                   }
@@ -151,7 +151,7 @@ const RequestService2 = () => {
                   }
                   placeholder={
                     postalCodeNum === 'تخصیص داده نشده'
-                      ? 'تخصیص داده نشده'
+                      ? '۱۲۳۴۵۶۷۸'
                       : postalCodeNum
                   }
                   className="input input-bordered  text-center w-full"
