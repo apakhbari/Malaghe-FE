@@ -174,7 +174,7 @@ function StoreSlug({ data }) {
               </div>
             </div>
 
-            <div className="flex flex-col justify-between">
+            <div className="flex justify-between">
               <label className="input-group">
                 <input
                   type="number"
