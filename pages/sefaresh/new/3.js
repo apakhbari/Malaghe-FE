@@ -18,6 +18,7 @@ const RequestService3 = () => {
   const [enteredDevice, setEnteredDevice] = useState()
   const [enteredDescription, setEnteredDescription] = useState()
   const [enteredMobile, setEnteredMobile] = useState()
+  const [enteredPhone, setEnteredPhone] = useState()
   const [enteredServiceKind, setEnteredServiceKind] = useState()
   const [isExpress, setIsExpress] = useState()
   //for 2 page
@@ -42,6 +43,7 @@ const RequestService3 = () => {
       setEnteredDevice(passedData.enteredDevice)
       setEnteredDescription(passedData.enteredDescription)
       setEnteredMobile(passedData.enteredMobile)
+      setEnteredPhone(passedData.enteredPhone)
       setEnteredServiceKind(passedData.enteredServiceKind)
       setIsExpress(passedData.isExpress)
     }
@@ -62,6 +64,7 @@ const RequestService3 = () => {
         enteredDevice,
         enteredDescription,
         enteredMobile,
+        enteredPhone,
         enteredServiceKind,
         isExpress,
         postalCodeNum,
@@ -112,6 +115,7 @@ const RequestService3 = () => {
                   : ' آقای ' + enteredName}
               </h3>
               <h3 className=" text-lg">{enteredMobile}</h3>
+              <h3 className=" text-lg">{enteredPhone}</h3>
             </div>
 
             <div className="divider"></div>

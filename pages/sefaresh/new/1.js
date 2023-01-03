@@ -99,6 +99,7 @@ const RequestService1 = ({ data }) => {
             enteredDevice,
             enteredDescription,
             enteredMobile,
+            enteredPhone,
             enteredServiceKind,
             isExpress,
             address,
@@ -166,7 +167,7 @@ const RequestService1 = ({ data }) => {
                 <label className="input-group mt-3">
                   <input
                     type="number"
-                    onChange={(e) => setEnteredMobile(e.target.value)}
+                    onChange={(e) => setEnteredPhone(e.target.value)}
                     className="input input-bordered  text-center w-full"
                     value={
                       enteredMobile === 'تخصیص داده نشده' ? '' : enteredMobile

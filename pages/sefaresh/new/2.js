@@ -25,6 +25,7 @@ const RequestService2 = () => {
   const [enteredDevice, setEnteredDevice] = useState()
   const [enteredDescription, setEnteredDescription] = useState()
   const [enteredMobile, setEnteredMobile] = useState()
+  const [enteredPhone, setEnteredPhone] = useState()
   const [enteredServiceKind, setEnteredServiceKind] = useState()
   const [isExpress, setIsExpress] = useState()
 
@@ -41,6 +42,7 @@ const RequestService2 = () => {
       setEnteredDevice(passedData.enteredDevice)
       setEnteredDescription(passedData.enteredDescription)
       setEnteredMobile(passedData.enteredMobile)
+      setEnteredPhone(passedData.enteredPhone)
       setEnteredServiceKind(passedData.enteredServiceKind)
       setIsExpress(passedData.isExpress)
     }
@@ -82,6 +84,7 @@ const RequestService2 = () => {
             enteredDevice,
             enteredDescription,
             enteredMobile,
+            enteredPhone,
             enteredServiceKind,
             isExpress,
             postalCodeNum,
