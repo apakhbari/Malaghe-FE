@@ -143,9 +143,34 @@ const SignIn = ({ data }) => {
 }
 
 export async function getServerSideProps(context) {
-  const { data } = await axios.get(
-    'https://malaghe.darkube.app/api/v1/users/currentuser'
+  //const { data } = await axios.get(
+  //'https://malaghe.darkube.app/api/v1/users/currentuser')
+
+  const res = await axios.get(
+    'https://malaghe.darkube.app/api/v1/users/currentuser',
+    {
+      withCredentials: true,
+      headers: {
+        Cookie: req.headers.cookie,
+      },
+    }
   )
+  const data = await res.data
+
+  if (data) {
+    if (data.currentUser) {
+      if (data.currentUser.id) {
+        return {
+          redirect: {
+            destination: 'http://malaghe-fe.malaghe.svc:3000/',
+            permanent: false,
+          },
+        }
+      }
+    }
+  }
+
+  return { props: { data } }
 
   if (data) {
     if (data.currentUser) {
