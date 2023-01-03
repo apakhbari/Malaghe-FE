@@ -170,12 +170,12 @@ const RequestService1 = ({ data }) => {
                     onChange={(e) => setEnteredPhone(e.target.value)}
                     className="input input-bordered  text-center w-full"
                     value={
-                      enteredMobile === 'تخصیص داده نشده' ? '' : enteredMobile
+                      enteredPhone === 'تخصیص داده نشده' ? '' : enteredPhone
                     }
                     placeholder={
-                      enteredMobile === 'تخصیص داده نشده'
+                      enteredPhone === 'تخصیص داده نشده'
                         ? '۰۲۱۲۲۶۵۱۲۳۴'
-                        : enteredMobile
+                        : enteredPhone
                     }
                   />
                   <span className="text-center">شماره تلفن</span>
