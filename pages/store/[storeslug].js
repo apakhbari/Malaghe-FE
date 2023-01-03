@@ -174,13 +174,13 @@ function StoreSlug({ data }) {
               </div>
             </div>
 
-            <label className="input-group justify-center text-center">
+            <label className="input-group justify-center text-center mt-2">
               <input
                 type="number"
                 placeholder="1"
                 value={quantity}
                 onChange={(e) => setQuantity(e.target.value)}
-                className="input input-bordered"
+                className="input input-bordered input-primary"
               />
               <span className=" bg-primary">تعداد</span>
             </label>
