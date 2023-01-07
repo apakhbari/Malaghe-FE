@@ -21,10 +21,12 @@ const RequestService1 = ({ data }) => {
   console.log(data)
   console.log(router.pathname)
 
+  const [userID, setUserID] = useState()
   const [enteredName, setEnteredName] = useState()
   const [enteredGender, setEnteredGender] = useState()
   const [enteredDescription, setEnteredDescription] = useState()
   const [enteredMobile, setEnteredMobile] = useState()
+  const [enteredPhone, setEnteredPhone] = useState()
   const [isExpress, setIsExpress] = useState(false)
 
   var postalCode = 'تخصیص داده نشده'
@@ -42,9 +44,11 @@ const RequestService1 = ({ data }) => {
   if (data) {
     if (data.id) {
       useEffect(() => {
+        setUserID(data.id)
         setEnteredName(data.fiName + ' ' + data.laName)
         setEnteredGender(data.gender)
         setEnteredMobile(data.mobile)
+        setEnteredPhone(data.phone)
       }, [data.id])
     }
   }
@@ -66,16 +70,24 @@ const RequestService1 = ({ data }) => {
       })
       error = error + 'mobile'
     }
+    if (enteredPhone.length < 2) {
+      new Snackbar('خطا! شماره تلفن باید حداقل ۲ کاراکتر باشد', {
+        position: 'bottom-right',
+      })
+      error = error + 'phone'
+    }
 
     if (error.length === 0) {
       router.replace(
         {
           pathname: '/sefaresh/cart/2',
           query: {
+            userID,
             enteredName,
             enteredGender,
             enteredDescription,
             enteredMobile,
+            enteredPhone,
             isExpress,
             address,
             postalCode,
@@ -137,6 +149,19 @@ const RequestService1 = ({ data }) => {
                     className="input input-bordered  text-center w-full"
                   />
                   <span className="text-center">شماره موبایل</span>
+                </label>
+
+                <label className="input-group mt-3">
+                  <input
+                    type="number"
+                    onChange={(e) => setEnteredPhone(e.target.value)}
+                    className="input input-bordered  text-center w-full"
+                    value={
+                      enteredPhone === 'تخصیص داده نشده' ? '' : enteredPhone
+                    }
+                    placeholder={'۰۲۱۲۲۶۵۱۲۳۴'}
+                  />
+                  <span className="text-center">شماره تلفن</span>
                 </label>
 
                 <textarea

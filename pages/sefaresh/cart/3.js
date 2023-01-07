@@ -33,11 +33,13 @@ const RequestService3 = () => {
   })
 
   //for 1 page
+  const [userID, setUserID] = useState()
   const [enteredName, setEnteredName] = useState()
   const [enteredGender, setEnteredGender] = useState()
   const [enteredDevice, setEnteredDevice] = useState()
   const [enteredDescription, setEnteredDescription] = useState()
   const [enteredMobile, setEnteredMobile] = useState()
+  const [enteredPhone, setEnteredPhone] = useState()
   const [isExpress, setIsExpress] = useState()
   //for 2 page
   const [postalCodeNum, setPostalCodeNum] = useState()
@@ -55,11 +57,13 @@ const RequestService3 = () => {
       setPostalCodeNum(passedData.postalCodeNum)
       setAddressStr(passedData.addressStr)
 
+      setUserID(passedData.userID)
       setEnteredName(passedData.enteredName)
       setEnteredGender(passedData.enteredGender)
       setEnteredDevice(passedData.enteredDevice)
       setEnteredDescription(passedData.enteredDescription)
       setEnteredMobile(passedData.enteredMobile)
+      setEnteredPhone(passedData.enteredPhone)
       setIsExpress(passedData.isExpress)
     }
   }, [router.isReady])

@@ -76,7 +76,7 @@ const RequestService3 = () => {
         description: enteredDescription,
       },
     },
-    onSuccess: (response) => console.log(response), //router.push('/dashboard'),
+    onSuccess: (response) => router.push('/dashboard'),
   })
 
   const onSubmit = (e) => {
