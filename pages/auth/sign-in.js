@@ -61,8 +61,8 @@ const SignIn = ({ data }) => {
       error = error + 'mobile'
     }
 
-    if (password.length < 4) {
-      new Snackbar('خطا! رمز باید حداقل ۴ کاراکتر باشد', {
+    if (password.length < 8) {
+      new Snackbar('خطا! رمز باید حداقل ۸ کاراکتر باشد', {
         position: 'bottom-right',
       })
       error = error + 'password'
