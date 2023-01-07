@@ -13,6 +13,7 @@ const RequestService3 = () => {
   const router = useRouter()
 
   //for 1 page
+  const [userID, setUserID] = useState()
   const [enteredName, setEnteredName] = useState()
   const [enteredGender, setEnteredGender] = useState()
   const [enteredDevice, setEnteredDevice] = useState()
@@ -38,6 +39,7 @@ const RequestService3 = () => {
       setPostalCodeNum(passedData.postalCodeNum)
       setAddressStr(passedData.addressStr)
 
+      setUserID(passedData.userID)
       setEnteredName(passedData.enteredName)
       setEnteredGender(passedData.enteredGender)
       setEnteredDevice(passedData.enteredDevice)
@@ -49,29 +51,39 @@ const RequestService3 = () => {
     }
   }, [router.isReady])
 
+  const { doRequest, errors } = useRequest({
+    url: '/api/v1/orders',
+    method: 'post',
+    body: {
+      userId: userID,
+      userName: enteredName,
+      gender: enteredGender,
+      mobile: enteredMobile,
+      phone: enteredPhone,
+      postalCode: postalCodeNum,
+      address: addressStr,
+
+      paymentKind: enteredPaymentKind,
+      isExpress: isExpress,
+      isService: 1,
+      serviceKind: enteredServiceKind,
+
+      products: {
+        title: enteredDevice,
+        description: enteredDescription,
+      },
+    },
+    onSuccess: (response) => console.log(response), //router.push('/dashboard'),
+  })
+
   const onSubmit = (e) => {
     e.preventDefault()
 
-    //new Snackbar('... لطفا منتظر بمانید', {
-    //position: 'bottom-right',
-    //})
-
-    router.replace({
-      pathname: '/developing',
-      query: {
-        enteredName,
-        enteredGender,
-        enteredDevice,
-        enteredDescription,
-        enteredMobile,
-        enteredPhone,
-        enteredServiceKind,
-        isExpress,
-        postalCodeNum,
-        addressStr,
-        enteredPaymentKind,
-      },
+    new Snackbar('... لطفا منتظر بمانید', {
+      position: 'bottom-right',
     })
+
+    doRequest()
   }
 
   return (

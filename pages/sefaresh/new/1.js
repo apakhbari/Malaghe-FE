@@ -20,6 +20,7 @@ const RequestService1 = ({ data }) => {
 
   console.log(data)
 
+  const [userID, setUserID] = useState()
   const [enteredName, setEnteredName] = useState()
   const [enteredGender, setEnteredGender] = useState()
   const [enteredDevice, setEnteredDevice] = useState('')
@@ -44,6 +45,7 @@ const RequestService1 = ({ data }) => {
   if (data) {
     if (data.id) {
       useEffect(() => {
+        setUserID(data.id)
         setEnteredName(data.fiName + ' ' + data.laName)
         setEnteredGender(data.gender)
         setEnteredMobile(data.mobile)
@@ -94,6 +96,7 @@ const RequestService1 = ({ data }) => {
         {
           pathname: '/sefaresh/new/2',
           query: {
+            userID,
             enteredName,
             enteredGender,
             enteredDevice,
