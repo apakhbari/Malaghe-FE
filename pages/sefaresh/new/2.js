@@ -157,7 +157,7 @@ const RequestService2 = () => {
                   }
                   placeholder={
                     postalCodeNum === 'تخصیص داده نشده'
-                      ? '۱۲۳۴۵۶۷۸'
+                      ? '123456'
                       : postalCodeNum
                   }
                   className="input input-bordered  text-center w-full"
