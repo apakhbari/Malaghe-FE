@@ -6,6 +6,8 @@ import Head from 'next/head'
 import { Fragment } from 'react'
 import { CLIENT_NAME_FA, APP_URL } from '../../envConfig'
 
+import RemoveUndefinedsToPleaseNext from '../../hooks/removeUndefineds'
+
 import axios from 'axios'
 
 function List({ data }) {
@@ -83,7 +85,7 @@ function List({ data }) {
 }
 
 export async function getServerSideProps(context) {
-  var id = context.query.id
+  const { id } = context.query
 
   console.log(id)
 
