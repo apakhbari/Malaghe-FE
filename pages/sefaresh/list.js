@@ -1,12 +1,10 @@
 import FooterNotMain from '../../components/layout/footernotmain'
 import Navbar from '../../components/layout/navbar/navbar'
 
-import { useRouter, useState } from 'next/router'
+import { useRouter } from 'next/router'
 import Head from 'next/head'
 import { Fragment } from 'react'
 import { CLIENT_NAME_FA, APP_URL } from '../../envConfig'
-
-import { useEffect } from 'react'
 
 import axios from 'axios'
 
@@ -14,17 +12,6 @@ function List({ data }) {
   const router = useRouter()
 
   console.log(data)
-
-  const [enteredMobile, setEnteredMobile] = useState()
-
-  useEffect(() => {
-    if (router.isReady) {
-      // Code using query
-      var passedData = router.query
-
-      setEnteredMobile(passedData.id)
-    }
-  }, [router.isReady])
 
   return (
     <Fragment>
@@ -35,7 +22,7 @@ function List({ data }) {
       <div className="h-screen bg-neutral p-4">
         <Navbar />
         <h3 className=" mt-24 text-neutral-content text-2xl" dir="rtl">
-          {enteredMobile} - لیستی از تمامی سفارش‌ها، خدمات و تعمیرات
+          - لیستی از تمامی سفارش‌ها، خدمات و تعمیرات
         </h3>
         <table className="table table-zebra w-full text-center overflow-scroll overscroll-contain mt-3">
           <thead>
