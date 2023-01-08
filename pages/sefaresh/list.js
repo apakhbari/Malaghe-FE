@@ -26,10 +26,12 @@ function List({ data }) {
 
   console.log(data)
 
-  const handleClick = (id) => {
+  const handleClick = (e) => {
     e.preventDefault()
 
-    console.log(id)
+    const value1 = e.currentTarget.getAttribute('data-value1')
+
+    console.log(value1)
 
     {
       /* 
@@ -77,7 +79,8 @@ function List({ data }) {
                 <Fragment>
                   <tr
                     className="group hover:scale-105 hover:shadow-xl hover:drop-shadow-xl cursor-pointer"
-                    onClick={handleClick(item.id)}
+                    onClick={handleClick}
+                    data-value1={item.id}
                   >
                     {item.isService ? (
                       <td className=" group-hover:text-primary-focus">
@@ -148,7 +151,9 @@ function List({ data }) {
             </tbody>
           </table>
         ) : (
-          <h3>رکوردی یافت نشد</h3>
+          <p3 className="text-neutral-content text-2xl" dir="rtl">
+            رکوردی یافت نشد
+          </p3>
         )}
         <FooterNotMain />
       </div>
