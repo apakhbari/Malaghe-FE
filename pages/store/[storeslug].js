@@ -88,7 +88,7 @@ function StoreSlug({ data }) {
 
           <div className="flex flex-col">
             <h3
-              className="mt-5 text-2xl font-extrabold text-neutral-content p-4 pb-0 items-start mx-4"
+              className="mt-5 text-2xl font-extrabold text-neutral-content p-4 pb-0 items-start mx-4 border-t-4 border-accent"
               dir="rtl"
             >
               {data.title}
