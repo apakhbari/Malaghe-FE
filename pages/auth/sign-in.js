@@ -21,14 +21,6 @@ const SignIn = ({ data }) => {
   const [mobile, setMobile] = useState('')
   const [password, setPassword] = useState('')
 
-  if (userCtx.totalUserCredential === 1) {
-    data = userCtx.userCredential[0].decoded
-
-    console.log(data)
-
-    //router.push('/auth/signin')
-  }
-
   const reqWasSuccess = (data) => {
     new Snackbar('عملیات موفقیت آمیز بود', {
       position: 'bottom-right',
