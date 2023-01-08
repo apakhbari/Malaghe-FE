@@ -25,6 +25,8 @@ import axios from 'axios'
 import { CLIENT_NAME_FA, APP_URL } from '../../envConfig'
 import MobileDeveloping from '../../components/layout/mobileDeveloping'
 
+import Snackbar from 'awesome-snackbar'
+
 var slugify = require('slugify-persian')
 
 function Dashboard({ data }) {

@@ -23,6 +23,8 @@ import NavBarTheme from '../../components/layout/navbar/navbarhelper/navbartheme
 
 import { CLIENT_NAME_FA, APP_URL } from '../../envConfig'
 
+import Snackbar from 'awesome-snackbar'
+
 import axios from 'axios'
 
 var slugify = require('slugify-persian')

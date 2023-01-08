@@ -13,6 +13,8 @@ import { CLIENT_NAME_FA } from '../../envConfig'
 
 import GroupDigital from '../../hooks/groupDigital'
 
+import Snackbar from 'awesome-snackbar'
+
 const NewStore = () => {
   const router = useRouter()
 
