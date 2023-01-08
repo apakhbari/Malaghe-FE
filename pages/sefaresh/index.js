@@ -33,7 +33,13 @@ function Sefaresh() {
     }
 
     if (error.length === 0) {
-      router.push('/sefaresh/list')
+      router.push(
+        {
+          pathname: '/sefaresh/list',
+          query: { id: enteredMobile },
+        },
+        '/sefaresh/list'
+      )
     }
   }
 
