@@ -8,10 +8,8 @@ import { CLIENT_NAME_FA, APP_URL } from '../../envConfig'
 
 import axios from 'axios'
 
-async function List() {
+function List({ data }) {
   const router = useRouter()
-
-  const { data } = await axios.get(`${APP_URL}/api/v1/orders/list/09358182885`)
 
   console.log(data)
 
@@ -84,8 +82,6 @@ async function List() {
   )
 }
 
-{
-  /* 
 export async function getServerSideProps(context) {
   var id = context.query.id
 
@@ -93,8 +89,6 @@ export async function getServerSideProps(context) {
   return {
     props: RemoveUndefinedsToPleaseNext({ data }),
   }
-}
-*/
 }
 
 export default List
