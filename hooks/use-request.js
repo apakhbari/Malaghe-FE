@@ -3,6 +3,8 @@ import { useState } from 'react'
 
 import { APP_URL } from '../envConfig'
 
+import Snackbar from 'awesome-snackbar'
+
 export default ({ url, method, body, onSuccess }) => {
   const [errors, setErrors] = useState()
 
@@ -27,18 +29,15 @@ export default ({ url, method, body, onSuccess }) => {
 
       return response.data
     } catch (err) {
-      setErrors(
-        console.log(err)
-        /*<div className="alert alert-danger">
-          <h4>Ooops....</h4>
-          <ul className="my-0">
-            {err.response.data.errors.map((err) => (
-              <li key={err.message}>{err.message}</li>
-            ))}
-          </ul>
-        </div>
-            */
-      )
+      setErrors(console.log(err))
+      {
+        err.response.data.errors.map(
+          (err) =>
+            new Snackbar('Error! ' + err.message, {
+              position: 'bottom-right',
+            })
+        )
+      }
     }
   }
 

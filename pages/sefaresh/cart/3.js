@@ -11,6 +11,8 @@ import GroupDigital from '../../../hooks/groupDigital'
 
 import { CLIENT_NAME_FA } from '../../../envConfig'
 
+import Snackbar from 'awesome-snackbar'
+
 const RequestService3 = () => {
   const router = useRouter()
 
@@ -71,9 +73,9 @@ const RequestService3 = () => {
   const onSubmit = (e) => {
     e.preventDefault()
 
-    //new Snackbar('... لطفا منتظر بمانید', {
-    //position: 'bottom-right',
-    //})
+    new Snackbar('... لطفا منتظر بمانید', {
+      position: 'bottom-right',
+    })
 
     router.replace({
       pathname: '/developing',

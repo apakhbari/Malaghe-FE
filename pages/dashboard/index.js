@@ -35,11 +35,18 @@ function Dashboard({ data }) {
   console.log(data)
   console.log('accountId:' + `${data.currentUser.id}`)
 
+  const onSignOutHandler = (data) => {
+    new Snackbar('خدا نگهدار', {
+      position: 'bottom-right',
+    })
+    router.push('/')
+  }
+
   const { doRequest } = useRequest({
     url: '/api/v1/users/signout',
     method: 'post',
     body: {},
-    onSuccess: () => router.push('/'),
+    onSuccess: (response) => onSignOutHandler(response),
   })
 
   useEffect(() => {

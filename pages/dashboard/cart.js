@@ -42,11 +42,18 @@ function CartPage({ data }) {
     // 👆 false parameter is required for react project
   }, [])
 
+  const onSignOutHandler = (data) => {
+    new Snackbar('خدا نگهدار', {
+      position: 'bottom-right',
+    })
+    router.push('/')
+  }
+
   const { doRequest: doSignOutRequest } = useRequest({
     url: '/api/v1/users/signout',
     method: 'post',
     body: {},
-    onSuccess: () => router.push('/'),
+    onSuccess: (response) => onSignOutHandler(response),
   })
 
   const onLogOutClick = (e) => {

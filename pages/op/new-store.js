@@ -34,6 +34,13 @@ const NewStore = () => {
   const [strMadeIn, setStrMadeIn] = useState()
   const [enumGoodKind, setEnumGoodKind] = useState()
 
+  const reqWasSuccess = (data) => {
+    new Snackbar('عملیات موفقیت آمیز بود', {
+      position: 'bottom-right',
+    })
+    router.push('/store')
+  }
+
   const { doRequest, errors } = useRequest({
     url: '/api/v1/store',
 
@@ -59,7 +66,7 @@ const NewStore = () => {
       magLink: strMagLink,
       createdBy: '63b40e8a137fab00190dc0c6',
     },
-    onSuccess: () => router.push('/store'),
+    onSuccess: (response) => reqWasSuccess(response),
   })
 
   const onSubmit = async (event) => {

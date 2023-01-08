@@ -82,6 +82,13 @@ function Account({ data }) {
     })
   }
 
+  const reqWasSuccess = (data) => {
+    new Snackbar('عملیات موفقیت آمیز بود', {
+      position: 'bottom-right',
+    })
+    router.push('/dashboard')
+  }
+
   const { doRequest, errors } = useRequest({
     url: `/api/v1/users/${data.id}`,
     method: 'put',
@@ -94,14 +101,21 @@ function Account({ data }) {
       phone: phoneNum,
       locations: { address: addressStr, postalCode: postalCodeNum },
     },
-    onSuccess: () => router.push('/dashboard'),
+    onSuccess: (response) => reqWasSuccess(response),
   })
+
+  const onSignOutHandler = (data) => {
+    new Snackbar('خدا نگهدار', {
+      position: 'bottom-right',
+    })
+    router.push('/')
+  }
 
   const { doRequest: doSignOutRequest } = useRequest({
     url: '/api/v1/users/signout',
     method: 'post',
     body: {},
-    onSuccess: () => router.push('/'),
+    onSuccess: (response) => onSignOutHandler(response),
   })
 
   const onLogOutClick = (e) => {
@@ -113,9 +127,9 @@ function Account({ data }) {
   const handleSubmit = async (event) => {
     event.preventDefault()
 
-    //new Snackbar('... لطفا منتظر بمانید', {
-    //position: 'bottom-right',
-    //})
+    new Snackbar('... لطفا منتظر بمانید', {
+      position: 'bottom-right',
+    })
 
     setEditing(true)
     doRequest()

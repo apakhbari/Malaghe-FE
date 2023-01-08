@@ -33,10 +33,11 @@ const SignUp = ({ data }) => {
 
   console.log(data)
 
-  const onSuccessHandler = (data) => {
-    //cookieCutter.set('currentUser', data)
-    //cookieCutter.set('jwt', data)
-    console.log(data)
+  const reqWasSuccess = (data) => {
+    new Snackbar('عملیات موفقیت آمیز بود', {
+      position: 'bottom-right',
+    })
+    router.push('/dashboard')
   }
 
   const { doRequest, errors } = useRequest({
@@ -49,7 +50,7 @@ const SignUp = ({ data }) => {
       mobile,
       password,
     },
-    onSuccess: (response) => router.push('/dashboard'),
+    onSuccess: (response) => reqWasSuccess(response),
   })
 
   const handleClick = (e) => {
@@ -97,9 +98,9 @@ const SignUp = ({ data }) => {
     }
 
     if (error.length === 0) {
-      //new Snackbar('... لطفا منتظر بمانید', {
-      //position: 'bottom-right',
-      //})
+      new Snackbar('... لطفا منتظر بمانید', {
+        position: 'bottom-right',
+      })
 
       doRequest()
     }

@@ -54,8 +54,15 @@ const RequestService3 = () => {
     }
   }, [router.isReady])
 
+  const reqWasSuccess = (data) => {
+    new Snackbar('عملیات موفقیت آمیز بود', {
+      position: 'bottom-right',
+    })
+    router.push('/dashboard')
+  }
+
   const { doRequest, errors } = useRequest({
-    url: '/api/v1/orders',
+    url: '/api/v1/orders/service',
     method: 'post',
     body: {
       userId: userID,
@@ -68,7 +75,6 @@ const RequestService3 = () => {
 
       paymentKind: enteredPaymentKind,
       isExpress: isExpress,
-      isService: 1,
       serviceKind: enteredServiceKind,
 
       products: {
@@ -76,7 +82,7 @@ const RequestService3 = () => {
         description: enteredDescription,
       },
     },
-    onSuccess: (response) => router.push('/dashboard'),
+    onSuccess: (response) => reqWasSuccess(response),
   })
 
   const onSubmit = (e) => {

@@ -32,6 +32,13 @@ const SignIn = ({ data }) => {
     //router.push('/auth/signin')
   }
 
+  const reqWasSuccess = (data) => {
+    new Snackbar('عملیات موفقیت آمیز بود', {
+      position: 'bottom-right',
+    })
+    router.push('/dashboard')
+  }
+
   var error
 
   const { doRequest, errors } = useRequest({
@@ -41,7 +48,7 @@ const SignIn = ({ data }) => {
       mobile,
       password,
     },
-    onSuccess: (response) => router.push('/dashboard'),
+    onSuccess: (response) => reqWasSuccess(response),
   })
 
   const handleClick = (e) => {
@@ -69,9 +76,9 @@ const SignIn = ({ data }) => {
     }
 
     if (error.length === 0) {
-      //new Snackbar('... لطفا منتظر بمانید', {
-      //position: 'bottom-right',
-      //})
+      new Snackbar('... لطفا منتظر بمانید', {
+        position: 'bottom-right',
+      })
 
       doRequest()
     }
