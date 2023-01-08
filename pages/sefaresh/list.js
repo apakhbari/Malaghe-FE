@@ -36,9 +36,14 @@ function List({ data }) {
         <Navbar />
 
         <h3 className=" mt-24 text-neutral-content text-2xl" dir="rtl">
-          - لیستی از تمامی سفارش‌ها، خدمات و تعمیرات
+          لیستی از تمامی سفارش‌ها، خدمات و تعمیرات
         </h3>
-        {data ? (
+        {data[0].mobile && (
+          <p className=" text-neutral-content text-xl" dir="rtl">
+            data[0].mobile
+          </p>
+        )}
+        {data.length > 0 ? (
           <table className="table table-zebra w-full text-center overflow-scroll overscroll-contain mt-3">
             <thead>
               <tr>
@@ -52,7 +57,7 @@ function List({ data }) {
               </tr>
             </thead>
             <tbody>
-              {data.data.map((item, index) => (
+              {data.map((item, index) => (
                 <Fragment>
                   key={item.id}
                   id={item.id}
