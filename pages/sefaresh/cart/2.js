@@ -6,7 +6,6 @@ import Head from 'next/head'
 import Navbar from '../../../components/layout/navbar/navbar'
 import IconGeoLocation from '../../../assets/icons/svg/icongeolocation'
 import CardComponent from '../../../components/layout/card'
-import FooterNotMain from '../../../components/layout/footernotmain'
 
 import { CLIENT_NAME_FA } from '../../../envConfig'
 
@@ -178,7 +177,6 @@ const RequestService2 = () => {
             </div>
           </form>
         </CardComponent>
-        <FooterNotMain />
       </div>
     </Fragment>
   )

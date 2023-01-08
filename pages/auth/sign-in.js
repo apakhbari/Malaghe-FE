@@ -15,6 +15,8 @@ import Snackbar from 'awesome-snackbar'
 import axios from 'axios'
 import { CLIENT_NAME_FA, APP_URL } from '../../envConfig'
 
+import FooterNotMain from '../../components/layout/footernotmain'
+
 const SignIn = ({ data }) => {
   const router = useRouter()
 
@@ -133,6 +135,7 @@ const SignIn = ({ data }) => {
             </div>
           </form>
         </CardComponent>
+        <FooterNotMain />
       </div>
     </Fragment>
   )

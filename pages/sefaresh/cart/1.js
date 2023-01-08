@@ -8,7 +8,6 @@ import RemoveUndefinedsToPleaseNext from '../../../hooks/removeUndefineds'
 
 import Navbar from '../../../components/layout/navbar/navbar'
 import CardComponent from '../../../components/layout/card'
-import FooterNotMain from '../../../components/layout/footernotmain'
 
 import Snackbar from 'awesome-snackbar'
 import { CLIENT_NAME_FA, APP_URL } from '../../../envConfig'
@@ -222,7 +221,6 @@ const RequestService1 = ({ data }) => {
             </div>
           </form>
         </CardComponent>
-        <FooterNotMain />
       </div>
     </Fragment>
   )

@@ -5,7 +5,6 @@ import Head from 'next/head'
 
 import Navbar from '../../../components/layout/navbar/navbar'
 import CardComponent from '../../../components/layout/card'
-import FooterNotMain from '../../../components/layout/footernotmain'
 import CartsContext from '../../../store/cart-context'
 import GroupDigital from '../../../hooks/groupDigital'
 
@@ -220,7 +219,6 @@ const RequestService3 = () => {
             </div>
           </form>
         </CardComponent>
-        <FooterNotMain />
       </div>
     </Fragment>
   )

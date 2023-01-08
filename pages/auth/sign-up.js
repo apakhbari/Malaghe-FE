@@ -17,6 +17,8 @@ import { CLIENT_NAME_FA, APP_URL } from '../../envConfig'
 
 import cookieCutter from 'cookie-cutter'
 
+import FooterNotMain from '../../components/layout/footernotmain'
+
 import axios from 'axios'
 
 const SignUp = ({ data }) => {
@@ -201,6 +203,7 @@ const SignUp = ({ data }) => {
             </div>
           </form>
         </CardComponent>
+        <FooterNotMain />
       </div>
     </Fragment>
   )
