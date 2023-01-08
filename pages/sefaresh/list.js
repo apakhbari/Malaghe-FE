@@ -85,6 +85,8 @@ function List({ data }) {
 export async function getServerSideProps(context) {
   var id = context.query.id
 
+  console.log(id)
+
   const { data } = await axios.get(`${APP_URL}/api/v1/orders/list/${id}`)
   return {
     props: RemoveUndefinedsToPleaseNext({ data }),
