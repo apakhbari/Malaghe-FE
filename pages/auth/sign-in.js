@@ -67,7 +67,7 @@ const SignIn = ({ data }) => {
     }
 
     if (error.length === 0) {
-      new Snackbar('... لطفا منتظر بمانید', {
+      new Snackbar('لطفاً شکیبا باشید', {
         position: 'bottom-right',
       })
 

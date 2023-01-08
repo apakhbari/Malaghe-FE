@@ -18,7 +18,8 @@ function ContactUs() {
   const onSubmit = (e) => {
     e.preventDefault()
 
-    //new Snackbar('... لطفا منتظر بمانید', {
+    //      new Snackbar('لطفاً شکیبا باشید', {
+
     //position: 'bottom-right',
     //})
 

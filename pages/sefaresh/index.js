@@ -33,6 +33,10 @@ function Sefaresh() {
     }
 
     if (error.length === 0) {
+      new Snackbar('لطفاً شکیبا باشید', {
+        position: 'bottom-right',
+      })
+
       router.push(
         {
           pathname: '/sefaresh/list',

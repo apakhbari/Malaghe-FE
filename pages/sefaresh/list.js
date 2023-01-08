@@ -26,6 +26,26 @@ function List({ data }) {
 
   console.log(data)
 
+  const handleClick = (id) => {
+    e.preventDefault()
+
+    console.log(id)
+
+    {
+      /* 
+    var slug = slugify(props.title)
+
+    router.push(
+      {
+        pathname: `/store/${slug}`,
+        query: { id: props.id },
+      },
+      `/store/${slug}`
+    )
+    */
+    }
+  }
+
   return (
     <Fragment>
       <Head>
@@ -38,11 +58,7 @@ function List({ data }) {
         <h3 className=" mt-24 text-neutral-content text-2xl" dir="rtl">
           لیستی از تمامی سفارش‌ها، خدمات و تعمیرات
         </h3>
-        {data[0].mobile && (
-          <p className=" text-neutral-content text-xl" dir="rtl">
-            data[0].mobile
-          </p>
-        )}
+
         {data.length > 0 ? (
           <table className="table table-zebra w-full text-center overflow-scroll overscroll-contain mt-3">
             <thead>
@@ -59,12 +75,13 @@ function List({ data }) {
             <tbody>
               {data.map((item, index) => (
                 <Fragment>
-                  key={item.id}
-                  id={item.id}
-                  <tr className="group hover:scale-105 hover:shadow-xl hover:drop-shadow-xl cursor-pointer">
+                  <tr
+                    className="group hover:scale-105 hover:shadow-xl hover:drop-shadow-xl cursor-pointer"
+                    onClick={handleClick(item.id)}
+                  >
                     {item.isService ? (
                       <td className=" group-hover:text-primary-focus">
-                        item.serviceKind
+                        {item.serviceKind}
                       </td>
                     ) : (
                       <td className=" group-hover:text-primary-focus">خرید</td>
@@ -87,12 +104,14 @@ function List({ data }) {
                     {item.isDone ? (
                       <td className=" group-hover:text-primary-focus">✔</td>
                     ) : (
-                      <td className=" group-hover:text-primary-focus"></td>
+                      <td className=" group-hover:text-primary-focus">-</td>
                     )}
                     <td className=" group-hover:text-primary-focus">
                       {item.createdAt}
                     </td>
-                    <th className=" group-hover:text-primary-focus">{index}</th>
+                    <th className=" group-hover:text-primary-focus">
+                      {index + 1}
+                    </th>
                   </tr>
                 </Fragment>
               ))}
