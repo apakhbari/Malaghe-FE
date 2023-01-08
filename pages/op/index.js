@@ -21,8 +21,6 @@ import NotificationDropDown from '../../components/layout/store/notificationdrop
 import CartsContext from '../../store/cart-context'
 import NavBarTheme from '../../components/layout/navbar/navbarhelper/navbartheme'
 
-import UserCredentialsContext from '../../store/user-context'
-
 import { CLIENT_NAME_FA, APP_URL } from '../../envConfig'
 
 import axios from 'axios'
@@ -33,7 +31,6 @@ function Dashboard() {
   const router = useRouter()
 
   const cartsCtx = useContext(CartsContext)
-  const userCtx = useContext(UserCredentialsContext)
 
   const onSignOutHandler = (data) => {
     new Snackbar('خدا نگهدار', {

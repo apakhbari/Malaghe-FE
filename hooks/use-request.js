@@ -30,14 +30,12 @@ export default ({ url, method, body, onSuccess }) => {
       return response.data
     } catch (err) {
       setErrors(console.log(err))
-      {
-        err.map(
-          (err) =>
-            new Snackbar('Error! ' + err.message, {
-              position: 'bottom-right',
-            })
-        )
-      }
+      new Snackbar('خطا! لطفا مشکل پیش آمده را به به تیم فنی گزارش دهید', {
+        position: 'bottom-right',
+      })
+      new Snackbar('Error! ' + err.message, {
+        position: 'bottom-right',
+      })
     }
   }
 

@@ -12,8 +12,6 @@ import CardComponent from '../../components/layout/card'
 
 import Snackbar from 'awesome-snackbar'
 
-import UserCredentialsContext from '../../store/user-context'
-
 import axios from 'axios'
 import { CLIENT_NAME_FA, APP_URL } from '../../envConfig'
 
@@ -22,7 +20,6 @@ const SignIn = ({ data }) => {
 
   const [mobile, setMobile] = useState('')
   const [password, setPassword] = useState('')
-  const userCtx = useContext(UserCredentialsContext)
 
   if (userCtx.totalUserCredential === 1) {
     data = userCtx.userCredential[0].decoded

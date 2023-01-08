@@ -11,7 +11,6 @@ import CardComponent from '../../components/layout/card'
 
 import Snackbar from 'awesome-snackbar'
 
-import UserCredentialsContext from '../../store/user-context'
 import ParseJwt from '../../hooks/jwtDecode'
 
 import { CLIENT_NAME_FA, APP_URL } from '../../envConfig'
@@ -22,8 +21,6 @@ import axios from 'axios'
 
 const SignUp = ({ data }) => {
   const router = useRouter()
-
-  const userCtx = useContext(UserCredentialsContext)
 
   const [fiName, setFiName] = useState('')
   const [laName, setLaName] = useState('')
