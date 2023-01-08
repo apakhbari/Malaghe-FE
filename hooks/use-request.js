@@ -31,7 +31,7 @@ export default ({ url, method, body, onSuccess }) => {
     } catch (err) {
       setErrors(console.log(err))
       {
-        err.response.data.errors.map(
+        err.map(
           (err) =>
             new Snackbar('Error! ' + err.message, {
               position: 'bottom-right',
