@@ -8,7 +8,7 @@ import { CLIENT_NAME_FA, APP_URL } from '../../envConfig'
 
 import axios from 'axios'
 
-async function List({ data }) {
+async function List() {
   const router = useRouter()
 
   const { data } = await axios.get(`${APP_URL}/api/v1/orders/list/09358182885`)
