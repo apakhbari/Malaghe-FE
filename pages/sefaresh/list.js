@@ -8,6 +8,8 @@ import { CLIENT_NAME_FA } from '../../envConfig'
 
 import { useEffect } from 'react'
 
+import axios from 'axios'
+
 function List({ data }) {
   const router = useRouter()
 
