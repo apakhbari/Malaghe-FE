@@ -4,7 +4,7 @@ import Navbar from '../../components/layout/navbar/navbar'
 import { useRouter, useState } from 'next/router'
 import Head from 'next/head'
 import { Fragment } from 'react'
-import { CLIENT_NAME_FA } from '../../envConfig'
+import { CLIENT_NAME_FA, APP_URL } from '../../envConfig'
 
 import { useEffect } from 'react'
 
