@@ -121,7 +121,7 @@ function StoreSlug({ data }) {
           </div>
         </div>
 
-        <div className="flex flex-col justify-around mt-5 bg-base-100">
+        <div className="flex flex-col justify-around bg-base-100">
           <div className="flex flex-col">
             <div
               className="stats stats-vertical bg-base-content text-base-100  justify-center lg:stats-horizontal shadow-2xl m-3"
