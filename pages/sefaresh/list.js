@@ -10,6 +10,8 @@ import RemoveUndefinedsToPleaseNext from '../../hooks/removeUndefineds'
 
 import axios from 'axios'
 
+import Snackbar from 'awesome-snackbar'
+
 function List({ data }) {
   const router = useRouter()
 
@@ -29,23 +31,20 @@ function List({ data }) {
   const handleClick = (e) => {
     e.preventDefault()
 
-    const value1 = e.currentTarget.getAttribute('data-value1')
+    new Snackbar('لطفاً شکیبا باشید', {
+      position: 'bottom-right',
+    })
 
-    console.log(value1)
+    const id = e.currentTarget.getAttribute('data-value1')
+    const code = e.currentTarget.getAttribute('data-value2')
 
-    {
-      /* 
-    var slug = slugify(props.title)
-
-    router.push(
+    router.replace(
       {
-        pathname: `/store/${slug}`,
-        query: { id: props.id },
+        pathname: `/store/${code}`,
+        query: { id: id },
       },
-      `/store/${slug}`
+      `/store/${code}`
     )
-    */
-    }
   }
 
   return (
@@ -81,6 +80,7 @@ function List({ data }) {
                     className="group hover:scale-105 hover:shadow-xl hover:drop-shadow-xl cursor-pointer"
                     onClick={handleClick}
                     data-value1={item.id}
+                    data-value2={item.code}
                   >
                     {item.isService ? (
                       <td className=" group-hover:text-primary-focus">
@@ -122,7 +122,7 @@ function List({ data }) {
           </table>
         ) : (
           <p3
-            className="text-neutral-content text-2xl text-center mt-24"
+            className="text-neutral-content text-2xl text-center m-auto"
             dir="rtl"
           >
             رکوردی یافت نشد
