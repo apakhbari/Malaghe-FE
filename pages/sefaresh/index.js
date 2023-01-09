@@ -78,7 +78,7 @@ function Sefaresh() {
               <div className="mx-auto mb-4">
                 <label className="input-group">
                   <input
-                    type="text"
+                    type="number"
                     value={enteredMobile}
                     onChange={(e) => setEnteredMobile(e.target.value)}
                     placeholder="09121802250"

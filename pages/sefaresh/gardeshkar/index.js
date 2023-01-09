@@ -66,7 +66,7 @@ function GardeshKar() {
               <div className="mx-auto mb-4">
                 <label className="input-group">
                   <input
-                    type="text"
+                    type="number"
                     value={enteredId}
                     onChange={(e) => setEnteredId(e.target.value)}
                     placeholder="12345"

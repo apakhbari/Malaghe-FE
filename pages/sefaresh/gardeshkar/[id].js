@@ -53,7 +53,7 @@ function SefareshID({ data }) {
 export async function getServerSideProps(context) {
   const { id } = context.query
 
-  const { data } = await axios.get(`${APP_URL}/api/v1/orders/${id}`)
+  const { data } = await axios.get(`${APP_URL}/api/v1/orders/workflow/${id}`)
   return {
     props: RemoveUndefinedsToPleaseNext({ data }),
   }

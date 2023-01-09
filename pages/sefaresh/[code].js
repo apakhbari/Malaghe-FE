@@ -11,6 +11,8 @@ import { CLIENT_NAME_FA, APP_URL } from '../../envConfig'
 
 import RemoveUndefinedsToPleaseNext from '../../hooks/removeUndefineds'
 
+import Snackbar from 'awesome-snackbar'
+
 import { useRouter } from 'next/router'
 
 const OrderCode = ({ data }) => {
@@ -20,6 +22,10 @@ const OrderCode = ({ data }) => {
 
   const onWorkFlowClick = (e) => {
     e.preventDefault()
+
+    new Snackbar('لطفاً شکیبا باشید', {
+      position: 'bottom-right',
+    })
 
     router.replace(
       {
@@ -142,9 +148,7 @@ const OrderCode = ({ data }) => {
                 <div>
                   <p>{index + 1}</p>
                   <p>{item.title}</p>
-                  <p className="border-b-4  border-accent">
-                    {item.description}
-                  </p>
+                  <p className="border-b  border-accent">{item.description}</p>
                 </div>
               ))}
             </div>
