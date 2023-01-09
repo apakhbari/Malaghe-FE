@@ -51,7 +51,11 @@ function SefareshID({ data }) {
 }
 
 export async function getServerSideProps(context) {
+  console.log(context.query)
+
   const { id } = context.query
+
+  console.log(id)
 
   const { data } = await axios.get(`${APP_URL}/api/v1/orders/workflow/${id}`)
   return {

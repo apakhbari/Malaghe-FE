@@ -33,7 +33,17 @@ function GardeshKar() {
     }
 
     if (error.length === 0) {
-      router.push('/sefaresh/gardeshkar/workflow1')
+      new Snackbar('لطفاً شکیبا باشید', {
+        position: 'bottom-right',
+      })
+
+      router.replace(
+        {
+          pathname: `/sefaresh/gardeshkar/${data.code}`,
+          query: { id: data.id },
+        },
+        `/sefaresh/gardeshkar/${data.code}`
+      )
     }
   }
 
