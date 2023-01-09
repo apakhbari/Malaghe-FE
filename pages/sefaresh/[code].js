@@ -33,10 +33,10 @@ const OrderCode = ({ data }) => {
 
     router.replace(
       {
-        pathname: `/sefaresh/gardeshkar/${data.code}`,
+        pathname: `/sefaresh/gardeshkar/${enteredId}`,
         query: { id: enteredId },
       },
-      `/sefaresh/gardeshkar/${data.code}`
+      `/sefaresh/gardeshkar/${enteredId}`
     )
   }
 
