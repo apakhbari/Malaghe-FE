@@ -24,12 +24,13 @@ const RequestService3 = () => {
       if (item.discountKind === 'درصد') {
         overAllPrice =
           overAllPrice +
-          Math.round(((100 - item.discountedPrice) * item.price) / 100)
+          Math.round(((100 - item.discountedPrice) * item.price) / 100) *
+            item.quantity
       } else {
-        overAllPrice = overAllPrice + item.discountedPrice
+        overAllPrice = overAllPrice + item.discountedPrice * item.quantity
       }
     } else {
-      overAllPrice = overAllPrice + item.price
+      overAllPrice = overAllPrice + item.price * item.quantity
     }
   })
 

@@ -34,7 +34,7 @@ function StoreSlug({ data }) {
 
   const clickOnAddCart = (e) => {
     if (cartsCtx.itemIsInCart(data.id)) {
-      cartsCtx.removeCart[data.id]
+      cartsCtx.removeCart(data.id)
       cartsCtx.addCart({
         id: data.id,
         title: data.title,
