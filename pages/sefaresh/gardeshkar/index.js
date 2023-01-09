@@ -40,7 +40,7 @@ function GardeshKar() {
       router.replace(
         {
           pathname: `/sefaresh/gardeshkar/${enteredId}`,
-          query: { id: data.id },
+          query: { id: enteredId },
         },
         `/sefaresh/gardeshkar/${enteredId}`
       )
