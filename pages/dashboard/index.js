@@ -30,15 +30,12 @@ import Snackbar from 'awesome-snackbar'
 var slugify = require('slugify-persian')
 
 function Dashboard({ data }) {
-  const statData = data.statData
-  const data = data.userData
-
   const router = useRouter()
 
   const cartsCtx = useContext(CartsContext)
 
-  console.log(data)
-  console.log('accountId:' + `${data.currentUser.id}`)
+  console.log(data.userData)
+  console.log('accountId:' + `${data.userData.currentUser.id}`)
 
   const onSignOutHandler = (data) => {
     new Snackbar('خدا نگهدار', {
@@ -65,7 +62,7 @@ function Dashboard({ data }) {
     router.push(
       {
         pathname: '/sefaresh/new/1',
-        query: { accountId: `${data.currentUser.id}` },
+        query: { accountId: `${data.userData.currentUser.id}` },
       },
       '/sefaresh/new/1'
     )
@@ -86,18 +83,26 @@ function Dashboard({ data }) {
     e.preventDefault()
 
     console.log(
-      slugify(data.currentUser.fiName + ' ' + data.currentUser.laName)
+      slugify(
+        data.userData.currentUser.fiName +
+          ' ' +
+          data.userData.currentUser.laName
+      )
     )
 
     router.push(
       {
         pathname: `/dashboard/${slugify(
-          data.currentUser.fiName + ' ' + data.currentUser.laName
+          data.userData.currentUser.fiName +
+            ' ' +
+            data.userData.currentUser.laName
         )}`,
-        query: { id: data.currentUser.id },
+        query: { id: data.userData.currentUser.id },
       },
       `/dashboard/${slugify(
-        data.currentUser.fiName + ' ' + data.currentUser.laName
+        data.userData.currentUser.fiName +
+          ' ' +
+          data.userData.currentUser.laName
       )}`
     )
   }
@@ -142,9 +147,9 @@ function Dashboard({ data }) {
           <div className="bg-neutral col-span-3 p-2  ">
             <div className="m-8 bg-base-100 rounded-box p-2 flex flex-col text-center items-center max-w-4xl shadow-md drop-shadow-md">
               <Stat2
-                inProgressProp={statData.inProgress}
-                allOrdersProp={statData.allOrders}
-                DoneOrderProp={statData.DoneOrder}
+                inProgressProp={data.statData.inProgress}
+                allOrdersProp={data.statData.allOrders}
+                DoneOrderProp={data.statData.DoneOrder}
               />
               <div className="divider">خدمات و تعمیرات</div>
 
@@ -241,9 +246,9 @@ function Dashboard({ data }) {
                     className="cursor-pointer content-center justify-center text-neutral-content"
                     dir="rtl"
                   >
-                    {data.currentUser.gender === 'زن'
-                      ? ' خانم ' + data.currentUser.laName
-                      : ' آقای ' + data.currentUser.laName}
+                    {data.userData.currentUser.gender === 'زن'
+                      ? ' خانم ' + data.userData.currentUser.laName
+                      : ' آقای ' + data.userData.currentUser.laName}
                   </div>
                   <div className="text-sm text-neutral-content text-opacity-70">
                     اکانت فعال
@@ -253,7 +258,8 @@ function Dashboard({ data }) {
                 <div className="avatar online placeholder cursor-pointer">
                   <div className="bg-primary-focus text-neutral-content rounded-full w-16">
                     <span className="text-xl text-neutral-content">
-                      {data.currentUser.fiName + data.currentUser.laName}
+                      {data.userData.currentUser.fiName +
+                        data.userData.currentUser.laName}
                     </span>
                   </div>
                 </div>
