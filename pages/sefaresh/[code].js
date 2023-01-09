@@ -20,6 +20,10 @@ const OrderCode = ({ data }) => {
 
   console.log(data)
 
+  const enteredId = data.id
+
+  console.log(enteredId)
+
   const onWorkFlowClick = (e) => {
     e.preventDefault()
 
@@ -30,7 +34,7 @@ const OrderCode = ({ data }) => {
     router.replace(
       {
         pathname: `/sefaresh/gardeshkar/${data.code}`,
-        query: { id: data.id },
+        query: { id: enteredId },
       },
       `/sefaresh/gardeshkar/${data.code}`
     )

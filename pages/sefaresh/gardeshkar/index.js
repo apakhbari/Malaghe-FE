@@ -39,10 +39,10 @@ function GardeshKar() {
 
       router.replace(
         {
-          pathname: `/sefaresh/gardeshkar/${data.code}`,
+          pathname: `/sefaresh/gardeshkar/${enteredId}`,
           query: { id: data.id },
         },
-        `/sefaresh/gardeshkar/${data.code}`
+        `/sefaresh/gardeshkar/${enteredId}`
       )
     }
   }
