@@ -18,7 +18,7 @@ function Stat2(props) {
             />
           </svg>
         </div>
-        <div className="stat-title text-primary-content">کل</div>
+        <div className="stat-title text-primary-content">کل سفارش‌ها</div>
         <div className="stat-value text-primary-content">
           {props.allOrdersProp}
         </div>

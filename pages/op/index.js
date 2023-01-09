@@ -26,6 +26,8 @@ import { CLIENT_NAME_FA, APP_URL } from '../../envConfig'
 import Snackbar from 'awesome-snackbar'
 
 import axios from 'axios'
+import IconPlus from '../../assets/icons/svg/iconplus'
+import IconOperator from '../../assets/icons/svg/iconoperator'
 
 var slugify = require('slugify-persian')
 
@@ -75,10 +77,21 @@ function Dashboard() {
     doRequest()
   }
 
+  const onCreateStoreClick = (e) => {
+    e.preventDefault()
+    router.push('/op/new-store')
+  }
+
   const onTransactionsClick = (e) => {
     e.preventDefault()
-    router.push('/sefaresh/list')
+    router.push('/op/list')
   }
+
+  const onTransactionsOurSideClick = (e) => {
+    e.preventDefault()
+    router.push('/op/list-ourside')
+  }
+
   return (
     <Fragment>
       <Head>
@@ -130,14 +143,32 @@ function Dashboard() {
                 <IconGardeshKar stylingProps={'w-6 h-6'} />
               </div>
 
+              <div className="divider">فروشگاه</div>
+
+              <div
+                className="btn btn-primary hover:border-slate-400 gap-8 mx-16 mb-2 shadow max-w-lg w-full"
+                onClick={onCreateStoreClick}
+              >
+                ساخت آیتم جدید در فروشگاه
+                <IconPlus stylingProps={'w-6 h-6'} />
+              </div>
+
               <div className="divider">گزارش‌ها</div>
 
               <div
                 className="btn btn-primary hover:border-slate-400 gap-8 mx-16 mb-2 shadow max-w-lg w-full"
                 onClick={onTransactionsClick}
               >
-                تاریخچه سفارش‌ها و درخواست‌ها
+                تاریخچه تمامی سفارش‌ها و درخواست‌ها
                 <IconWallet stylingProps={'w-6 h-6'} />
+              </div>
+
+              <div
+                className="btn btn-primary hover:border-slate-400 gap-8 mx-16 mb-2 shadow max-w-lg w-full"
+                onClick={onTransactionsOurSideClick}
+              >
+                درخواست‌های در انتظار تعامل اپراتور
+                <IconOperator stylingProps={'w-6 h-6'} />
               </div>
             </div>
           </div>
@@ -176,24 +207,7 @@ function Dashboard() {
                   />
                 </Link>
               </div>
-              <div className="divider"></div>
 
-              <div>
-                <Link
-                  href="/dashboard/cart"
-                  className="btn btn-ghost normal-case text-xl  w-4/5 text-neutral-content"
-                >
-                  سبد خرید
-                  {cartsCtx.totalCarts > 0 && (
-                    <div className="badge badge-secondary ml-2">
-                      {cartsCtx.totalCarts}
-                    </div>
-                  )}
-                  <IconCart
-                    stylingProps={'w-8 h-8 ml-4 stroke-primary fill-none'}
-                  />
-                </Link>
-              </div>
               <div className="divider"></div>
             </div>
 
@@ -233,6 +247,8 @@ function Dashboard() {
   )
 }
 
+{
+  /* 
 export async function getServerSideProps(context) {
   const res = await axios.get(`${APP_URL}/api/v1/users/currentuser`, {
     withCredentials: true,
@@ -272,6 +288,8 @@ export async function getServerSideProps(context) {
   }
 
   return { props: { data } }
+}
+*/
 }
 
 export default Dashboard
