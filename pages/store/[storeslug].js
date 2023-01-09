@@ -25,7 +25,7 @@ function StoreSlug({ data }) {
 
   const cartsCtx = useContext(CartsContext)
 
-  const [quantity, setQuantity] = useState(1)
+  const [enteredQuantity, setEnteredQuantity] = useState(1)
 
   useEffect(() => {
     themeChange(false)
@@ -33,14 +33,30 @@ function StoreSlug({ data }) {
   }, [])
 
   const clickOnAddCart = (e) => {
-    cartsCtx.addCart({
-      id: data.id,
-      title: data.title,
-      price: data.price,
-      hasDiscount: data.hasDiscount,
-      discountKind: data.discountKind,
-      discountedPrice: data.discountedPrice,
-    })
+    if (cartsCtx.itemIsInCart(data.id)) {
+      const tempQuantity = cartsCtx.carts[data.id].quantity
+      console.log(tempQuantity)
+      cartsCtx.removeCart[data.id]
+      cartsCtx.addCart({
+        id: data.id,
+        title: data.title,
+        price: data.price,
+        quantity: enteredQuantity,
+        hasDiscount: data.hasDiscount,
+        discountKind: data.discountKind,
+        discountedPrice: data.discountedPrice,
+      })
+    } else {
+      cartsCtx.addCart({
+        id: data.id,
+        title: data.title,
+        price: data.price,
+        quantity: enteredQuantity,
+        hasDiscount: data.hasDiscount,
+        discountKind: data.discountKind,
+        discountedPrice: data.discountedPrice,
+      })
+    }
 
     console.log('cart:' + cartsCtx.totalCarts)
   }
@@ -180,8 +196,8 @@ function StoreSlug({ data }) {
               <input
                 type="number"
                 placeholder="1"
-                value={quantity}
-                onChange={(e) => setQuantity(e.target.value)}
+                value={enteredQuantity}
+                onChange={(e) => setEnteredQuantity(e.target.value)}
                 className="input input-bordered input-primary"
               />
               <span className=" bg-primary">تعداد</span>
