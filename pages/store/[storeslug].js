@@ -56,7 +56,7 @@ function StoreSlug({ data }) {
       })
     }
 
-    console.log('cart:' + cartsCtx.totalCarts)
+    setEnteredQuantity(1)
   }
 
   console.log(data)

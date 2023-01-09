@@ -274,7 +274,7 @@ export async function getServerSideProps(context) {
       Cookie: context.req.headers.cookie,
     },
   })
-  const data = await res.data
+  var data = await res.data
 
   {
     if (!data) {
@@ -304,6 +304,25 @@ export async function getServerSideProps(context) {
       }
     }
   }
+
+  const res2 = await axios.get(
+    `${APP_URL}/api/v1/orders/stat/${data.currentUser.id}`,
+    {
+      withCredentials: true,
+      headers: {
+        Cookie: context.req.headers.cookie,
+      },
+    }
+  )
+
+  var data2 = await res2.data
+
+  console.log(data)
+  console.log(data2)
+
+  data.concat(data2)
+
+  console.log(data)
 
   return { props: { data } }
 }
