@@ -9,11 +9,13 @@ import CardDescriptionComponent from '../../components/layout/cardDescription'
 import axios from 'axios'
 import { CLIENT_NAME_FA, APP_URL } from '../../envConfig'
 
-import FooterNotMain from '../../components/layout/footernotmain'
-
 import RemoveUndefinedsToPleaseNext from '../../hooks/removeUndefineds'
 
+import { useRouter } from 'next/router'
+
 const OrderCode = ({ data }) => {
+  const router = useRouter()
+
   console.log(data)
 
   const onWorkFlowClick = (e) => {
@@ -52,7 +54,7 @@ const OrderCode = ({ data }) => {
         <CardDescriptionComponent>
           <div className="flex flex-col">
             <button
-              className="flex btn btn-secondary  mt-2 mx-2 text-secondary-content"
+              className="flex btn btn-secondary  mt-2 mx-2 text-secondary-content justify-around"
               onClick={onWorkFlowClick}
             >
               مشاهده گردش کار
@@ -74,7 +76,7 @@ const OrderCode = ({ data }) => {
             <div className="divider">اطلاعات اولیه</div>
 
             <div
-              className="text-xl font-extrabold text-neutral-content p-4 pb-0 text-center mx-4"
+              className="text-xl text-neutral-content p-4 pb-0 text-center mx-4"
               dir="rtl"
             >
               <p>{data.code}</p>
@@ -93,7 +95,7 @@ const OrderCode = ({ data }) => {
             <div className="divider">اطلاعات مشتری</div>
 
             <div
-              className="text-xl text-neutral-content p-4 items-center mx-4"
+              className="text-xl text-neutral-content p-4 text-center mx-4"
               dir="rtl"
             >
               <p>{data.address}</p>
@@ -105,7 +107,7 @@ const OrderCode = ({ data }) => {
             <div className="divider">اطلاعات سفارش</div>
 
             <div
-              className="text-xl text-neutral-content p-4 items-center mx-4"
+              className="text-xl text-neutral-content p-4 text-center mx-4"
               dir="rtl"
             >
               <p>{data.isDone ? 'انجام شده' : 'در حال انجام'}</p>
@@ -123,7 +125,7 @@ const OrderCode = ({ data }) => {
             <div className="divider">اطلاعات پرداخت</div>
 
             <div
-              className="text-xl text-neutral-content p-4 items-center mx-4"
+              className="text-xl text-neutral-content p-4 text-center mx-4"
               dir="rtl"
             >
               <p>{data.paymentKind}</p>
