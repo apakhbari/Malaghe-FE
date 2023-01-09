@@ -40,7 +40,7 @@ function List({ data }) {
 
     router.replace(
       {
-        pathname: `/store/${code}`,
+        pathname: `/sefaresh/${code}`,
         query: { id: id },
       },
       `/store/${code}`
@@ -121,9 +121,9 @@ function List({ data }) {
             </tbody>
           </table>
         ) : (
-          <p3 className="text-neutral-content text-2xl text-center m-auto content-center justify-center">
+          <p className="text-neutral-content text-2xl text-center m-auto content-center justify-center">
             رکوردی یافت نشد
-          </p3>
+          </p>
         )}
         <FooterNotMain />
       </div>
