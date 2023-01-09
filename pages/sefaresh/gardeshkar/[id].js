@@ -4,12 +4,12 @@ import Head from 'next/head'
 
 import Navbar from '../../components/layout/navbar/navbar'
 
-import CardDescriptionComponent from '../../components/layout/cardDescription'
+import CardDescriptionComponent from '../../../components/layout/cardDescription'
 
 import axios from 'axios'
-import { CLIENT_NAME_FA, APP_URL } from '../../envConfig'
+import { CLIENT_NAME_FA, APP_URL } from '../../../envConfig'
 
-import RemoveUndefinedsToPleaseNext from '../../hooks/removeUndefineds'
+import RemoveUndefinedsToPleaseNext from '../../../hooks/removeUndefineds'
 
 import { useRouter } from 'next/router'
 
