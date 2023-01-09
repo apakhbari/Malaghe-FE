@@ -10,6 +10,8 @@ import FooterNotMain from '../../../components/layout/footernotmain'
 import Snackbar from 'awesome-snackbar'
 import { CLIENT_NAME_FA } from '../../../envConfig'
 
+import FooterNotMain from '../../../components/layout/footernotmain'
+
 function GardeshKar() {
   const router = useRouter()
 
