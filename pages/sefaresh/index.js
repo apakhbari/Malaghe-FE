@@ -37,7 +37,7 @@ function Sefaresh() {
         position: 'bottom-right',
       })
 
-      router.replace(
+      router.push(
         {
           pathname: '/sefaresh/list',
           query: { id: enteredMobile },

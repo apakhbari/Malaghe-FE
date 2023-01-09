@@ -87,28 +87,28 @@ function StoreSlug({ data }) {
           </div>
 
           <div className="flex flex-col">
-            <h3
+            <p
               className="mt-5 text-2xl font-extrabold text-neutral-content p-4 pb-0 items-start mx-4 border-t-4 border-accent"
               dir="rtl"
             >
               {data.title}
-            </h3>
+            </p>
 
-            <h3
+            <p
               className="mt-5 text-xl text-neutral-content p-4 items-start mx-4 border-y-4 border-accent"
               dir="rtl"
             >
               {data.summary}
-            </h3>
+            </p>
 
-            <h3
+            <p
               className="mt-5 text-xl text-neutral-content p-4 pt-0 items-start mx-4 border-b-4 border-accent"
               dir="rtl"
             >
               توضیحات: {data.description}
-            </h3>
+            </p>
 
-            <h3
+            <p
               className="mt-5 text-xl text-neutral-content p-4 pt-0 items-start mx-4 border-b-4 border-accent"
               dir="rtl"
             >
@@ -117,7 +117,7 @@ function StoreSlug({ data }) {
               سانتی‌متر، ارتفاع: {GroupDigital(data.volumes.height)}سانتی‌متر،
               وزن:
               {GroupDigital(data.volumes.weight)} گرم
-            </h3>
+            </p>
           </div>
         </div>
 
