@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 
 import Head from 'next/head'
 
-import Navbar from '../../components/layout/navbar/navbar'
+import Navbar from '../../../components/layout/navbar/navbar'
 
 import CardDescriptionComponent from '../../../components/layout/cardDescription'
 
