@@ -14,6 +14,8 @@ import FooterNotMain from '../../components/layout/footernotmain'
 import RemoveUndefinedsToPleaseNext from '../../hooks/removeUndefineds'
 
 const OrderCode = ({ data }) => {
+  console.log(data)
+
   return (
     <Fragment>
       <Head>
@@ -30,7 +32,7 @@ const OrderCode = ({ data }) => {
 }
 
 export async function getServerSideProps(context) {
-  var id = context.query.id
+  const { id } = context.query
 
   const { data } = await axios.get(`${APP_URL}/api/v1/orders/${id}`)
   return {
