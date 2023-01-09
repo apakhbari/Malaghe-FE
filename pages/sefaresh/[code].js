@@ -45,7 +45,7 @@ const OrderCode = ({ data }) => {
     <Fragment>
       <Head>
         <title>
-          {CLIENT_NAME_FA} - {data.code} سفارش
+          {CLIENT_NAME_FA} - سفارش {data.code}
         </title>
       </Head>
 
@@ -57,7 +57,6 @@ const OrderCode = ({ data }) => {
               className="flex btn btn-secondary  mt-2 mx-2 text-secondary-content justify-around"
               onClick={onWorkFlowClick}
             >
-              مشاهده گردش کار
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -71,6 +70,7 @@ const OrderCode = ({ data }) => {
                   clipRule="evenodd"
                 />
               </svg>
+              مشاهده گردش کار
             </button>
 
             <div className="divider">اطلاعات اولیه</div>
@@ -129,7 +129,24 @@ const OrderCode = ({ data }) => {
               dir="rtl"
             >
               <p>{data.paymentKind}</p>
-              <p>{data.hasPaid}</p>
+              <p>{data.hasPaid ? 'پرداخت شده' : 'پرداخت نشده'}</p>
+            </div>
+
+            <div className="divider">اطلاعات اجناس</div>
+
+            <div
+              className="text-xl text-neutral-content p-4 text-center mx-4"
+              dir="rtl"
+            >
+              {data.products.map((item, index) => (
+                <div>
+                  <p>{index + 1}</p>
+                  <p>{item.title}</p>
+                  <p className="border-b-4  border-accent">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </CardDescriptionComponent>
