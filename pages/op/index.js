@@ -85,9 +85,6 @@ function Dashboard() {
         <title>{CLIENT_NAME_FA} - اپراتور</title>
       </Head>
 
-      <div className="md:hidden">
-        <MobileDeveloping />
-      </div>
       <div className="flex flex-col content-center justify-center h-screen bg-neutral">
         <div className=" bg-neutral flex justify-around border-b border-zinc-800 ">
           <div className="flex">

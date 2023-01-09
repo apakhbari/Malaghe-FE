@@ -144,9 +144,8 @@ const OrderCode = ({ data }) => {
               className="text-xl text-neutral-content p-4 text-center mx-4"
               dir="rtl"
             >
-              {data.products.map((item, index) => (
+              {data.products.map((item) => (
                 <div>
-                  <p>{index + 1}</p>
                   <p>{item.title}</p>
                   <p className="border-b  border-accent">{item.description}</p>
                 </div>
