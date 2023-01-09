@@ -30,7 +30,9 @@ const OrderCode = ({ data }) => {
   return (
     <Fragment>
       <Head>
-        <title>{CLIENT_NAME_FA} - ورود</title>
+        <title>
+          {CLIENT_NAME_FA} - {data.code}
+        </title>
       </Head>
 
       <div className="flex flex-col items-center justify-center h-screen overflow-hidden mx-auto">
@@ -44,7 +46,7 @@ const OrderCode = ({ data }) => {
             <div className="divider">اطلاعات اولیه</div>
 
             <div
-              className="mt-2 text-2xl font-extrabold text-neutral-content p-4 pb-0 items-center mx-4 border-t-4 border-accent"
+              className="text-xl font-extrabold text-neutral-content p-4 pb-0 text-center mx-4"
               dir="rtl"
             >
               <p>{data.code}</p>
@@ -63,7 +65,7 @@ const OrderCode = ({ data }) => {
             <div className="divider">اطلاعات مشتری</div>
 
             <div
-              className="mt-5 text-xl text-neutral-content p-4 items-center mx-4 border-y-4 border-accent"
+              className="text-xl text-neutral-content p-4 items-center mx-4"
               dir="rtl"
             >
               <p>{data.address}</p>
@@ -75,7 +77,7 @@ const OrderCode = ({ data }) => {
             <div className="divider">اطلاعات سفارش</div>
 
             <div
-              className="mt-5 text-xl text-neutral-content p-4 items-center mx-4 border-y-4 border-accent"
+              className="text-xl text-neutral-content p-4 items-center mx-4"
               dir="rtl"
             >
               <p>{data.isDone ? 'انجام شده' : 'در حال انجام'}</p>
@@ -85,7 +87,7 @@ const OrderCode = ({ data }) => {
                   ? 'در انتظار تعامل کاربر'
                   : 'در انتظار تعامل اپراتور'}
               </p>
-              {data.isExpress && <p>'خدمت اکسپرس'</p>}
+              {data.isExpress && <p>خدمت اکسپرس</p>}
               <p>{data.isService ? 'تعمیر' : 'خرید از فروشگاه'}</p>
               {data.isService && <p>{data.serviceKind}</p>}
             </div>
@@ -93,7 +95,7 @@ const OrderCode = ({ data }) => {
             <div className="divider">اطلاعات پرداخت</div>
 
             <div
-              className="mt-5 text-xl text-neutral-content p-4 items-center mx-4 border-y-4 border-accent"
+              className="text-xl text-neutral-content p-4 items-center mx-4"
               dir="rtl"
             >
               <p>{data.paymentKind}</p>
@@ -101,7 +103,6 @@ const OrderCode = ({ data }) => {
             </div>
           </div>
         </CardDescriptionComponent>
-        <FooterNotMain />
       </div>
     </Fragment>
   )
