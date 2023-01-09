@@ -30,6 +30,9 @@ import Snackbar from 'awesome-snackbar'
 var slugify = require('slugify-persian')
 
 function Dashboard({ data }) {
+  const statData = data.statData
+  const data = data.userData
+
   const router = useRouter()
 
   const cartsCtx = useContext(CartsContext)
@@ -138,7 +141,11 @@ function Dashboard({ data }) {
         <div className="grid grid-cols-4 h-full">
           <div className="bg-neutral col-span-3 p-2  ">
             <div className="m-8 bg-base-100 rounded-box p-2 flex flex-col text-center items-center max-w-4xl shadow-md drop-shadow-md">
-              <Stat2 />
+              <Stat2
+                inProgressProp={statData.inProgress}
+                allOrdersProp={statData.allOrders}
+                DoneOrderProp={statData.DoneOrder}
+              />
               <div className="divider">خدمات و تعمیرات</div>
 
               <div

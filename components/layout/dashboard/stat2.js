@@ -18,8 +18,10 @@ function Stat2() {
             />
           </svg>
         </div>
-        <div className="stat-title text-primary-content">مرجوعی</div>
-        <div className="stat-value text-primary-content">۰</div>
+        <div className="stat-title text-primary-content">کل</div>
+        <div className="stat-value text-primary-content">
+          {props.allOrdersProp}
+        </div>
       </div>
 
       <div className="stat">
@@ -40,7 +42,9 @@ function Stat2() {
           </svg>
         </div>
         <div className="stat-title text-primary-content">سفارش دریافت شده</div>
-        <div className="stat-value text-primary-content">۴</div>
+        <div className="stat-value text-primary-content">
+          {props.DoneOrderProp}
+        </div>
       </div>
 
       <div className="stat">
@@ -61,7 +65,9 @@ function Stat2() {
           </svg>
         </div>
         <div className="stat-title text-primary-content">سفارش جاری</div>
-        <div className="stat-value text-primary-content">۰</div>
+        <div className="stat-value text-primary-content">
+          {props.inProgressProp}
+        </div>
       </div>
     </div>
   )
