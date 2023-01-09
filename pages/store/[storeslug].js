@@ -34,8 +34,6 @@ function StoreSlug({ data }) {
 
   const clickOnAddCart = (e) => {
     if (cartsCtx.itemIsInCart(data.id)) {
-      const tempQuantity = cartsCtx.carts[data.id].quantity
-      console.log(tempQuantity)
       cartsCtx.removeCart[data.id]
       cartsCtx.addCart({
         id: data.id,

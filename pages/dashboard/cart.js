@@ -69,12 +69,13 @@ function CartPage({ data }) {
       if (item.discountKind === 'درصد') {
         overAllPrice =
           overAllPrice +
-          Math.round(((100 - item.discountedPrice) * item.price) / 100)
+          Math.round(((100 - item.discountedPrice) * item.price) / 100) *
+            item.quantity
       } else {
-        overAllPrice = overAllPrice + item.discountedPrice
+        overAllPrice = overAllPrice + item.discountedPrice * item.quantity
       }
     } else {
-      overAllPrice = overAllPrice + item.price
+      overAllPrice = overAllPrice + item.price * item.quantity
     }
   })
 
@@ -137,6 +138,7 @@ function CartPage({ data }) {
                     key={item.id}
                     id={item.id}
                     title={item.title}
+                    quantity={item.quantity}
                     hasDiscount={item.hasDiscount}
                     discountKind={item.discountKind}
                     discountedPrice={item.discountedPrice}

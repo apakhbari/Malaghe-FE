@@ -121,7 +121,7 @@ function CartComponent(props) {
                 {GroupDigital(props.price)}
               </h2>
             )}
-            <div className="badge badge-primary">1</div>
+            <div className="badge badge-primary">{props.quantity}</div>
           </div>
         </div>
       )}
