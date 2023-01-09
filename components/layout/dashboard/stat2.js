@@ -1,4 +1,4 @@
-function Stat2() {
+function Stat2(props) {
   return (
     <div className="stats shadow bg-primary mt-2">
       <div className="stat">
