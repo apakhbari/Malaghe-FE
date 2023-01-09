@@ -43,7 +43,7 @@ function List({ data }) {
         pathname: `/sefaresh/${code}`,
         query: { id: id },
       },
-      `/store/${code}`
+      `/sefaresh/${code}`
     )
   }
 
@@ -121,7 +121,7 @@ function List({ data }) {
             </tbody>
           </table>
         ) : (
-          <p className="text-neutral-content text-2xl text-center m-auto content-center justify-center">
+          <p className="text-neutral-content text-2xl text-center m-auto mt-10 content-center justify-center">
             رکوردی یافت نشد
           </p>
         )}
