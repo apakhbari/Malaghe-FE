@@ -274,10 +274,10 @@ export async function getServerSideProps(context) {
       Cookie: context.req.headers.cookie,
     },
   })
-  var data = await res.data
+  const userData = await res.data
 
   {
-    if (!data) {
+    if (!userData) {
       return {
         redirect: {
           destination: '/auth/sign-in',
@@ -286,7 +286,7 @@ export async function getServerSideProps(context) {
       }
     }
 
-    if (!data.currentUser) {
+    if (!userData.currentUser) {
       return {
         redirect: {
           destination: '/auth/sign-in',
@@ -295,7 +295,7 @@ export async function getServerSideProps(context) {
       }
     }
 
-    if (!data.currentUser.id) {
+    if (!userData.currentUser.id) {
       return {
         redirect: {
           destination: '/auth/sign-in',
@@ -306,7 +306,7 @@ export async function getServerSideProps(context) {
   }
 
   const res2 = await axios.get(
-    `${APP_URL}/api/v1/orders/stat/${data.currentUser.id}`,
+    `${APP_URL}/api/v1/orders/stat/${userData.currentUser.id}`,
     {
       withCredentials: true,
       headers: {
@@ -315,14 +315,12 @@ export async function getServerSideProps(context) {
     }
   )
 
-  var data2 = await res2.data
+  const statData = await res2.data
 
-  console.log(data)
-  console.log(data2)
+  console.log(userData)
+  console.log(statData)
 
-  data.concat(data2)
-
-  console.log(data)
+  const data = { userData, statData }
 
   return { props: { data } }
 }
