@@ -121,10 +121,7 @@ function List({ data }) {
             </tbody>
           </table>
         ) : (
-          <p3
-            className="text-neutral-content text-2xl text-center m-auto"
-            dir="rtl"
-          >
+          <p3 className="text-neutral-content text-2xl text-center m-auto content-center justify-center">
             رکوردی یافت نشد
           </p3>
         )}
