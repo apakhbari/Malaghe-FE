@@ -26,8 +26,6 @@ function List({ data }) {
     7: 'تعمیر',
   }
 
-  console.log(data)
-
   const handleClick = (e) => {
     e.preventDefault()
 

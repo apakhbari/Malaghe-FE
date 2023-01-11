@@ -33,7 +33,6 @@ const RequestService2 = () => {
     if (router.isReady) {
       // Code using query
       var passedData = router.query
-      console.log(passedData)
       setPostalCodeNum(passedData.postalCode)
       setAddressStr(passedData.address)
 

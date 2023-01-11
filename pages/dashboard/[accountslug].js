@@ -36,8 +36,6 @@ import axios from 'axios'
 function Account({ data }) {
   const router = useRouter()
 
-  console.log(data)
-
   const cartsCtx = useContext(CartsContext)
 
   const [editing, setEditing] = useState(true)

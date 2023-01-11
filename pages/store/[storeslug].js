@@ -59,7 +59,6 @@ function StoreSlug({ data }) {
     setEnteredQuantity(1)
   }
 
-  console.log(data)
   return (
     <Fragment>
       <Head>

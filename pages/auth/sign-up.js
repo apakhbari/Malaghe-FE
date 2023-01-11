@@ -30,8 +30,6 @@ const SignUp = ({ data }) => {
   const [password, setPassword] = useState('')
   const [gender, setGender] = useState('')
 
-  console.log(data)
-
   const reqWasSuccess = (data) => {
     new Snackbar('عملیات موفقیت آمیز بود', {
       position: 'bottom-right',

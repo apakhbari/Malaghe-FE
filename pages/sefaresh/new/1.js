@@ -17,8 +17,6 @@ import axios from 'axios'
 const RequestService1 = ({ data }) => {
   const router = useRouter()
 
-  console.log(data)
-
   const [userID, setUserID] = useState()
   const [enteredName, setEnteredName] = useState()
   const [enteredGender, setEnteredGender] = useState()
@@ -272,8 +270,6 @@ const RequestService1 = ({ data }) => {
 
 export async function getServerSideProps(context) {
   const id = context.query.accountId
-
-  console.log(`${APP_URL}/api/v1/users/service/${id}`)
 
   const res = await axios.get(`${APP_URL}/api/v1/users/service/${id}`, {
     withCredentials: true,

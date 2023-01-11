@@ -34,9 +34,6 @@ function Dashboard({ data }) {
 
   const cartsCtx = useContext(CartsContext)
 
-  console.log(data.userData)
-  console.log('accountId:' + `${data.userData.currentUser.id}`)
-
   const onSignOutHandler = (data) => {
     new Snackbar('خدا نگهدار', {
       position: 'bottom-right',
@@ -81,14 +78,6 @@ function Dashboard({ data }) {
 
   const onAccountClick = (e) => {
     e.preventDefault()
-
-    console.log(
-      slugify(
-        data.userData.currentUser.fiName +
-          ' ' +
-          data.userData.currentUser.laName
-      )
-    )
 
     router.push(
       {
@@ -329,9 +318,6 @@ export async function getServerSideProps(context) {
   )
 
   const statData = await res2.data
-
-  console.log(userData)
-  console.log(statData)
 
   const data = { userData, statData }
 

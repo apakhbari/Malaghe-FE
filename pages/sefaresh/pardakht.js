@@ -23,7 +23,6 @@ const RequestService3 = () => {
   useEffect(() => {
     if (router.isReady) {
       var passedData = router.query
-      console.log(passedData)
       //setPostalCodeNum(passedData.postalCode)
       //setAddressStr(passedData.address)
     }

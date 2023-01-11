@@ -34,7 +34,6 @@ const RequestService2 = () => {
     if (router.isReady) {
       // Code using query
       var passedData = router.query
-      console.log(passedData)
 
       setEnteredName(passedData.enteredName)
       setEnteredGender(passedData.enteredGender)

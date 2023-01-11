@@ -26,8 +26,6 @@ function List({ data }) {
     7: 'تعمیر',
   }
 
-  console.log(data)
-
   const handleClick = (e) => {
     e.preventDefault()
 
@@ -133,8 +131,6 @@ function List({ data }) {
 
 export async function getServerSideProps(context) {
   const { id } = context.query
-
-  console.log(id)
 
   const { data } = await axios.get(`${APP_URL}/api/v1/orders/list/${id}`)
   return {

@@ -18,8 +18,6 @@ import { useRouter } from 'next/router'
 const OrderCode = ({ data }) => {
   const router = useRouter()
 
-  console.log(data)
-
   const onWorkFlowClick = (e) => {
     e.preventDefault()
 

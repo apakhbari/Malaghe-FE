@@ -35,8 +35,6 @@ function CartPage({ data }) {
 
   var overAllPrice = 0
 
-  console.log({ data })
-
   const cartsCtx = useContext(CartsContext)
 
   useEffect(() => {
