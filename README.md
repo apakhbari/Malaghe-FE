@@ -8,9 +8,9 @@
 
 ## **Description** :
 
-## FrontEnd of Malaghe™ Project. Developed using Next.js, React.js, TailwindCss, Docker, nginx (reverse proxy).
+### FrontEnd of Malaghe™ Project. Developed using Next.js, React.js, TailwindCss, Docker, nginx (reverse proxy).
 
-## More docs are available on malaghe-be.
+### More docs are available on malaghe-be.
 
 <br>
 
@@ -18,22 +18,28 @@
 
 ## **Links**:
 
-## Backend github: --> https://github.com/apakhbari/Malaghe-BE
+### Backend github: --> https://github.com/apakhbari/Malaghe-BE
 
-## docker --> https://hub.docker.com/repository/docker/apakhbari/malaghe
+### docker --> https://hub.docker.com/repository/docker/apakhbari/malaghe
 
 ---
 
 ## **TODO**:
 
-1- Make it responsive
+- Make it responsive
 
 ### **temp ToDo:**
+
+1- transform date to hejri-shamsi
+
+2- transform digits to desired font & style
+
+3- create dictionaries & enums
 
 ---
 
 <br>
 
-# **© APA, 2022-2023, all rights reserved**
+# **© APA, 2022-2023, All Rights Reserved**
 
 ![ascii_apa.png](ascii_apa.png)

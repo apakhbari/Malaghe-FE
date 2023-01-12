@@ -33,11 +33,6 @@ module.exports = {
 
   daisyui: {
     themes: [
-      'black',
-      'lemonade',
-      'coffee',
-      'pastel',
-      'retro',
       {
         wireframe: {
           ...require('daisyui/src/colors/themes')['[data-theme=wireframe]'],
@@ -61,6 +56,11 @@ module.exports = {
           silver: '#c0c0c0',
         },
       },
+      'lemonade',
+      'black',
+      'coffee',
+      'pastel',
+      'retro',
     ],
   },
 }
