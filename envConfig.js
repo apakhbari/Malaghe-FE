@@ -7,4 +7,4 @@ export const CLIENT_DESCRIPTION =
 
 export const NODE_ENV = 'development'
 
-export const APP_URL = 'https://karachian.darkube.app'
+export const APP_URL = 'https://karachian.ir'
