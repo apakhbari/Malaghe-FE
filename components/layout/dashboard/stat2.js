@@ -20,7 +20,7 @@ function Stat2(props) {
         </div>
         <div className="stat-title text-primary-content">کل سفارش‌ها</div>
         <div className="stat-value text-primary-content">
-          {props.allOrdersProp}
+          {Number(props.allOrdersProp)}
         </div>
       </div>
 
@@ -43,7 +43,7 @@ function Stat2(props) {
         </div>
         <div className="stat-title text-primary-content">سفارش دریافت شده</div>
         <div className="stat-value text-primary-content">
-          {props.DoneOrderProp}
+          {Number(props.DoneOrderProp)}
         </div>
       </div>
 
@@ -66,7 +66,7 @@ function Stat2(props) {
         </div>
         <div className="stat-title text-primary-content">سفارش جاری</div>
         <div className="stat-value text-primary-content">
-          {props.inProgressProp}
+          {Number(props.inProgressProp)}
         </div>
       </div>
     </div>
