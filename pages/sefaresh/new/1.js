@@ -44,7 +44,7 @@ const RequestService1 = ({ data }) => {
       useEffect(() => {
         setUserID(data.id)
         setEnteredName(data.fiName + ' ' + data.laName)
-        setEnteredGender(data.gender)
+        setEnteredGender(data.isMale)
         setEnteredMobile(data.mobile)
         setEnteredPhone(data.phone)
       }, [data.id])

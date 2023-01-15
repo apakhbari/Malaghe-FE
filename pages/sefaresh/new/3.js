@@ -11,6 +11,11 @@ import useRequest from '../../../hooks/use-request'
 
 import Snackbar from 'awesome-snackbar'
 
+import {
+  PaymentKindDictionaryReverse,
+  ServiceKindDictionaryReverse,
+} from '../../../hooks/dictionaries'
+
 const RequestService3 = () => {
   const router = useRouter()
 
@@ -65,15 +70,15 @@ const RequestService3 = () => {
     body: {
       userId: userID,
       userName: enteredName,
-      gender: enteredGender,
+      isMale: enteredGender,
       mobile: enteredMobile,
       phone: enteredPhone,
       postalCode: postalCodeNum,
       address: addressStr,
 
-      paymentKind: enteredPaymentKind,
+      paymentKind: PaymentKindDictionaryReverse[enteredPaymentKind],
       isExpress: isExpress,
-      serviceKind: enteredServiceKind,
+      serviceKind: ServiceKindDictionaryReverse[enteredServiceKind],
 
       products: {
         title: enteredDevice,
@@ -128,9 +133,9 @@ const RequestService3 = () => {
             <div className="divider">اطلاعات وارد شده</div>
 
             <h3 className=" text-lg" dir="rtl">
-              {enteredGender === 'زن'
-                ? ' خانم ' + enteredName
-                : ' آقای ' + enteredName}
+              {enteredGender === true
+                ? ' آقای ' + enteredName
+                : ' خانم ' + enteredName}
             </h3>
             <h3 className=" text-lg" dir="rtl">
               {enteredMobile}

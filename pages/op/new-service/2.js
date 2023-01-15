@@ -67,6 +67,7 @@ const RequestService2 = () => {
           query: {
             enteredName,
             enteredDevice,
+            enteredGender,
             enteredDescription,
             enteredMobile,
             enteredServiceKind,

@@ -12,7 +12,10 @@ import axios from 'axios'
 
 import Snackbar from 'awesome-snackbar'
 
-import { OrderStatusDictionary } from '../../hooks/dictionaries'
+import {
+  OrderStatusDictionary,
+  ServiceKindDictionary,
+} from '../../hooks/dictionaries'
 
 function List({ data }) {
   const router = useRouter()
@@ -73,7 +76,7 @@ function List({ data }) {
                   >
                     {item.isService ? (
                       <td className=" group-hover:text-primary-focus">
-                        {item.serviceKind}
+                        {ServiceKindDictionary[item.serviceKind]}
                       </td>
                     ) : (
                       <td className=" group-hover:text-primary-focus">خرید</td>

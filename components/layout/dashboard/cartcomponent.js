@@ -99,7 +99,7 @@ function CartComponent(props) {
                 data-atropos-offset="6"
                 dir="rtl"
               >
-                {props.discountKind === 'درصد'
+                {props.discountKind === 1
                   ? `${GroupDigital(
                       Math.round(
                         ((100 - props.discountedPrice) * props.price) / 100

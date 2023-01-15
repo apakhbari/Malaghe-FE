@@ -17,6 +17,11 @@ import { useRouter } from 'next/router'
 
 import { OrderStatusDictionary } from '../../hooks/dictionaries'
 
+import {
+  PaymentKindDictionary,
+  ServiceKindDictionary,
+} from './../../hooks/dictionaries'
+
 const OrderCode = ({ data }) => {
   const router = useRouter()
 
@@ -79,9 +84,9 @@ const OrderCode = ({ data }) => {
               <p>{OrderStatusDictionary[data.orderStatus]}</p>
 
               <p>
-                {data.gender === 'زن'
-                  ? ' خانم ' + data.userName
-                  : ' آقای ' + data.userName}
+                {data.isMale === true
+                  ? ' آقای ' + data.userName
+                  : ' خانم ' + data.userName}
               </p>
 
               <p>{data.mobile}</p>
@@ -114,7 +119,9 @@ const OrderCode = ({ data }) => {
               </p>
               {data.isExpress && <p>خدمت اکسپرس</p>}
               <p>{data.isService ? 'تعمیر' : 'خرید از فروشگاه'}</p>
-              {data.isService && <p>{data.serviceKind}</p>}
+              {data.isService && (
+                <p>{ServiceKindDictionary[data.serviceKind]}</p>
+              )}
             </div>
 
             <div className="divider">اطلاعات پرداخت</div>
@@ -123,7 +130,7 @@ const OrderCode = ({ data }) => {
               className="text-xl text-neutral-content p-4 text-center mx-4"
               dir="rtl"
             >
-              <p>{data.paymentKind}</p>
+              <p>{PaymentKindDictionary[data.paymentKind]}</p>
               <p>{data.hasPaid ? 'پرداخت شده' : 'پرداخت نشده'}</p>
             </div>
 

@@ -9,6 +9,8 @@ import GroupDigital from '../../../hooks/groupDigital'
 
 var slugify = require('slugify-persian')
 
+import { GoodKindDictionary } from '../../../hooks/dictionaries'
+
 function StoreAtropos(props) {
   const router = useRouter()
 
@@ -62,7 +64,7 @@ function StoreAtropos(props) {
                   dir="rtl"
                   data-atropos-offset="6"
                 >
-                  {props.discountKind === 'درصد'
+                  {props.discountKind === 1
                     ? `${props.discountedPrice}٪ تخفیف`
                     : '+ تخفیف'}
                 </div>
@@ -74,7 +76,7 @@ function StoreAtropos(props) {
                 data-atropos-offset="6"
                 dir="rtl"
               >
-                {props.discountKind === 'درصد'
+                {props.discountKind === 1
                   ? `${GroupDigital(
                       Math.round(
                         ((100 - props.discountedPrice) * props.price) / 100
@@ -113,11 +115,9 @@ function StoreAtropos(props) {
                 <div className="badge badge-outline">تولید {props.madeIn}</div>
               )}
 
-              {props.goodKind && (
-                <div className="badge badge-outline badge-primary">
-                  {props.goodKind}
-                </div>
-              )}
+              <div className="badge badge-outline badge-primary">
+                {GoodKindDictionary[props.goodKind]}
+              </div>
             </div>
           </div>
         </div>

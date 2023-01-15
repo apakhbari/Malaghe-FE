@@ -130,9 +130,9 @@ const RequestService3 = () => {
 
             <div className="flex justify-around" dir="rtl">
               <h3 className=" text-lg">
-                {enteredGender === 'زن'
-                  ? ' خانم ' + enteredName
-                  : ' آقای ' + enteredName}
+                {enteredGender === true
+                  ? ' آقای ' + enteredName
+                  : ' خانم ' + enteredName}
               </h3>
               <h3 className=" text-lg">{enteredMobile}</h3>
             </div>

@@ -5,7 +5,6 @@ import Head from 'next/head'
 
 import { themeChange } from 'theme-change'
 
-import BuildClient from '../../api/build-client'
 import RemoveUndefinedsToPleaseNext from '../../hooks/removeUndefineds'
 import CartDropDown from '../../components/layout/navbar/navbarhelper/cartdropdown'
 import Link from 'next/link'
@@ -19,6 +18,8 @@ import { CLIENT_NAME_FA, APP_URL } from '../../envConfig'
 import MobileDeveloping from '../../components/layout/mobileDeveloping'
 
 import axios from 'axios'
+
+import { GoodKindDictionary } from '../../hooks/dictionaries'
 
 function StoreSlug({ data }) {
   const router = useRouter()
@@ -125,11 +126,9 @@ function StoreSlug({ data }) {
               className="mt-5 text-xl text-neutral-content p-4 pt-0 items-start mx-4 border-b-4 border-accent"
               dir="rtl"
             >
-              طول: {GroupDigital(data.volumes.length)} سانتی‌متر، عرض:{' '}
-              {data.volumes.width}
-              سانتی‌متر، ارتفاع: {GroupDigital(data.volumes.height)}سانتی‌متر،
-              وزن:
-              {GroupDigital(data.volumes.weight)} گرم
+              طول: {GroupDigital(data.length)} سانتی‌متر، عرض: {data.width}
+              سانتی‌متر، ارتفاع: {GroupDigital(data.height)}سانتی‌متر، وزن:
+              {GroupDigital(data.weight)} گرم
             </p>
           </div>
         </div>
@@ -145,7 +144,7 @@ function StoreSlug({ data }) {
                 <div className="stat-value">
                   {data.hasDiscount && (
                     <h2 className="card-title font-extrabold" dir="rtl">
-                      {data.discountKind === 'درصد'
+                      {data.discountKind === 1
                         ? `${GroupDigital(
                             Math.round(
                               ((100 - data.discountedPrice) * data.price) / 100
@@ -170,7 +169,7 @@ function StoreSlug({ data }) {
                 <div className="stat-desc">
                   {data.hasDiscount && (
                     <h2 dir="rtl">
-                      {data.discountKind === 'درصد'
+                      {data.discountKind === 1
                         ? `${GroupDigital(data.discountedPrice)}% ↘︎`
                         : `تومن ${GroupDigital(
                             data.price - data.discountedPrice
@@ -185,7 +184,9 @@ function StoreSlug({ data }) {
               <div className="stat text-base">
                 <div className="stat-title text-base-100">ساخت</div>
                 <div className="stat-value">{data.madeIn}</div>
-                <div className="stat-desc">{data.goodKind}</div>
+                <div className="stat-desc">
+                  {GoodKindDictionary[data.goodKind]}
+                </div>
               </div>
             </div>
 

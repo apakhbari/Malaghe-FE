@@ -8,12 +8,16 @@ import Navbar from '../../components/layout/navbar/navbar'
 import useRequest from '../../hooks/use-request'
 import CardComponent from '../../components/layout/card'
 
-import axios from 'axios'
 import { CLIENT_NAME_FA } from '../../envConfig'
 
 import GroupDigital from '../../hooks/groupDigital'
 
 import Snackbar from 'awesome-snackbar'
+
+import {
+  DiscountKindDictionaryReverse,
+  GoodKindDictionaryReverse,
+} from '../../hooks/dictionaries'
 
 const NewStore = () => {
   const router = useRouter()
@@ -52,18 +56,16 @@ const NewStore = () => {
       description: strDescription,
       summary: strSummary,
       price: numPrice,
-      volumes: {
-        width: strVolumesWidth,
-        length: strVolumesLength,
-        height: strVolumesHeight,
-        weight: strVolumesWeight,
-      },
+      width: strVolumesWidth,
+      length: strVolumesLength,
+      height: strVolumesHeight,
+      weight: strVolumesWeight,
       availableQuantity: numAvailableQuantity,
       hasDiscount: boolHasDiscount,
-      discountKind: enumDiscountKind,
+      discountKind: DiscountKindDictionaryReverse[enumDiscountKind],
       discountedPrice: numDiscountedPrice,
       madeIn: strMadeIn,
-      goodKind: enumGoodKind,
+      goodKind: GoodKindDictionaryReverse[enumGoodKind],
       hasMag: boolHasMag,
       magLink: strMagLink,
       createdBy: '63b40e8a137fab00190dc0c6',

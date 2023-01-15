@@ -235,9 +235,9 @@ function Dashboard({ data }) {
                     className="cursor-pointer content-center justify-center text-neutral-content"
                     dir="rtl"
                   >
-                    {data.userData.currentUser.gender === 'زن'
-                      ? ' خانم ' + data.userData.currentUser.laName
-                      : ' آقای ' + data.userData.currentUser.laName}
+                    {data.userData.currentUser.isMale === true
+                      ? ' آقای ' + data.userData.currentUser.laName
+                      : ' خانم ' + data.userData.currentUser.laName}
                   </div>
                   <div className="text-sm text-neutral-content text-opacity-70">
                     اکانت فعال

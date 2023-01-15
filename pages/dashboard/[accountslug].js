@@ -42,7 +42,7 @@ function Account({ data }) {
 
   const [firstName, setFirstName] = useState(data.fiName)
   const [lastName, setLastName] = useState(data.laName)
-  const [gender, setGender] = useState(data.gender)
+  const [gender, setGender] = useState(data.isMale)
   const [mobileNum, setMobileNum] = useState(data.mobile)
   const [phoneNum, setPhoneNum] = useState(data.phone)
   const [emailStr, setEmailStr] = useState(data.email)
@@ -209,7 +209,7 @@ function Account({ data }) {
                     <span className="justify-center">نام خانوادگی</span>
                     <input
                       type="text"
-                      value={lastName === 'تخصیص داده نشده' ? '' : lastName}
+                      value={lastName}
                       onChange={(e) => setLastName(e.target.value)}
                       disabled={editing ? 'disabled' : ''}
                       placeholder={lastName}
@@ -223,7 +223,7 @@ function Account({ data }) {
                     <span className="justify-center">نام</span>
                     <input
                       type="text"
-                      value={firstName === 'تخصیص داده نشده' ? '' : firstName}
+                      value={firstName}
                       onChange={(e) => setFirstName(e.target.value)}
                       disabled={editing ? 'disabled' : ''}
                       placeholder={firstName}
@@ -237,10 +237,12 @@ function Account({ data }) {
                     <span className="justify-center">شماره تلفن</span>
                     <input
                       type="number"
-                      value={phoneNum === 'تخصیص داده نشده' ? '' : phoneNum}
+                      value={phoneNum}
                       onChange={(e) => setPhoneNum(e.target.value)}
                       disabled={editing ? 'disabled' : ''}
-                      placeholder={phoneNum}
+                      placeholder={
+                        phoneNum === '' ? 'تخصیص داده نشده' : phoneNum
+                      }
                       className="input input-bordered justify-center text-center"
                     />
                   </label>
@@ -251,7 +253,7 @@ function Account({ data }) {
                     <span className="justify-center">شماره موبایل</span>
                     <input
                       type="number"
-                      value={mobileNum === 'تخصیص داده نشده' ? '' : mobileNum}
+                      value={mobileNum}
                       onChange={(e) => setMobileNum(e.target.value)}
                       disabled={editing ? 'disabled' : ''}
                       placeholder={mobileNum}
@@ -265,12 +267,12 @@ function Account({ data }) {
                     <span className="justify-center">کدپستی</span>
                     <input
                       type="number"
-                      value={
-                        postalCodeNum === 'تخصیص داده نشده' ? '' : postalCodeNum
-                      }
+                      value={postalCodeNum}
                       onChange={(e) => setPostalCodeNum(e.target.value)}
                       disabled={editing ? 'disabled' : ''}
-                      placeholder={postalCodeNum}
+                      placeholder={
+                        postalCodeNum === '' ? 'تخصیص داده نشده' : postalCodeNum
+                      }
                       className="input input-bordered justify-center text-center"
                     />
                   </label>
@@ -281,10 +283,12 @@ function Account({ data }) {
                     <span className="justify-center">ایمیل</span>
                     <input
                       type="email"
-                      value={emailStr === 'تخصیص داده نشده' ? '' : emailStr}
+                      value={emailStr}
                       onChange={(e) => setEmailStr(e.target.value)}
                       disabled={editing ? 'disabled' : ''}
-                      placeholder={emailStr}
+                      placeholder={
+                        emailStr === '' ? 'تخصیص داده نشده' : emailStr
+                      }
                       className="input input-bordered justify-center text-center"
                     />
                   </label>
@@ -295,10 +299,12 @@ function Account({ data }) {
                     <span className="justify-center">آدرس</span>
                     <input
                       type="text"
-                      value={addressStr === 'تخصیص داده نشده' ? '' : addressStr}
+                      value={addressStr}
                       onChange={(e) => setAddressStr(e.target.value)}
                       disabled={editing ? 'disabled' : ''}
-                      placeholder={addressStr}
+                      placeholder={
+                        addressStr === '' ? 'تخصیص داده نشده' : addressStr
+                      }
                       className="input input-bordered justify-center text-center"
                     />
                   </label>
@@ -405,9 +411,9 @@ function Account({ data }) {
                     className="cursor-pointer content-center justify-center text-neutral-content"
                     dir="rtl"
                   >
-                    {gender === 'زن'
-                      ? ' خانم ' + lastName
-                      : ' آقای ' + lastName}
+                    {gender === true
+                      ? ' آقای ' + lastName
+                      : ' خانم ' + lastName}
                   </div>
                   <div className="text-sm text-neutral-content text-opacity-70">
                     اکانت فعال

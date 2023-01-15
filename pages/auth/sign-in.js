@@ -16,7 +16,7 @@ import { CLIENT_NAME_FA, APP_URL } from '../../envConfig'
 
 import FooterNotMain from '../../components/layout/footernotmain'
 
-const SignIn = ({ data }) => {
+const SignIn = () => {
   const router = useRouter()
 
   const [mobile, setMobile] = useState('')
@@ -44,6 +44,13 @@ const SignIn = ({ data }) => {
   const handleClick = (e) => {
     e.preventDefault()
     router.push('/auth/sign-up')
+  }
+  const onClickForgotPass = (e) => {
+    e.preventDefault()
+
+    new Snackbar('در حال توسعه ... با تیم پشتیبانی تماس بگیرید', {
+      position: 'bottom-right',
+    })
   }
 
   const onSubmit = async (event) => {
@@ -121,8 +128,8 @@ const SignIn = ({ data }) => {
 
               <label className="label justify-end place-content-end items-end mt-2">
                 <a
-                  href="#"
                   className="label-text-alt link underline link-primary link-hover hover:bg-primary-focus"
+                  onClick={onClickForgotPass}
                 >
                   رمزم را فراموش کرده‌ام
                 </a>

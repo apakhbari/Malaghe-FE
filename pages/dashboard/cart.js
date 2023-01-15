@@ -64,7 +64,7 @@ function CartPage({ data }) {
 
   cartsCtx.carts.map((item) => {
     if (item.hasDiscount) {
-      if (item.discountKind === 'درصد') {
+      if (item.discountKind === 1) {
         overAllPrice =
           overAllPrice +
           Math.round(((100 - item.discountedPrice) * item.price) / 100) *
