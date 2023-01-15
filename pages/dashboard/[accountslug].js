@@ -46,8 +46,8 @@ function Account({ data }) {
   const [lastName, setLastName] = useState(data.laName)
   const [gender, setGender] = useState(data.isMale)
   const [mobileNum, setMobileNum] = useState(data.mobile)
-  const [phoneNum, setPhoneNum] = useState(data.phone)
-  const [emailStr, setEmailStr] = useState(data.email)
+  const [phoneNum, setPhoneNum] = useState(data.phone || 'تخصیص داده نشده')
+  const [emailStr, setEmailStr] = useState(data.email || 'تخصیص داده نشده')
   const [postalCodeNum, setPostalCodeNum] = useState('تخصیص داده نشده')
   const [addressStr, setAddressStr] = useState('تخصیص داده نشده')
 
@@ -239,11 +239,13 @@ function Account({ data }) {
                     <span className="justify-center">شماره تلفن</span>
                     <input
                       type="number"
-                      value={phoneNum}
+                      value={phoneNum === 'تخصیص داده نشده' ? '' : phoneNum}
                       onChange={(e) => setPhoneNum(e.target.value)}
                       disabled={editing ? 'disabled' : ''}
                       placeholder={
-                        phoneNum === '' ? 'تخصیص داده نشده' : phoneNum
+                        phoneNum === 'تخصیص داده نشده'
+                          ? 'تخصیص داده نشده'
+                          : phoneNum
                       }
                       className="input input-bordered justify-center text-center"
                     />
@@ -269,11 +271,15 @@ function Account({ data }) {
                     <span className="justify-center">کدپستی</span>
                     <input
                       type="number"
-                      value={postalCodeNum}
+                      value={
+                        postalCodeNum === 'تخصیص داده نشده' ? '' : postalCodeNum
+                      }
                       onChange={(e) => setPostalCodeNum(e.target.value)}
                       disabled={editing ? 'disabled' : ''}
                       placeholder={
-                        postalCodeNum === '' ? 'تخصیص داده نشده' : postalCodeNum
+                        postalCodeNum === 'تخصیص داده نشده'
+                          ? 'تخصیص داده نشده'
+                          : postalCodeNum
                       }
                       className="input input-bordered justify-center text-center"
                     />
@@ -285,11 +291,12 @@ function Account({ data }) {
                     <span className="justify-center">ایمیل</span>
                     <input
                       type="email"
-                      value={emailStr}
+                      value={emailStr === 'تخصیص داده نشده' ? '' : emailStr}
                       onChange={(e) => setEmailStr(e.target.value)}
-                      disabled={editing ? 'disabled' : ''}
                       placeholder={
-                        emailStr === '' ? 'تخصیص داده نشده' : emailStr
+                        emailStr === 'تخصیص داده نشده'
+                          ? 'تخصیص داده نشده'
+                          : emailStr
                       }
                       className="input input-bordered justify-center text-center"
                     />
@@ -301,11 +308,13 @@ function Account({ data }) {
                     <span className="justify-center">آدرس</span>
                     <input
                       type="text"
-                      value={addressStr}
+                      value={addressStr === 'تخصیص داده نشده' ? '' : addressStr}
                       onChange={(e) => setAddressStr(e.target.value)}
                       disabled={editing ? 'disabled' : ''}
                       placeholder={
-                        addressStr === '' ? 'تخصیص داده نشده' : addressStr
+                        addressStr === 'تخصیص داده نشده'
+                          ? 'تخصیص داده نشده'
+                          : addressStr
                       }
                       className="input input-bordered justify-center text-center"
                     />
