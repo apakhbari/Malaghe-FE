@@ -5,7 +5,6 @@ import { useRouter } from 'next/router'
 
 import CartsContext from '../../../store/cart-context'
 
-import hamzan from '../../../assets/images/store/hamzan.jpg'
 import GroupDigital from '../../../hooks/groupDigital'
 
 var slugify = require('slugify-persian')
