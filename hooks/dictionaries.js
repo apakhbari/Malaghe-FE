@@ -10,6 +10,6 @@ export const OrderStatusDictionary = {
 }
 
 export const GenderDictionary = {
-  0: 'زن',
-  1: 'مرد',
+  زن: 0,
+  مرد: 1,
 }
