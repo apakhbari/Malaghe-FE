@@ -19,9 +19,11 @@ import MobileDeveloping from '../../components/layout/mobileDeveloping'
 
 import axios from 'axios'
 
-import { GoodKindDictionary } from '../../hooks/dictionaries'
+import { GoodKindDictionary, MadeInDictionary } from '../../hooks/dictionaries'
 
 function StoreSlug({ data }) {
+  console.log(data)
+
   const router = useRouter()
 
   const cartsCtx = useContext(CartsContext)
@@ -183,7 +185,9 @@ function StoreSlug({ data }) {
 
               <div className="stat text-base">
                 <div className="stat-title text-base-100">ساخت</div>
-                <div className="stat-value">{data.madeIn}</div>
+                <div className="stat-value">
+                  {MadeInDictionary[data.madeIn]}
+                </div>
                 <div className="stat-desc">
                   {GoodKindDictionary[data.goodKind]}
                 </div>

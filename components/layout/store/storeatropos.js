@@ -9,7 +9,10 @@ import GroupDigital from '../../../hooks/groupDigital'
 
 var slugify = require('slugify-persian')
 
-import { GoodKindDictionary } from '../../../hooks/dictionaries'
+import {
+  GoodKindDictionary,
+  MadeInDictionary,
+} from '../../../hooks/dictionaries'
 
 function StoreAtropos(props) {
   const router = useRouter()
@@ -112,7 +115,9 @@ function StoreAtropos(props) {
               )}
 
               {props.madeIn && (
-                <div className="badge badge-outline">تولید {props.madeIn}</div>
+                <div className="badge badge-outline">
+                  تولید {MadeInDictionary[props.madeIn]}
+                </div>
               )}
 
               <div className="badge badge-outline badge-primary">

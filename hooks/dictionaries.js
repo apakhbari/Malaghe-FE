@@ -57,3 +57,12 @@ export const GoodKindDictionaryReverse = {
 }
 
 //---------------------------
+
+export const MadeInDictionary = {
+  1: 'ایران',
+  2: 'چین',
+}
+export const MadeInDictionaryReverse = {
+  ایران: 1,
+  چین: 2,
+}

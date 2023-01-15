@@ -18,6 +18,8 @@ import {
 } from '../../hooks/dictionaries'
 
 function List({ data }) {
+  console.log(data)
+
   const router = useRouter()
 
   const handleClick = (e) => {

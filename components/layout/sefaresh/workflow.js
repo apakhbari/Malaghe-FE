@@ -40,7 +40,7 @@ function Workflow() {
         در تاریخ ۱۰ شهریور ۱۴۰۱
       </time>
       <p className="text-base font-normal text-neutral-content/80 mb-2 mt-2 ml-2">
-        درخواست شما برای تعمیر دستگاه ثبت شد.{' '}
+        درخواست شما برای تعمیر دستگاه ثبت شد.
       </p>
     </li>
   )

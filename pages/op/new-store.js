@@ -17,6 +17,7 @@ import Snackbar from 'awesome-snackbar'
 import {
   DiscountKindDictionaryReverse,
   GoodKindDictionaryReverse,
+  MadeInDictionaryReverse,
 } from '../../hooks/dictionaries'
 
 const NewStore = () => {
@@ -25,11 +26,14 @@ const NewStore = () => {
   const [strTitle, setStrTitle] = useState('عنوان')
   const [strDescription, setStrDescription] = useState()
   const [strSummary, setStrSummary] = useState()
+  const [strMaterial, setStrMaterial] = useState()
   const [strVolumesHeight, setStrVolumesHeight] = useState()
   const [strVolumesWidth, setStrVolumesWidth] = useState()
   const [strVolumesLength, setStrVolumesLength] = useState()
   const [strVolumesWeight, setStrVolumesWeight] = useState()
+
   const [numPrice, setNumPrice] = useState()
+  const [numPhotos, setNumPhotos] = useState()
   const [numAvailableQuantity, setNumAvailableQuantity] = useState()
   const [boolHasDiscount, setBoolHasDiscount] = useState(false)
   const [boolHasMag, setBoolHasMag] = useState(false)
@@ -56,6 +60,8 @@ const NewStore = () => {
       description: strDescription,
       summary: strSummary,
       price: numPrice,
+      photoNum: numPhotos,
+      material: strMaterial,
       width: strVolumesWidth,
       length: strVolumesLength,
       height: strVolumesHeight,
@@ -64,7 +70,7 @@ const NewStore = () => {
       hasDiscount: boolHasDiscount,
       discountKind: DiscountKindDictionaryReverse[enumDiscountKind],
       discountedPrice: numDiscountedPrice,
-      madeIn: strMadeIn,
+      madeIn: MadeInDictionaryReverse[strMadeIn],
       goodKind: GoodKindDictionaryReverse[enumGoodKind],
       hasMag: boolHasMag,
       magLink: strMagLink,
@@ -147,18 +153,25 @@ const NewStore = () => {
                 </h3>
               )}
 
-              <div className="form-control mx-auto  items-center justify-center content-center mb-2">
-                <label className="input-group">
-                  <input
-                    type="text"
-                    value={strMadeIn}
-                    onChange={(e) => setStrMadeIn(e.target.value)}
-                    placeholder="ایران"
-                    className="input input-bordered  text-center w-full"
-                  />
-                  <span className="  text-center">ساخت کشور</span>
-                </label>
-              </div>
+              <select
+                className="select select-bordered mx-auto max-w-xs mb-2 w-full"
+                dir="rtl"
+                onChange={(e) => setStrMadeIn(e.target.value)}
+              >
+                <option
+                  disabled
+                  selected
+                  className="text-center content-center"
+                >
+                  ساخت کشور
+                </option>
+                <option className="text-center content-center" dir="rtl">
+                  ایران
+                </option>
+                <option className="text-center content-center" dir="rtl">
+                  چین
+                </option>
+              </select>
 
               <div className="form-control mx-auto  items-center justify-center content-center mb-2">
                 <label className="input-group">
@@ -170,6 +183,19 @@ const NewStore = () => {
                     className="input input-bordered  text-center w-full"
                   />
                   <span className="  text-center">تعداد موجودی</span>
+                </label>
+              </div>
+
+              <div className="form-control mx-auto  items-center justify-center content-center mb-2">
+                <label className="input-group">
+                  <input
+                    type="number"
+                    value={numPhotos}
+                    onChange={(e) => setNumPhotos(e.target.value)}
+                    placeholder="10"
+                    className="input input-bordered  text-center w-full"
+                  />
+                  <span className="  text-center">تعداد تصاویر</span>
                 </label>
               </div>
 
@@ -220,7 +246,21 @@ const NewStore = () => {
                 </div>
               )}
 
-              <div className="divider">اندازه ها</div>
+              <div className="divider">اندازه و جنس</div>
+
+              <div className="form-control mx-auto  items-center justify-center content-center mb-2">
+                <label className="input-group">
+                  <input
+                    type="text"
+                    dir="rtl"
+                    value={strMaterial}
+                    onChange={(e) => setStrMaterial(e.target.value)}
+                    placeholder="12"
+                    className="input input-bordered  text-center w-full"
+                  />
+                  <span className="  text-center">جنس</span>
+                </label>
+              </div>
 
               <div className="form-control mx-auto  items-center justify-center content-center mb-2">
                 <label className="input-group">

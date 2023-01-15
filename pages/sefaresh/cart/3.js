@@ -12,12 +12,16 @@ import { CLIENT_NAME_FA } from '../../../envConfig'
 
 import Snackbar from 'awesome-snackbar'
 
+import { PaymentKindDictionaryReverse } from '../../../hooks/dictionaries'
+
 const RequestService3 = () => {
   const router = useRouter()
 
   const cartsCtx = useContext(CartsContext)
 
   var overAllPrice = 0
+
+  var productArray = [{}]
 
   cartsCtx.carts.map((item) => {
     if (item.hasDiscount) {
@@ -69,11 +73,63 @@ const RequestService3 = () => {
     }
   }, [router.isReady])
 
+  const reqWasSuccess = (data) => {
+    new Snackbar('عملیات موفقیت آمیز بود', {
+      position: 'bottom-right',
+    })
+    router.push('/dashboard')
+  }
+
+  const { doRequest, errors } = useRequest({
+    url: '/api/v1/orders/cart',
+    method: 'post',
+    body: {
+      userId: userID,
+      userName: enteredName,
+      isMale: enteredGender,
+      mobile: enteredMobile,
+      phone: enteredPhone,
+      postalCode: postalCodeNum,
+      address: addressStr,
+      description: enteredDescription,
+
+      paymentKind: PaymentKindDictionaryReverse[enteredPaymentKind],
+      isExpress: isExpress,
+
+      products: {
+        title: enteredDevice,
+        description: enteredDescription,
+      },
+    },
+    onSuccess: (response) => reqWasSuccess(response),
+  })
+
   const onSubmit = (e) => {
     e.preventDefault()
 
     new Snackbar('لطفاً شکیبا باشید', {
       position: 'bottom-right',
+    })
+
+    productArray = [{}]
+
+    cartsCtx.carts.map((item, index) => {
+      productArray[index] = {}
+      productArray[index].title = item.title
+      productArray[index].quantity = item.quantity
+
+      if (item.hasDiscount) {
+        productArray[index].initialPrice = item.price
+        if (item.discountKind === 'درصد') {
+          productArray[index].price =
+            Math.round(((100 - item.discountedPrice) * item.price) / 100) *
+            item.quantity
+        } else {
+          productArray[index].price = item.discountedPrice * item.quantity
+        }
+      } else {
+        productArray[index].price = item.price
+      }
     })
 
     router.replace({
