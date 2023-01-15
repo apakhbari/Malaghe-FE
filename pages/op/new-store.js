@@ -192,7 +192,7 @@ const NewStore = () => {
                     type="number"
                     value={numPhotos}
                     onChange={(e) => setNumPhotos(e.target.value)}
-                    placeholder="10"
+                    placeholder="4"
                     className="input input-bordered  text-center w-full"
                   />
                   <span className="  text-center">تعداد تصاویر</span>
@@ -248,14 +248,14 @@ const NewStore = () => {
 
               <div className="divider">اندازه و جنس</div>
 
-              <div className="form-control mx-auto  items-center justify-center content-center mb-2">
+              <div className="mx-auto  items-center justify-center content-center mb-2">
                 <label className="input-group">
                   <input
                     type="text"
                     dir="rtl"
                     value={strMaterial}
                     onChange={(e) => setStrMaterial(e.target.value)}
-                    placeholder="12"
+                    placeholder="فلزی"
                     className="input input-bordered  text-center w-full"
                   />
                   <span className="  text-center">جنس</span>

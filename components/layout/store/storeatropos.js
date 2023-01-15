@@ -98,7 +98,7 @@ function StoreAtropos(props) {
                 data-atropos-offset="6"
                 dir="rtl"
               >
-                {GroupDigital(props.price)}
+                {GroupDigital(props.price)} تومن
               </h2>
             )}
 
