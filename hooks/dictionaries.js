@@ -13,3 +13,7 @@ export const GenderDictionary = {
   زن: 0,
   مرد: 1,
 }
+export const GenderDictionaryReverse = {
+  0: 'زن',
+  1: 'مرد',
+}

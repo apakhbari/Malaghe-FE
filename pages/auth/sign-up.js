@@ -18,7 +18,7 @@ import FooterNotMain from '../../components/layout/footernotmain'
 
 import axios from 'axios'
 
-const SignUp = ({ data }) => {
+const SignUp = () => {
   const router = useRouter()
 
   const [fiName, setFiName] = useState('')
@@ -96,12 +96,7 @@ const SignUp = ({ data }) => {
         position: 'bottom-right',
       })
 
-      console.log(GenderDictionary[gender])
-      console.log('-----------------------')
-      console.log(GenderDictionary[1])
-      console.log(GenderDictionary['مرد'])
-
-      //doRequest()
+      doRequest()
     }
   }
 
@@ -230,8 +225,6 @@ export async function getServerSideProps(context) {
       }
     }
   }
-
-  return { props: { data } }
 }
 
 export default SignUp
