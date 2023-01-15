@@ -21,6 +21,8 @@ import axios from 'axios'
 
 import { GoodKindDictionary, MadeInDictionary } from '../../hooks/dictionaries'
 
+import Snackbar from 'awesome-snackbar'
+
 function StoreSlug({ data }) {
   console.log(data)
 
@@ -36,6 +38,10 @@ function StoreSlug({ data }) {
   }, [])
 
   const clickOnAddCart = (e) => {
+    new Snackbar('کالا به سبد خریدتان اضافه شد', {
+      position: 'bottom-right',
+    })
+
     if (cartsCtx.itemIsInCart(data.id)) {
       cartsCtx.removeCart(data.id)
       cartsCtx.addCart({

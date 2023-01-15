@@ -112,6 +112,7 @@ const OrderCode = ({ data }) => {
               className="text-xl text-neutral-content p-4 text-center mx-4"
               dir="rtl"
             >
+              {data.description && <p>{data.description}</p>}
               <p>{data.isDone ? 'انجام شده' : 'در حال انجام'}</p>
               <p>{data.createdAt}</p>
               <p>
