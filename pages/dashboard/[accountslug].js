@@ -293,6 +293,7 @@ function Account({ data }) {
                       type="email"
                       value={emailStr === 'تخصیص داده نشده' ? '' : emailStr}
                       onChange={(e) => setEmailStr(e.target.value)}
+                      disabled={editing ? 'disabled' : ''}
                       placeholder={
                         emailStr === 'تخصیص داده نشده'
                           ? 'تخصیص داده نشده'
