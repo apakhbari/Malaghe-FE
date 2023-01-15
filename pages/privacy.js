@@ -1,6 +1,5 @@
 import { Fragment } from 'react'
 import CardDescriptionComponent from '../components/layout/cardDescription'
-import FooterNotMain from '../components/layout/footernotmain'
 import MobileDeveloping from '../components/layout/mobileDeveloping'
 import Navbar from '../components/layout/navbar/navbar'
 
@@ -71,7 +70,6 @@ function Privacy() {
             شماره تماس : ۰۹۹۳۸۵۱۳۷۲۴
           </p>
         </CardDescriptionComponent>
-        <FooterNotMain />
       </div>
     </Fragment>
   )

@@ -8,9 +8,11 @@ COPY package.json .
 #    then npm install; \
 #    else npm install --only=production; \
 #    fi
-RUN npm install
+RUN npm install --only=production
 
 COPY . .
 EXPOSE 3000
 
-CMD ["npm", "run", "dev"]
+RUN npm run buil
+
+CMD ["npm", "run", "start"]
