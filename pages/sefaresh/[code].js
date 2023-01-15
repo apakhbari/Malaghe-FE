@@ -23,8 +23,6 @@ import {
 } from './../../hooks/dictionaries'
 
 const OrderCode = ({ data }) => {
-  console.log(data)
-
   const router = useRouter()
 
   const onWorkFlowClick = (e) => {

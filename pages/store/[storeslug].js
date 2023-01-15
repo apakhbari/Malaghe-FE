@@ -24,8 +24,6 @@ import { GoodKindDictionary, MadeInDictionary } from '../../hooks/dictionaries'
 import Snackbar from 'awesome-snackbar'
 
 function StoreSlug({ data }) {
-  console.log(data)
-
   const router = useRouter()
 
   const cartsCtx = useContext(CartsContext)

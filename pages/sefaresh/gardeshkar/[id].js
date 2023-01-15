@@ -19,8 +19,6 @@ import Workflow2 from '../../../components/layout/sefaresh/workflow2'
 import FooterNotMain from '../../../components/layout/footernotmain'
 
 function SefareshID({ data }) {
-  console.log(data)
-
   const router = useRouter()
 
   return (

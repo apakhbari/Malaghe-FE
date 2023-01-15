@@ -26,8 +26,6 @@ import axios from 'axios'
 import { CLIENT_NAME_FA, APP_URL } from '../../envConfig'
 
 function Store(data) {
-  console.log(data)
-
   const [menuIsOpen, setMenuIsOpen] = useState(false)
   const [theme, setTheme] = useState(true)
 

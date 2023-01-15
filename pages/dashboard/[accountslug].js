@@ -34,8 +34,6 @@ import MobileDeveloping from '../../components/layout/mobileDeveloping'
 import axios from 'axios'
 
 function Account({ data }) {
-  console.log(data)
-
   const router = useRouter()
 
   const cartsCtx = useContext(CartsContext)
