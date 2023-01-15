@@ -40,7 +40,7 @@ function StoreAtropos(props) {
           <figure>
             <Image
               className="aspect-square group-hover:opacity-80"
-              src={`../../../assets/images/store/${slugify(props.title)}.jpg`}
+              src={`/${slugify(props.title)}.jpg`}
               alt="tighe"
               ata-atropos-offset="0"
               width="300"
