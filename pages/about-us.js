@@ -21,7 +21,7 @@ function AboutUs() {
           </h3>
 
           <p className="text-center py-1 text-neutral-content" dir="rtl">
-            آدرس: پاکدشت، جاده خاوران،عباس آباد علاقبند شهرک کاوه
+            آدرس: شهرک صنعتی کاوه. پاکدشت، جاده خاوران، عباس‌آباد علاقبند
           </p>
           <p className="text-center py-1 text-neutral-content">
             ۰۹۹۳۸۵۱۳۷۲۴ :شماره تماس

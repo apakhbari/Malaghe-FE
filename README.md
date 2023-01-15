@@ -34,7 +34,23 @@
 
 2- transform digits to desired font & style
 
-3- create dictionaries & enums
+3- create dictionaries & enums (there are such thing in /BE/types/)
+
+4- all inputs : trim + lowercase
+
+5- store: rendering props
+
+**admin / op:**
+
+1- admin dashboard
+
+2- id op in new-store
+
+3- sign in
+
+### **Ask K:**
+
+1- in workflow, by is necessary?
 
 ---
 
