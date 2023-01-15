@@ -120,7 +120,7 @@ const OrderCode = ({ data }) => {
                   : 'در انتظار تعامل اپراتور'}
               </p>
               {data.isExpress && <p>خدمت اکسپرس</p>}
-              <p>{data.isService ? 'تعمیر' : 'خرید از فروشگاه'}</p>
+              <p>{data.isService ? 'خدمات' : 'خرید از فروشگاه'}</p>
               {data.isService && (
                 <p>{ServiceKindDictionary[data.serviceKind]}</p>
               )}

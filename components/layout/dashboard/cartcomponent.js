@@ -48,9 +48,11 @@ function CartComponent(props) {
           <figure>
             <Image
               className="aspect-square group-hover:opacity-80"
-              src={hamzan}
-              alt="hamzan"
+              src={`/${slugify(props.title)}.jpg`}
+              alt="tighe"
               ata-atropos-offset="0"
+              width="360"
+              height="360"
             />
           </figure>
           <div className="card-body" dir="rtl">

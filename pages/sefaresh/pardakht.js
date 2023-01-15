@@ -64,7 +64,7 @@ const RequestService3 = () => {
               سفارش شماره ۱۲۳۴
             </h3>
             <h3 dir="rtl" className="text-xl text-neutral-content">
-              شماره موبایل: ۰۹۱۲۲۷۸۸۲۱۰
+              شماره موبایل: ۰۹۱۲۱۰۰۲۳۸۰
             </h3>
 
             <select
