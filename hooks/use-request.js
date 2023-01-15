@@ -22,7 +22,7 @@ export default ({ url, method, body, onSuccess }) => {
       })
 
       if (onSuccess) {
-        console.log(response.data)
+        //console.log(response.data)
 
         onSuccess(response.data)
       }
