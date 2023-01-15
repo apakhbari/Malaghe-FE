@@ -40,6 +40,8 @@
 
 5- store: rendering props
 
+6- add description to address page of new sefaresh
+
 **admin / op:**
 
 1- admin dashboard

@@ -8,7 +8,7 @@ COPY package.json .
 #    then npm install; \
 #    else npm install --only=production; \
 #    fi
-RUN npm install --only=production
+RUN npm install
 
 COPY . .
 EXPOSE 3000
