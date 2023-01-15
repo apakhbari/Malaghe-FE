@@ -43,6 +43,8 @@ function StoreAtropos(props) {
               src={`../../../assets/images/store/${slugify(props.title)}.jpg`}
               alt="tighe"
               ata-atropos-offset="0"
+              width="300"
+              height="300"
             />
           </figure>
           <div
