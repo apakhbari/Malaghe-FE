@@ -225,6 +225,8 @@ export async function getServerSideProps(context) {
       }
     }
   }
+
+  return { props: { data } }
 }
 
 export default SignUp
