@@ -3,8 +3,6 @@ import { useRouter } from 'next/router'
 
 import Atropos from 'atropos/react'
 
-import hamzan from '../../../assets/images/store/hamzan.jpg'
-
 import GroupDigital from '../../../hooks/groupDigital'
 
 var slugify = require('slugify-persian')
