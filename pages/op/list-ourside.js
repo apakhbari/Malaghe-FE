@@ -12,19 +12,10 @@ import axios from 'axios'
 
 import Snackbar from 'awesome-snackbar'
 
+import { OrderStatusDictionary } from '../../hooks/dictionaries'
+
 function List({ data }) {
   const router = useRouter()
-
-  const orderStatus = {
-    1: 'ایجاد شده',
-    2: 'در انتظار پرداخت',
-    3: 'در حال جابجایی',
-    4: 'دریافت‌شده',
-    5: 'مرجوع شده',
-
-    6: 'عیب‌یابی',
-    7: 'تعمیر',
-  }
 
   const handleClick = (e) => {
     e.preventDefault()
@@ -102,7 +93,7 @@ function List({ data }) {
                       {item.code}
                     </td>
                     <td className=" group-hover:text-primary-focus">
-                      {orderStatus[item.orderStatus]}
+                      {OrderStatusDictionary[item.orderStatus]}
                     </td>
                     {item.isDone ? (
                       <td className=" group-hover:text-primary-focus">✔</td>

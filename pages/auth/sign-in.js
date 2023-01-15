@@ -2,7 +2,6 @@ import { useState, useContext, Fragment } from 'react'
 
 import { useRouter } from 'next/router'
 import Head from 'next/head'
-import { cookies } from 'next/headers'
 
 import useRequest from '../../hooks/use-request'
 

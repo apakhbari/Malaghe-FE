@@ -15,6 +15,8 @@ import Snackbar from 'awesome-snackbar'
 
 import { useRouter } from 'next/router'
 
+import { OrderStatusDictionary } from '../../hooks/dictionaries'
+
 const OrderCode = ({ data }) => {
   const router = useRouter()
 
@@ -32,17 +34,6 @@ const OrderCode = ({ data }) => {
       },
       `/sefaresh/gardeshkar/${data.code}`
     )
-  }
-
-  const orderStatus = {
-    1: 'ایجاد شده',
-    2: 'در انتظار پرداخت',
-    3: 'در حال جابجایی',
-    4: 'دریافت‌شده',
-    5: 'مرجوع شده',
-
-    6: 'عیب‌یابی',
-    7: 'تعمیر',
   }
 
   return (
@@ -85,7 +76,7 @@ const OrderCode = ({ data }) => {
             >
               <p>{data.code}</p>
 
-              <p>{orderStatus[data.orderStatus]}</p>
+              <p>{OrderStatusDictionary[data.orderStatus]}</p>
 
               <p>
                 {data.gender === 'زن'

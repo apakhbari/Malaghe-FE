@@ -2,7 +2,6 @@ import { useState, useContext, Fragment } from 'react'
 
 import { useRouter } from 'next/router'
 import Head from 'next/head'
-import { cookies } from 'next/headers'
 
 import Navbar from '../../components/layout/navbar/navbar'
 
@@ -11,11 +10,9 @@ import CardComponent from '../../components/layout/card'
 
 import Snackbar from 'awesome-snackbar'
 
-import ParseJwt from '../../hooks/jwtDecode'
-
 import { CLIENT_NAME_FA, APP_URL } from '../../envConfig'
 
-import cookieCutter from 'cookie-cutter'
+import { GenderDictionary } from '../../hooks/dictionaries'
 
 import FooterNotMain from '../../components/layout/footernotmain'
 
@@ -43,7 +40,7 @@ const SignUp = ({ data }) => {
     body: {
       fiName,
       laName,
-      gender,
+      isMale: GenderDictionary[gender],
       mobile,
       password,
     },
@@ -99,7 +96,12 @@ const SignUp = ({ data }) => {
         position: 'bottom-right',
       })
 
-      doRequest()
+      console.log(GenderDictionary[gender])
+      console.log('-----------------------')
+      console.log(GenderDictionary[1])
+      console.log(GenderDictionary['مرد'])
+
+      //doRequest()
     }
   }
 
