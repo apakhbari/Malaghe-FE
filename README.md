@@ -18,9 +18,9 @@
 
 ## **Links**:
 
-### Backend github: --> https://github.com/apakhbari/Malaghe-BE
+## [BackEnd github](https://github.com/apakhbari/Malaghe-BE)
 
-### docker --> https://hub.docker.com/repository/docker/apakhbari/malaghe
+## [docker](https://hub.docker.com/repository/docker/apakhbari/malaghe)
 
 ---
 
@@ -54,7 +54,61 @@
 
 1- in workflow, by is necessary?
 
+## <br>
+
 ---
+
+## **Routes** :
+
+    .
+    ├── _app
+    ├── _document
+    ├── /
+    ├── 404
+    ├── about-us
+    ├── contact-us
+    ├── developing
+    ├── faq
+    ├── privacy
+    ├── auth
+    │   ├── sign-in
+    │   └── sign-up
+    ├── dashboard
+    │   ├── /
+    │   ├── [accountslug]
+    │   └── cart
+    ├── mag
+    │   └── /
+    ├── op
+    │   ├── /
+    │   ├── list-ourside
+    │   ├── list
+    │   ├── new-service
+    │   |    ├── 1
+    │   |    ├── 2
+    │   |    └── 3
+    ├── sefaresh
+    │   ├── /
+    │   ├── [code]
+    │   ├── list
+    │   ├── pardakht
+    │   ├── cart
+    │   |    ├── 1
+    │   |    ├── 2
+    │   |    └── 3
+    │   ├── gardeshkar
+    │   |    ├── /
+    │   |    ├── [id]
+    │   |    └── workflow1
+    │   ├── new
+    │   |    ├── 1
+    │   |    ├── 2
+    │   |    └── 3
+    ├── store
+    │   ├── /
+    │   └── [storeslug]
+
+## <br>
 
 <br>
 
