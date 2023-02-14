@@ -14,6 +14,8 @@
 
 <br>
 
+![architecture.png](architecture.png)
+
 ---
 
 ## **Links**:
