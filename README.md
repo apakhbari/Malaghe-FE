@@ -20,9 +20,7 @@
 
 ### [Malaghe BackEnd](https://github.com/apakhbari/Malaghe-BE)
 
-### [malaghe utility package](https://github.com/apakhbari/malaghe-k8s-utility) , [npm utility package](https://www.npmjs.com/package/@apa_malaghe/utility)
-
-### [malaghe k8s + Skaffold (NOT MAINTAINED)](https://github.com/apakhbari/malaghe-k8s)
+### [malaghe utility package](https://github.com/apakhbari/malaghe-k8s-utility), [npm utility package](https://www.npmjs.com/package/@apa_malaghe/utility)
 
 ---
 
