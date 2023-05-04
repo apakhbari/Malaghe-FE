@@ -18,9 +18,11 @@
 
 ## **Links**:
 
-### [BackEnd github](https://github.com/apakhbari/Malaghe-BE)
+### [Malaghe BackEnd](https://github.com/apakhbari/Malaghe-BE)
 
-### [docker](https://hub.docker.com/repository/docker/apakhbari/malaghe)
+### [malaghe utility package](https://github.com/apakhbari/malaghe-k8s-utility) , [npm utility package](https://www.npmjs.com/package/@apa_malaghe/utility)
+
+### [malaghe k8s + Skaffold (NOT MAINTAINED)](https://github.com/apakhbari/malaghe-k8s)
 
 ---
 
